@@ -35,70 +35,70 @@ const AddComp = ({ list, setList }) => {
           <LabelCol>
             <Label htmlFor="title">Titel:</Label>
           </LabelCol>
-          <Col15>
+          <Col20>
             <Input
               name="title"
               id="title"
               value={form.title}
               onChange={typer}
             />
-          </Col15>
+          </Col20>
         </Row>
 
         <Row>
           <LabelCol>
             <Label htmlFor="sorts">Sorts:</Label>
           </LabelCol>
-          <Col15>
+          <Col20>
             <Input
               name="sorts"
               id="sorts"
               value={form.sorts}
               onChange={typer}
             />
-          </Col15>
+          </Col20>
         </Row>
 
         <Row>
           <LabelCol>
             <Label htmlFor="price">Pris:</Label>
           </LabelCol>
-          <Col15>
+          <Col20>
             <Input
               name="price"
               id="price"
               value={form.price}
               onChange={typer}
             />
-          </Col15>
+          </Col20>
         </Row>
 
         <Row>
           <LabelCol>
             <Label htmlFor="image">Bildfilen:</Label>
           </LabelCol>
-          <Col15>
+          <Col20>
             <Input
               id="image"
               name="image"
               value={form.image}
               onChange={typer}
             />
-          </Col15>
+          </Col20>
         </Row>
 
         <Row>
           <LabelCol>
             <Label htmlFor="included">Ingår:</Label>
           </LabelCol>
-          <Col15>
+          <Col20>
             <Input
               name="included"
               id="included"
               value={form.included}
               onChange={typer}
             />
-          </Col15>
+          </Col20>
         </Row>
         <Button type="submit" onClick={AddItem}>
           Lägg till
@@ -123,8 +123,8 @@ const Row = styled.div`
   }
 `;
 
-const Col15 = styled.div`
-  width: 15%;
+const Col20 = styled.div`
+  width: 20%;
 
   @media (max-width: 1900px) {
     width: 95%;
@@ -132,7 +132,7 @@ const Col15 = styled.div`
 `;
 
 const LabelCol = styled.div`
-  width: 10%;
+  width: 15%;
 
   @media (max-width: 1900px) {
     width: 100%;

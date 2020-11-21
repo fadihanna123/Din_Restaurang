@@ -1,4 +1,4 @@
-# Din Restaurang Server
+## Din Restaurang Server
 
 Via denna Rest webbtjänst kan man ha åtkomst till json data i själva webbsidan. Här byggde jag Din restaurang databas och gav tillgång till json data via en länk där man kan surfa, lägga till, ändra och data eller använda dessa funktioner i Postman. <br />
 HTTP-metoder som kan användas: GET, POST, DELETE, PUT.
