@@ -8,7 +8,7 @@ models/ <br />
 models/model.js <br />
 app.js <br />
 package.json <br />
-yarn.lock <br />
+pnpm-lock.yaml <br />
 
 **Installation:**<br />
 Du behöver skapa "restaurangdata" tabellen. <br />
