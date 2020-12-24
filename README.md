@@ -30,7 +30,7 @@ public/Favicon/site.webmanifest <br />
 .gitignore <br />
 README.md <br />
 package.json <br />
-yarn.lock <br />
+pnpm-lock.yaml <br />
 
 ### 1.1.2 Adminpanel
 
@@ -57,14 +57,14 @@ public/Favicon/site.webmanifest <br />
 .gitignore <br />
 README.md <br />
 package.json <br />
-yarn.lock <br />
+pnpm-lock.yaml <br />
 
 **Backend:** <br />
 models/ <br />
 models/model.js <br />
 app.js <br />
 package.json <br />
-yarn.lock <br />
+pnpm-lock.yaml <br />
 
 ### 1.3 Programmeringsspråk som används i projektet:
 
