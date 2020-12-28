@@ -13,27 +13,34 @@ const App = () => {
   const [getid, setId] = useState(null);
 
   const getData = async () => {
-    await axios({
-      url: "http://localhost:5000/food",
-      headers: { "Content-Type": "application/json" },
-    })
-      .then((response) => {
-        setList(response.data);
-        setLoading(true);
-      })
-      .catch((err) => console.log(err.respoonse));
+    try {
+      setLoading(true);
+      const { data } = await axios({
+        url: "http://localhost:5000/food",
+        headers: { "Content-Type": "application/json" },
+      });
+      setList(data);
+    } catch (err) {
+      console.log(err.response);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const DeleteItem = async (id) => {
-    await axios({
-      url: "http://localhost:5000/food/" + id,
-      method: "DELETE",
-    })
-      .then((data) => {
-        const temp = [...list].filter((item) => item._id !== id);
-        setList(temp);
-      })
-      .catch((err) => console.log(err.response));
+    try {
+      setLoading(true);
+      await axios({
+        url: "http://localhost:5000/food/" + id,
+        method: "DELETE",
+      });
+      const temp = [...list].filter((item) => item._id !== id);
+      setList(temp);
+    } catch (err) {
+      console.log(err.response);
+    } finally {
+      setLoading(false);
+    }
   };
 
   useEffect(() => {
@@ -61,7 +68,7 @@ const App = () => {
                   </tr>
                 </TableHead>
                 <tbody>
-                  {loading ? (
+                  {!loading ? (
                     list.length > 0 ? (
                       list.map((item, i) => (
                         <tr key={i}>

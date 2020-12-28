@@ -9,15 +9,18 @@ const App = () => {
   const [loading, setLoading] = useState(false);
 
   const getData = async () => {
-    await axios({
-      url: "http://localhost:5000/food",
-      headers: { "Content-Type": "application/json" },
-    })
-      .then((response) => {
-        setList(response.data);
-        setLoading(true);
-      })
-      .catch((err) => console.log(err.response));
+    try {
+      setLoading(true);
+      const { data } = await axios({
+        url: "http://localhost:5000/food",
+        headers: { "Content-Type": "application/json" },
+      });
+      setList(data);
+    } catch (err) {
+      console.log(err.response);
+    } finally {
+      setLoading(false);
+    }
   };
 
   useEffect(() => {

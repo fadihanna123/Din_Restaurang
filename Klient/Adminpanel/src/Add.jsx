@@ -16,16 +16,19 @@ const AddComp = ({ list, setList }) => {
   };
 
   const AddItem = async () => {
-    await axios({
-      url: "http://localhost:5000/food/add",
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      data: JSON.stringify(form),
-    })
-      .then((response) => setList([...list, response.data]))
-      .catch((err) => console.log(err.response));
+    try {
+      const { data } = await axios({
+        url: "http://localhost:5000/food/add",
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        data: JSON.stringify(form),
+      });
+      setList([...list, data.data]);
+    } catch (err) {
+      console.log(err.response);
+    }
   };
 
   return (

@@ -21,22 +21,23 @@ const EditComp = ({ setView, getid, list, setList }) => {
   }, [getid, list]);
 
   const EditItem = async () => {
-    await axios({
-      url: `http://localhost:5000/food/${getid}`,
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      data: JSON.stringify(form),
-    })
-      .then((data) => {
-        const temp = [...list];
-        const index = temp.findIndex((i) => i._id === getid);
-        temp[index] = form;
-        setList(temp);
-        setView("");
-      })
-      .catch((err) => console.log(err));
+    try {
+      await axios({
+        url: `http://localhost:5000/food/${getid}`,
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        data: JSON.stringify(form),
+      });
+      const temp = [...list];
+      const index = temp.findIndex((i) => i._id === getid);
+      temp[index] = form;
+      setList(temp);
+      setView("");
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
