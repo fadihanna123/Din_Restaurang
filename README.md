@@ -8,12 +8,25 @@ Din restaurang erbjuder 5 maträtter och i adminpanel kan du administrera alla m
 
 **Din restaurang** <br />
 src/ <br />
-src/global.js <br />
-src/App.jsx <br />
-src/index.jsx <br />
-src/Includes/Header.jsx <br />
-src/Includes/Footer.jsx <br />
+src/components/ <br />
+src/components/PhotosList.tsx <br />
+src/global.tsx <br />
+src/App.tsx <br />
+src/index.tsx <br />
+src/Includes/ <br />
+src/Includes/Header.tsx <br />
+src/Includes/Footer.tsx <br />
+src/typings/ <br />
+src/typings/List.ts <br />
+src/GetData.tsx <br />
+src/Images/ <br />
+src/Images/burgare.jpg <br />
+src/Images/falafel.jpg <br />
+src/Images/kebab.jpg <br />
 src/Images/logo.jpg <br />
+src/Images/pannbiff.jpg <br />
+src/Images/pizza.jpg <br />
+src/Images/sushi.jpg <br />
 public/ <br />
 public/index.html <br />
 public/robots.txt <br />
@@ -30,17 +43,33 @@ public/Favicon/site.webmanifest <br />
 .gitignore <br />
 README.md <br />
 package.json <br />
+tsconfig.json <br />
 yarn.lock <br />
 
-### 1.1.2 Adminpanel
+**Adminpanel**
 
 src/ <br />
-src/global.js <br />
-src/App.jsx <br />
-src/index.jsx <br />
-src/Includes/Header.jsx <br />
-src/Includes/Footer.jsx <br />
+src/components/ <br />
+src/components/Add.tsx <br />
+src/components/Edit.tsx <br />
+src/components/FoodTable.tsx <br />
+src/global.tsx <br />
+src/App.tsx <br />
+src/index.tsx <br />
+src/Includes/ <br />
+src/Includes/Header.tsx <br />
+src/Includes/Footer.tsx <br />
+src/typings/ <br />
+src/typings/List.ts <br />
+src/GetData.tsx <br />
+src/Images/ <br />
+src/Images/burgare.jpg <br />
+src/Images/falafel.jpg <br />
+src/Images/kebab.jpg <br />
 src/Images/logo.jpg <br />
+src/Images/pannbiff.jpg <br />
+src/Images/pizza.jpg <br />
+src/Images/sushi.jpg <br />
 public/ <br />
 public/index.html <br />
 public/robots.txt <br />
@@ -57,18 +86,25 @@ public/Favicon/site.webmanifest <br />
 .gitignore <br />
 README.md <br />
 package.json <br />
+tsconfig.json <br />
 yarn.lock <br />
 
-**Backend:** <br />
+### 1.1.2 Backend: <br />
+
 models/ <br />
-models/model.js <br />
-app.js <br />
+models/model.ts <br />
+typings/ <br />
+typings/List.ts <br />
+.gitignore
+app.ts <br />
 package.json <br />
+README.md <br />
+tsconfig.json <br />
 yarn.lock <br />
 
 ### 1.3 Programmeringsspråk som används i projektet:
 
-HTML, Javascript. <br />
+HTML, Javascript och Typescript. <br />
 
 ### 1.4 Ramverk/bibliotek:
 

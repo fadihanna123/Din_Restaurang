@@ -1,31 +1,27 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
+import PropTypes from "prop-types";
 
-const AddComp = ({ list, setList }) => {
-  const [form, setForm] = useState({
+import { AddForm, Food, Props } from "../typings/List";
+
+const AddComp = ({ list, setList }: Props) => {
+  const [form, setForm] = useState<AddForm>({
     title: "",
     sorts: "",
-    price: "",
+    price: 0,
     image: "",
     included: "",
   });
 
-  const typer = (e) => {
+  const typer = (e: React.ChangeEvent<HTMLInputElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const AddItem = async () => {
+  const AddItem = async (): Promise<void> => {
     try {
-      const { data } = await axios({
-        url: "http://localhost:5000/food/add",
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        data: JSON.stringify(form),
-      });
-      setList([...list, data.data]);
+      const { data } = await axios.post<Food>("food/add", form);
+      setList([...list, data]);
     } catch (err) {
       console.log(err.response);
     }
@@ -109,6 +105,16 @@ const AddComp = ({ list, setList }) => {
       </MyAddForm>
     </>
   );
+};
+
+AddComp.propTypes = {
+  setList: PropTypes.func.isRequired,
+  list: PropTypes.array.isRequired,
+};
+
+AddComp.defaultProps = {
+  setList: [],
+  list: [],
 };
 
 export default AddComp;

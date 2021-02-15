@@ -1,11 +1,10 @@
-const express = require("express");
-const cors = require("cors");
-const mongoose = require("mongoose");
+import express, { Request, Response } from "express";
+import cors from "cors";
+import mongoose from "mongoose";
+
+import { Food } from "./models/model";
+
 const app = express();
-
-const Food = require("./models/model.js");
-
-mongoose.Promise = global.Promise;
 
 // Anslutning till Mongodbdatabasen.
 mongoose.connect("mongodb://localhost:27017/dinrestaurang", {
@@ -13,11 +12,12 @@ mongoose.connect("mongodb://localhost:27017/dinrestaurang", {
   useUnifiedTopology: true,
   useFindAndModify: false,
 });
+
+// Inställningar
 app.use(express.json());
 app.use(cors());
-app.use(express.urlencoded({ extended: true }));
 
-app.get("/food", async (req, res) => {
+app.get("/food", async (req: Request, res: Response) => {
   try {
     const getFood = await Food.find({});
     res.json(getFood);
@@ -28,7 +28,7 @@ app.get("/food", async (req, res) => {
 
 app.get("/food/:id", async (req, res) => {
   try {
-    const id = req.params.id;
+    const id: string = req.params.id;
     const getFoodById = await Food.find({ _id: id });
     res.json(getFoodById);
   } catch (err) {
@@ -54,12 +54,8 @@ app.post("/food/add", async (req, res) => {
 app.put("/food/:id", async (req, res) => {
   try {
     const id = req.params.id;
-    Food.findOneAndUpdate({ _id: id }, req.body, (err) => {
-      if (err) {
-        console.log(err.message);
-      }
-      res.send({ message: "Changed" });
-    });
+    Food.findOneAndUpdate({ _id: id }, req.body);
+    res.send({ message: "Changed" });
   } catch (err) {
     console.log(err.response);
   }
@@ -75,5 +71,5 @@ app.delete("/food/:id", async (req, res) => {
   }
 });
 
-const port = 5000;
+const port: number = 5000;
 app.listen(port, () => console.log(`Servern startar på port ${port}`));

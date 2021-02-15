@@ -1,37 +1,34 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import axios from "axios";
+import PropTypes from "prop-types";
 
-const EditComp = ({ setView, getid, list, setList }) => {
-  const [form, setForm] = useState({
+import { Props, IEditForm, Food } from "../typings/List";
+
+const EditComp = ({ setView, getId, list, setList }: Props) => {
+  const [form, setForm] = useState<IEditForm>({
+    _id: "",
     title: "",
     sorts: "",
-    price: "",
+    price: 0,
     image: "",
     included: "",
   });
 
-  const typer = (e) => {
+  const typer = (e: React.ChangeEvent<HTMLInputElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
   useEffect(() => {
-    const item = list.find((item) => item._id === getid);
+    const item = list.find((item) => item._id === getId);
     if (item) setForm(item);
-  }, [getid, list]);
+  }, [getId, list]);
 
-  const EditItem = async () => {
+  const EditItem = async (): Promise<void> => {
     try {
-      await axios({
-        url: `http://localhost:5000/food/${getid}`,
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        data: JSON.stringify(form),
-      });
+      await axios.put<Food>(`food/${getId}`, form);
       const temp = [...list];
-      const index = temp.findIndex((i) => i._id === getid);
+      const index = temp.findIndex((i) => i._id === getId);
       temp[index] = form;
       setList(temp);
       setView("");
@@ -118,6 +115,20 @@ const EditComp = ({ setView, getid, list, setList }) => {
       </EditForm>
     </>
   );
+};
+
+EditComp.propTypes = {
+  setView: PropTypes.string.isRequired,
+  getId: PropTypes.string.isRequired,
+  setList: PropTypes.array.isRequired,
+  list: PropTypes.array.isRequired,
+};
+
+EditComp.defaultProps = {
+  setView: "",
+  getId: "",
+  setList: [],
+  list: [],
 };
 
 export default EditComp;
