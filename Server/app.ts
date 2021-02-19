@@ -22,7 +22,7 @@ app.get("/food", async (req: Request, res: Response) => {
     const getFood = await Food.find({});
     res.json(getFood);
   } catch (err) {
-    console.log(err.response);
+    console.log(err.message);
   }
 });
 
@@ -32,7 +32,7 @@ app.get("/food/:id", async (req, res) => {
     const getFoodById = await Food.find({ _id: id });
     res.json(getFoodById);
   } catch (err) {
-    console.log(err.response);
+    console.log(err.message);
   }
 });
 
@@ -47,7 +47,7 @@ app.post("/food/add", async (req, res) => {
     await FoodModel.save();
     res.json(FoodModel);
   } catch (err) {
-    console.log(err.response);
+    console.log(err.message);
   }
 });
 
@@ -57,7 +57,7 @@ app.put("/food/:id", async (req, res) => {
     Food.findOneAndUpdate({ _id: id }, req.body);
     res.send({ message: "Changed" });
   } catch (err) {
-    console.log(err.response);
+    console.log(err.message);
   }
 });
 
@@ -67,7 +67,7 @@ app.delete("/food/:id", async (req, res) => {
     await Food.deleteOne({ _id: id });
     res.send({ message: "Deleted" });
   } catch (err) {
-    console.log(err.response);
+    console.log(err.message);
   }
 });
 
