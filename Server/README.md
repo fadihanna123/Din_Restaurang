@@ -4,7 +4,6 @@ Via denna Rest webbtjänst kan man ha åtkomst till json data i själva webbsida
 HTTP-metoder som kan användas: GET, POST, DELETE, PUT.
 
 **Mappstruktur**<br />
-models/ <br />
 api/ <br />
 api/routes.ts <br />
 config/ <br />
