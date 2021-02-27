@@ -4,7 +4,6 @@ import "./config/database";
 import "./config/settings";
 import routes from "./api/routes";
 
-const server = express();
 
 server.use(routes);
 
