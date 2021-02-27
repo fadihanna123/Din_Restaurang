@@ -1,23 +1,14 @@
-import express, { Request, Response } from "express";
-import cors from "cors";
-import mongoose from "mongoose";
+import { Request, Response } from "express";
 
-import { Food } from "./models/model";
+import { Food } from "../models/model";
+import { router } from "../config/GlobalSettings";
 
-const app = express();
-
-// Anslutning till Mongodbdatabasen.
-mongoose.connect("mongodb://localhost:27017/dinrestaurang", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useFindAndModify: false,
+// Routes
+router.get("/", async (req: Request, res: Response) => {
+  console.log("hej");
 });
 
-// Inställningar
-app.use(express.json());
-app.use(cors());
-
-app.get("/food", async (req: Request, res: Response) => {
+router.get("/food", async (req: Request, res: Response) => {
   try {
     const getFood = await Food.find({});
     res.json(getFood);
@@ -26,7 +17,7 @@ app.get("/food", async (req: Request, res: Response) => {
   }
 });
 
-app.get("/food/:id", async (req, res) => {
+router.get("/food/:id", async (req, res) => {
   try {
     const id: string = req.params.id;
     const getFoodById = await Food.find({ _id: id });
@@ -36,7 +27,7 @@ app.get("/food/:id", async (req, res) => {
   }
 });
 
-app.post("/food/add", async (req, res) => {
+router.post("/food/add", async (req, res) => {
   try {
     const FoodModel = new Food();
     FoodModel.title = req.body.title;
@@ -51,7 +42,7 @@ app.post("/food/add", async (req, res) => {
   }
 });
 
-app.put("/food/:id", async (req, res) => {
+router.put("/food/:id", async (req, res) => {
   try {
     const id = req.params.id;
     Food.findOneAndUpdate({ _id: id }, req.body);
@@ -61,7 +52,7 @@ app.put("/food/:id", async (req, res) => {
   }
 });
 
-app.delete("/food/:id", async (req, res) => {
+router.delete("/food/:id", async (req, res) => {
   try {
     const id = req.params.id;
     await Food.deleteOne({ _id: id });
@@ -71,5 +62,4 @@ app.delete("/food/:id", async (req, res) => {
   }
 });
 
-const port: number = 5000;
-app.listen(port, () => console.log(`Servern startar på port ${port}`));
+export default router;
