@@ -91,12 +91,19 @@ yarn.lock <br />
 
 ### 1.1.2 Backend: <br />
 
+api/ <br />
+api/routes.ts <br />
+config/ <br />
+config/database.ts <br />
+config/GlobalSettings.ts <br />
+config/settings.ts <br />
 models/ <br />
 models/model.ts <br />
 typings/ <br />
 typings/List.ts <br />
+.env
 .gitignore
-app.ts <br />
+server.ts <br />
 package.json <br />
 README.md <br />
 tsconfig.json <br />
