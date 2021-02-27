@@ -5,10 +5,23 @@ HTTP-metoder som kan användas: GET, POST, DELETE, PUT.
 
 **Mappstruktur**<br />
 models/ <br />
-models/model.js <br />
-app.js <br />
+api/ <br />
+api/routes.ts <br />
+config/ <br />
+config/database.ts <br />
+config/GlobalSettings.ts <br />
+config/settings.ts <br />
+models/ <br />
+models/model.ts <br />
+typings/ <br />
+typings/List.ts <br />
+.env
+.gitignore
+server.ts <br />
 package.json <br />
-pnpm-lock.yaml <br />
+README.md <br />
+tsconfig.json <br />
+yarn.lock <br />
 
 **Installation:**<br />
 Du behöver skapa "restaurangdata" tabellen. <br />
@@ -20,17 +33,13 @@ Du behöver skapa dessa kolumner i denna tabell :<br />
 `image` String, <br />
 `included` String <br />
 
-Du behöver redigera anslutningsuppgifter som finns i rad 13 i filen app.js från localhost till din egen.<br />
+Du behöver redigera anslutningsuppgifter som finns i filen .env rad 13 i variablen DATABASE_URL från localhost till din egen.<br />
 **Exempel efter redigering:**<br />
-mongoose.connect("mongodb://localhost:27017/xxx", {
-useNewUrlParser: true,
-useUnifiedTopology: true,
-useFindAndModify: false,
-});
+DATABASE_URL="mongodb://localhost:27017/xxx"
 <br />
 
 **Programmeringsspråk som används:**<br />
-Javascript, Node JS<br />
+Typescript, Javascript och Node JS<br />
 **Rmaverk/Tekniker som används:**<br />
 JSON<br />
 
