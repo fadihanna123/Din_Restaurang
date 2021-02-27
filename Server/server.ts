@@ -1,5 +1,4 @@
 import express from "express";
-
 import "./config/database";
 import "./config/settings";
 import routes from "./api/routes";
