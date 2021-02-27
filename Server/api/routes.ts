@@ -4,10 +4,6 @@ import { Food } from "../models/model";
 import { router } from "../config/GlobalSettings";
 
 // Routes
-router.get("/", async (req: Request, res: Response) => {
-  console.log("hej");
-});
-
 router.get("/food", async (req: Request, res: Response) => {
   try {
     const getFood = await Food.find({});
