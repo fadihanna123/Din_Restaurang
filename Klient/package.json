@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@types/jest": "^26.0.20",
-    "@types/node": "^14.14.28",
+    "@types/node": "^14.14.31",
     "@types/react": "^17.0.2",
     "@types/react-dom": "^17.0.1",
     "axios": "^0.21.1",
@@ -12,7 +12,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.2",
+    "react-scripts": "4.0.3",
     "styled-components": "5.2.1",
     "websocket-extensions": "^0.1.4",
     "yarn": "^1.22.10"
@@ -43,6 +43,6 @@
     "@types/react-router-dom": "^5.1.7",
     "@types/styled-components": "^5.1.7",
     "react-refresh": "^0.9.0",
-    "typescript": "^4.1.5"
+    "typescript": "^4.2.2"
   }
 }
