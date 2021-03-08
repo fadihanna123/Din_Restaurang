@@ -9,7 +9,7 @@ const PhotosList = ({ loading, list }: Props) => {
       <Row>
         <br />
         <MainPhotos>
-          {loading ? (
+          {!loading ? (
             list.length > 0 ? (
               list.map((item, i) => (
                 <Col key={i}>
