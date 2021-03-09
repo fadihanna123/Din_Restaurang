@@ -8,13 +8,13 @@ export async function GetData({ setLoading, setList }: Props) {
   useEffect(() => {
     async function GetData(): Promise<void> {
       try {
-        setLoading(true);
+        setLoading && setLoading(true);
         const { data } = await axios.get<Food[]>("food");
-        setList(data);
+        setList && setList(data);
       } catch (err) {
         console.log(err.response);
       } finally {
-        setLoading(false);
+        setLoading && setLoading(false);
       }
     }
   }, [setList, setLoading]);

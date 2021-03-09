@@ -8,14 +8,14 @@ export interface Food {
 }
 
 export interface Props {
-  setLoading: (loading: boolean) => void;
-  setList: (list: Food[]) => void;
   list: Food[];
-  loading: boolean;
-  view: string;
-  setView: (view: string) => void;
-  getId: null | string;
-  setId: (getId: null | string) => void;
+  setList: (list: Food[]) => void;
+  setLoading?: (loading: boolean) => void;
+  loading?: boolean;
+  view?: string;
+  setView?: (view: string) => void;
+  getId?: null | string;
+  setId?: (getId: null | string) => void;
 }
 
 export interface AddForm {

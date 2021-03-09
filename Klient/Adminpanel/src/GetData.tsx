@@ -7,13 +7,13 @@ import { Food, Props } from "./typings/List";
 export async function GetData({ setLoading, setList }: Props) {
   async function GetData(): Promise<void> {
     try {
-      setLoading(true);
+      setLoading && setLoading(true);
       const { data } = await axios.get<Food[]>("food");
       setList(data);
     } catch (err) {
       console.log(err.response);
     } finally {
-      setLoading(false);
+      setLoading && setLoading(false);
     }
   }
 

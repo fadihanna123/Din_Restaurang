@@ -31,7 +31,7 @@ const EditComp = ({ setView, getId, list, setList }: Props) => {
       const index = temp.findIndex((i) => i._id === getId);
       temp[index] = form;
       setList(temp);
-      setView("");
+      setView && setView("");
     } catch (err) {
       console.log(err);
     }

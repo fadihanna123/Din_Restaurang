@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
-
+// Pages
 import Header from "./Includes/Header";
 import Footer from "./Includes/Footer";
 import { Food } from "./typings/List";
@@ -19,12 +19,7 @@ const App = () => {
       <Container>
         <Header />
         <Welcome>Välkommen till din restaurang</Welcome>
-        <PhotosList
-          setLoading={setLoading}
-          setList={setList}
-          loading={loading}
-          list={list}
-        />
+        <PhotosList loading={loading} list={list} />
         <Footer />
       </Container>
     </>

@@ -18,7 +18,7 @@ const FoodTable = ({
 }: Props) => {
   const DeleteItem = async (id: string): Promise<void> => {
     try {
-      setLoading(true);
+      setLoading && setLoading(true);
       await axios({
         url: "http://localhost:5000/food/" + id,
         method: "DELETE",
@@ -28,7 +28,7 @@ const FoodTable = ({
     } catch (err) {
       console.log(err.response);
     } finally {
-      setLoading(false);
+      setLoading && setLoading(false);
     }
   };
 
@@ -61,8 +61,8 @@ const FoodTable = ({
                         <td>
                           <Button
                             onClick={() => {
-                              setView("Edit");
-                              setId(item._id);
+                              setView && setView("Edit");
+                              setId && setId(item._id);
                             }}
                           >
                             Ändra
@@ -85,34 +85,17 @@ const FoodTable = ({
                 )}
               </tbody>
             </DataTable>
-            <Button className="spec" onClick={() => setView("Add")}>
+            <Button className="spec" onClick={() => setView && setView("Add")}>
               Lägg till
             </Button>
             <div>
-              {view === "Add" ? (
-                <AddComp
-                  setView={setView}
-                  list={list}
-                  setList={setList}
-                  getId={getId}
-                  loading={loading}
-                  setLoading={setLoading}
-                  setId={setId}
-                  view={view}
-                />
-              ) : (
-                ""
-              )}
+              {view === "Add" ? <AddComp list={list} setList={setList} /> : ""}
               {view === "Edit" ? (
                 <EditComp
                   setView={setView}
                   list={list}
                   setList={setList}
                   getId={getId}
-                  loading={loading}
-                  setLoading={setLoading}
-                  setId={setId}
-                  view={view}
                 />
               ) : (
                 ""

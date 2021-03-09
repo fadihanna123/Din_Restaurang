@@ -8,6 +8,6 @@ export interface Food {
 export interface Props {
   loading: boolean;
   list: Food[];
-  setList: (list: Food[]) => void;
-  setLoading: (loading: boolean) => void;
+  setList?: (list: Food[]) => void;
+  setLoading?: (loading: boolean) => void;
 }
