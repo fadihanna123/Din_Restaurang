@@ -18,12 +18,14 @@ För att bygga projektet i statisk form och är redo för publicering.<br>
 ### 1.2 Mappstruktur
 
 src/ <br />
-src/global.js <br />
-src/App.jsx <br />
-src/index.jsx <br />
-src/Includes/Header.jsx <br />
-src/Includes/Footer.jsx <br />
+src/global.tsx <br />
+src/App.tsx <br />
+src/index.tsx <br />
+src/Includes/Header.tsx <br />
+src/Includes/Footer.tsx <br />
 src/Images/logo.jpg <br />
+typings/ <br />
+typings/index.tsx <br />
 public/ <br />
 public/index.html <br />
 public/robots.txt <br />
