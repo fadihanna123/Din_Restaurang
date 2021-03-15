@@ -17,7 +17,7 @@ src/Includes/ <br />
 src/Includes/Header.tsx <br />
 src/Includes/Footer.tsx <br />
 src/typings/ <br />
-src/typings/List.ts <br />
+src/typings/index.ts <br />
 src/GetData.tsx <br />
 src/Images/ <br />
 src/Images/burgare.jpg <br />
@@ -60,7 +60,7 @@ src/Includes/ <br />
 src/Includes/Header.tsx <br />
 src/Includes/Footer.tsx <br />
 src/typings/ <br />
-src/typings/List.ts <br />
+src/typings/index.ts <br />
 src/GetData.tsx <br />
 src/Images/ <br />
 src/Images/burgare.jpg <br />
@@ -92,15 +92,18 @@ yarn.lock <br />
 ### 1.1.2 Backend: <br />
 
 api/ <br />
+api/index.ts <br />
 api/routes.ts <br />
 config/ <br />
+config/index.ts <br />
 config/database.ts <br />
 config/GlobalSettings.ts <br />
 config/settings.ts <br />
 models/ <br />
+models/index.ts <br />
 models/model.ts <br />
 typings/ <br />
-typings/List.ts <br />
+typings/index.ts <br />
 .env <br />
 .gitignore <br />
 server.ts <br />
