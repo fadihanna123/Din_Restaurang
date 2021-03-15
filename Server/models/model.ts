@@ -1,6 +1,6 @@
 // Importera Mongoose.
 import { Model, Schema, model } from "mongoose";
-import { IFood } from "../typings/List";
+import { IFood } from "../typings";
 
 // Skapa en Mongodbschema.
 let restaurangsSchema: Schema = new Schema(

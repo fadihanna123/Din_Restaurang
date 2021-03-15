@@ -4,7 +4,7 @@ import axios from "axios";
 // Pages
 import Header from "./Includes/Header";
 import Footer from "./Includes/Footer";
-import { Food } from "./typings/List";
+import { Food } from "./typings";
 import PhotosList from "./components/PhotosList";
 
 axios.defaults.baseURL = "http://localhost:5000/";

@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 
-import { Food } from "../models/model";
-import { router } from "../config/GlobalSettings";
+import { Food } from "../models";
+import { router } from "../config";
 
 // Routes
 router.get("/food", async (req: Request, res: Response) => {

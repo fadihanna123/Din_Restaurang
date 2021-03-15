@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import axios from "axios";
 import PropTypes from "prop-types";
 
-import { Props, Food } from "./typings/List";
+import { Props, Food } from "./typings";
 
 export async function GetData({ setLoading, setList }: Props) {
   useEffect(() => {
