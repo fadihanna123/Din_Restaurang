@@ -1,5 +1,6 @@
-import mongoose from "mongoose";
 import "dotenv/config";
+
+import mongoose from "mongoose";
 
 // Anslutning till Mongodbdatabasen.
 mongoose.connect(
@@ -9,5 +10,5 @@ mongoose.connect(
     useUnifiedTopology: true,
     useFindAndModify: true,
   },
-  () => console.log(`Connected... \n`)
+  () => console.log(` \n Connected... \n `)
 );

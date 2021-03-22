@@ -3,13 +3,15 @@ import styled from "styled-components";
 
 import { Props } from "../typings";
 
-const PhotosList = ({ loading, list }: Props) => {
+const PhotosList = ({ loading, list, error }: Props) => {
   return (
     <>
       <Row>
         <br />
         <MainPhotos>
-          {!loading ? (
+          {error ? (
+            <div style={{ color: "red" }}>{error}</div>
+          ) : !loading ? (
             list.length > 0 ? (
               list.map((item, i) => (
                 <Col key={i}>

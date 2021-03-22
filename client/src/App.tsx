@@ -13,13 +13,13 @@ axios.defaults.headers["Content-Type"] = "application/json";
 const App = () => {
   const [list, setList] = useState<Food[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
-
+  const [error, setError] = useState<string>("");
   return (
     <>
       <Container>
         <Header />
         <Welcome>Välkommen till din restaurang</Welcome>
-        <PhotosList loading={loading} list={list} />
+        <PhotosList error={error} loading={loading} list={list} />
         <Footer />
       </Container>
     </>

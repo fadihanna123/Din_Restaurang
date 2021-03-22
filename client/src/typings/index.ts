@@ -10,4 +10,6 @@ export interface Props {
   list: Food[];
   setList?: (list: Food[]) => void;
   setLoading?: (loading: boolean) => void;
+  error: string;
+  setError?: (error: string) => void;
 }
