@@ -1,9 +1,8 @@
-import React, { useState } from "react";
-import styled from "styled-components";
 import axios from "axios";
 import PropTypes from "prop-types";
-
-import { AddForm, Food, Props } from "../typings/List";
+import React, { useState } from "react";
+import styled from "styled-components";
+import { AddForm, Food, Props } from "typings";
 
 const AddComp = ({ list, setList }: Props) => {
   const [form, setForm] = useState<AddForm>({

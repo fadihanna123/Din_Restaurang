@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
 import styled from "styled-components";
-
-import { Props } from "../typings";
+import { Props } from "typings";
 
 const PhotosList = ({ loading, list, error }: Props) => {
   return (

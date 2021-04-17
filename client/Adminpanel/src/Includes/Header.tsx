@@ -1,6 +1,5 @@
-import React from "react";
+import Logo from "Images/logo.jpg";
 import styled from "styled-components";
-import Logo from "../Images/logo.jpg";
 
 const Header = () => {
   return <LogoBox></LogoBox>;

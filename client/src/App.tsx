@@ -1,11 +1,10 @@
+import axios from "axios";
+import PhotosList from "components/PhotosList";
+import Footer from "Includes/Footer";
+import Header from "Includes/Header";
 import { useState } from "react";
 import styled from "styled-components";
-import axios from "axios";
-// Pages
-import Header from "./Includes/Header";
-import Footer from "./Includes/Footer";
-import { Food } from "./typings";
-import PhotosList from "./components/PhotosList";
+import { Food } from "typings";
 
 axios.defaults.baseURL = "http://localhost:5000/";
 axios.defaults.headers["Content-Type"] = "application/json";

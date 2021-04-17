@@ -1,10 +1,10 @@
 import axios from "axios";
-import styled from "styled-components";
 import PropTypes from "prop-types";
+import styled from "styled-components";
+import { Food, Props } from "typings";
 
 import AddComp from "./Add";
 import EditComp from "./Edit";
-import { Food, Props } from "../typings/List";
 
 const FoodTable = ({
   loading,

@@ -1,11 +1,10 @@
+import axios from "axios";
+import FoodTable from "components/FoodTable";
+import Footer from "Includes/Footer";
+import Header from "Includes/Header";
 import React, { useState } from "react";
 import styled from "styled-components";
-import axios from "axios";
-
-import Header from "./Includes/Header";
-import Footer from "./Includes/Footer";
-import { Food } from "./typings/List";
-import FoodTable from "./components/FoodTable";
+import { Food } from "typings";
 
 axios.defaults.baseURL = "http://localhost:5000/";
 axios.defaults.headers["Content-Type"] = "application/json";

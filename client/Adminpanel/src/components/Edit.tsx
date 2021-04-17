@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from "react";
-import styled from "styled-components";
 import axios from "axios";
 import PropTypes from "prop-types";
-
-import { Props, IEditForm, Food } from "../typings/List";
+import React, { useEffect, useState } from "react";
+import styled from "styled-components";
+import { Food, IEditForm, Props } from "typings";
 
 const EditComp = ({ setView, getId, list, setList }: Props) => {
   const [form, setForm] = useState<IEditForm>({

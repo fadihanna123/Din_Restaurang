@@ -1,8 +1,7 @@
-import { useEffect } from "react";
-import PropTypes from "prop-types";
 import axios from "axios";
-
-import { Food, Props } from "./typings/List";
+import PropTypes from "prop-types";
+import { useEffect } from "react";
+import { Food, Props } from "typings";
 
 export async function GetData({ setLoading, setList }: Props) {
   async function GetData(): Promise<void> {
