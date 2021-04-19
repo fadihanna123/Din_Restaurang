@@ -17,7 +17,7 @@ const App = () => {
     <>
       <Container>
         <Header />
-        <Welcome>Välkommen till din restaurang</Welcome>
+        <Welcome data-aos="zoom-in">Välkommen till din restaurang</Welcome>
         <PhotosList error={error} loading={loading} list={list} />
         <Footer />
       </Container>

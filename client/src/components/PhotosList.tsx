@@ -30,7 +30,9 @@ const PhotosList = ({ loading, list, error }: Props) => {
                 </Col>
               ))
             ) : (
-              <ErrorData>Inga data. Var vänlig försök igen</ErrorData>
+              <ErrorData data-aos="zoom-out">
+                Inga data. Var vänlig försök igen
+              </ErrorData>
             )
           ) : (
             <Loading>Laddar...</Loading>

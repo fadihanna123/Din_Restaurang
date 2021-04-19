@@ -2,7 +2,7 @@ import axios from "axios";
 import FoodTable from "components/FoodTable";
 import Footer from "Includes/Footer";
 import Header from "Includes/Header";
-import React, { useState } from "react";
+import { useState } from "react";
 import styled from "styled-components";
 import { Food } from "typings";
 
