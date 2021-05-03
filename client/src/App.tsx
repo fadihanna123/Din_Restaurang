@@ -10,8 +10,11 @@ axios.defaults.baseURL = "http://localhost:5000/";
 axios.defaults.headers["Content-Type"] = "application/json";
 
 const App = () => {
+  // eslint-disable-next-line
   const [list, setList] = useState<Food[]>([]);
+  // eslint-disable-next-line
   const [loading, setLoading] = useState<boolean>(false);
+  // eslint-disable-next-line
   const [error, setError] = useState<string>("");
   return (
     <>
