@@ -1,36 +1,33 @@
 import axios from "axios";
-import PropTypes from "prop-types";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
+import { useRecoilState } from "recoil";
+import { editFormState, getIdState, listState, viewState } from "State";
 import styled from "styled-components";
-import { Food, IEditForm, Props } from "typings";
+import { Food } from "typings";
 
-const EditComp = ({ setView, getId, list, setList }: Props) => {
-  const [form, setForm] = useState<IEditForm>({
-    _id: "",
-    title: "",
-    sorts: "",
-    price: 0,
-    image: "",
-    included: "",
-  });
+const EditComp = () => {
+  const [editForm, setEditForm] = useRecoilState(editFormState);
+  const [list, setList] = useRecoilState(listState);
+  const [getId] = useRecoilState(getIdState);
+  const [, setView] = useRecoilState(viewState);
 
   const typer = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    setEditForm({ ...editForm, [e.target.name]: e.target.value });
   };
 
   useEffect(() => {
     const item = list.find((item) => item._id === getId);
-    if (item) setForm(item);
-  }, [getId, list]);
+    if (item) setEditForm(item);
+  }, [getId, list, setEditForm]);
 
   const EditItem = async (): Promise<void> => {
     try {
-      await axios.put<Food>(`food/${getId}`, form);
+      await axios.put<Food>(`food/${getId}`, editForm);
       const temp = [...list];
       const index = temp.findIndex((i) => i._id === getId);
-      temp[index] = form;
+      temp[index] = editForm;
       setList(temp);
-      setView && setView("");
+      setView("");
     } catch (err) {
       console.log(err);
     }
@@ -47,7 +44,7 @@ const EditComp = ({ setView, getId, list, setList }: Props) => {
             <Input
               name="title"
               id="title"
-              value={form.title}
+              value={editForm.title}
               onChange={typer}
             />
           </Col15>
@@ -61,7 +58,7 @@ const EditComp = ({ setView, getId, list, setList }: Props) => {
             <Input
               name="sorts"
               id="sorts"
-              value={form.sorts}
+              value={editForm.sorts}
               onChange={typer}
             />
           </Col15>
@@ -75,7 +72,7 @@ const EditComp = ({ setView, getId, list, setList }: Props) => {
             <Input
               name="price"
               id="price"
-              value={form.price}
+              value={editForm.price}
               onChange={typer}
             />
           </Col15>
@@ -89,7 +86,7 @@ const EditComp = ({ setView, getId, list, setList }: Props) => {
             <Input
               id="image"
               name="image"
-              value={form.image}
+              value={editForm.image}
               onChange={typer}
             />
           </Col15>
@@ -103,7 +100,7 @@ const EditComp = ({ setView, getId, list, setList }: Props) => {
             <Input
               name="included"
               id="included"
-              value={form.included}
+              value={editForm.included}
               onChange={typer}
             />
           </Col15>
@@ -114,20 +111,6 @@ const EditComp = ({ setView, getId, list, setList }: Props) => {
       </EditForm>
     </>
   );
-};
-
-EditComp.propTypes = {
-  setView: PropTypes.string.isRequired,
-  getId: PropTypes.string.isRequired,
-  setList: PropTypes.array.isRequired,
-  list: PropTypes.array.isRequired,
-};
-
-EditComp.defaultProps = {
-  setView: "",
-  getId: "",
-  setList: [],
-  list: [],
 };
 
 export default EditComp;

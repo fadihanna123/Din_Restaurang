@@ -1,15 +1,19 @@
-import PropTypes from "prop-types";
 import styled from "styled-components";
-import { Props } from "typings";
+import { useRecoilState } from "recoil";
+import { errorState, listState, loadingState } from "State";
 
-const PhotosList = ({ loading, list, error }: Props) => {
+const PhotosList = () => {
+  const [err] = useRecoilState(errorState);
+  const [loading] = useRecoilState(loadingState);
+  const [list] = useRecoilState(listState);
+
   return (
     <>
       <Row>
         <br />
         <MainPhotos>
-          {error ? (
-            <div style={{ color: "red" }}>{error}</div>
+          {err ? (
+            <div style={{ color: "red" }}>{err}</div>
           ) : !loading ? (
             list.length > 0 ? (
               list.map((item, i) => (
@@ -41,16 +45,6 @@ const PhotosList = ({ loading, list, error }: Props) => {
       </Row>
     </>
   );
-};
-
-PhotosList.propTypes = {
-  loading: PropTypes.bool.isRequired,
-  list: PropTypes.array.isRequired,
-};
-
-PhotosList.defaultProps = {
-  loading: false,
-  list: [],
 };
 
 export default PhotosList;

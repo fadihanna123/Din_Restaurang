@@ -1,28 +1,24 @@
 import axios from "axios";
-import PropTypes from "prop-types";
-import React, { useState } from "react";
+import React from "react";
+import { useRecoilState } from "recoil";
+import { addFormState, listState } from "State";
 import styled from "styled-components";
-import { AddForm, Food, Props } from "typings";
+import { Food } from "typings";
 
-const AddComp = ({ list, setList }: Props) => {
-  const [form, setForm] = useState<AddForm>({
-    title: "",
-    sorts: "",
-    price: 0,
-    image: "",
-    included: "",
-  });
+const AddComp = () => {
+  const [addForm, setAddForm] = useRecoilState(addFormState);
+  const [list, setList] = useRecoilState(listState);
 
   const typer = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    setAddForm({ ...addForm, [e.target.name]: e.target.value });
   };
 
   const AddItem = async (): Promise<void> => {
     try {
-      const { data } = await axios.post<Food>("food/add", form);
+      const { data } = await axios.post<Food>("food/add", addForm);
       setList([...list, data]);
-    } catch (err) {
-      console.log(err.response);
+    } catch (error) {
+      console.log(error.response);
     }
   };
 
@@ -37,7 +33,7 @@ const AddComp = ({ list, setList }: Props) => {
             <Input
               name="title"
               id="title"
-              value={form.title}
+              value={addForm.title}
               onChange={typer}
             />
           </Col20>
@@ -51,7 +47,7 @@ const AddComp = ({ list, setList }: Props) => {
             <Input
               name="sorts"
               id="sorts"
-              value={form.sorts}
+              value={addForm.sorts}
               onChange={typer}
             />
           </Col20>
@@ -65,7 +61,7 @@ const AddComp = ({ list, setList }: Props) => {
             <Input
               name="price"
               id="price"
-              value={form.price}
+              value={addForm.price}
               onChange={typer}
             />
           </Col20>
@@ -79,7 +75,7 @@ const AddComp = ({ list, setList }: Props) => {
             <Input
               id="image"
               name="image"
-              value={form.image}
+              value={addForm.image}
               onChange={typer}
             />
           </Col20>
@@ -93,7 +89,7 @@ const AddComp = ({ list, setList }: Props) => {
             <Input
               name="included"
               id="included"
-              value={form.included}
+              value={addForm.included}
               onChange={typer}
             />
           </Col20>
@@ -104,16 +100,6 @@ const AddComp = ({ list, setList }: Props) => {
       </MyAddForm>
     </>
   );
-};
-
-AddComp.propTypes = {
-  setList: PropTypes.func.isRequired,
-  list: PropTypes.array.isRequired,
-};
-
-AddComp.defaultProps = {
-  setList: [],
-  list: [],
 };
 
 export default AddComp;

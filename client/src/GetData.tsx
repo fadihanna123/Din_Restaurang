@@ -1,10 +1,14 @@
-import { useEffect } from "react";
 import axios from "axios";
-import PropTypes from "prop-types";
+import { useEffect } from "react";
+import { useRecoilState } from "recoil";
+import { errorState, listState, loadingState } from "State";
+import { Food } from "typings";
 
-import { Props, Food } from "typings";
+export async function GetData() {
+  const [, setLoading] = useRecoilState(loadingState);
+  const [, setList] = useRecoilState(listState);
+  const [, setError] = useRecoilState(errorState);
 
-export async function GetData({ setLoading, setList, setError }: Props) {
   useEffect(() => {
     async function GetData(): Promise<void> {
       try {
@@ -19,15 +23,3 @@ export async function GetData({ setLoading, setList, setError }: Props) {
     }
   }, [setList, setLoading, setError]);
 }
-
-GetData.propTypes = {
-  setLoading: PropTypes.func.isRequired,
-  setList: PropTypes.func.isRequired,
-  setError: PropTypes.func.isRequired,
-};
-
-GetData.propTypes = {
-  setLoading: false,
-  setList: [],
-  setError: "",
-};

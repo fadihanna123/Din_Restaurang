@@ -2,34 +2,18 @@ import axios from "axios";
 import FoodTable from "components/FoodTable";
 import Footer from "Includes/Footer";
 import Header from "Includes/Header";
-import { useState } from "react";
 import styled from "styled-components";
-import { Food } from "typings";
 
 axios.defaults.baseURL = "http://localhost:5000/";
 axios.defaults.headers["Content-Type"] = "application/json";
 
 const App = () => {
-  const [list, setList] = useState<Food[]>([]);
-  const [loading, setLoading] = useState<boolean>(false);
-  const [view, setView] = useState<string>("");
-  const [getId, setId] = useState<null | string>(null);
-
   return (
     <>
       <Container>
         <Header />
         <Admin>Välkommen till din restaurang</Admin>
-        <FoodTable
-          loading={loading}
-          setLoading={setLoading}
-          view={view}
-          setView={setView}
-          getId={getId}
-          setId={setId}
-          list={list}
-          setList={setList}
-        />
+        <FoodTable />
         <Footer />
       </Container>
     </>

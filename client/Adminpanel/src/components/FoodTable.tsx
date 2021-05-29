@@ -1,24 +1,21 @@
 import axios from "axios";
-import PropTypes from "prop-types";
+import { useRecoilState } from "recoil";
+import { getIdState, listState, loadingState, viewState } from "State";
 import styled from "styled-components";
-import { Food, Props } from "typings";
+import { Food } from "typings";
 
 import AddComp from "./Add";
 import EditComp from "./Edit";
 
-const FoodTable = ({
-  loading,
-  list,
-  setList,
-  view,
-  setView,
-  getId,
-  setId,
-  setLoading,
-}: Props) => {
+const FoodTable = () => {
+  const [loading, setLoading] = useRecoilState(loadingState);
+  const [list, setList] = useRecoilState(listState);
+  const [, setId] = useRecoilState(getIdState);
+  const [view, setView] = useRecoilState(viewState);
+
   const DeleteItem = async (id: string): Promise<void> => {
     try {
-      setLoading && setLoading(true);
+      setLoading(true);
       await axios({
         url: "http://localhost:5000/food/" + id,
         method: "DELETE",
@@ -26,7 +23,7 @@ const FoodTable = ({
       const temp = [...list].filter((item) => item._id !== id);
       setList(temp);
     } catch (err) {
-      console.log(err.response);
+      console.log(err.message);
     } finally {
       setLoading && setLoading(false);
     }
@@ -89,45 +86,14 @@ const FoodTable = ({
               Lägg till
             </Button>
             <div>
-              {view === "Add" ? <AddComp list={list} setList={setList} /> : ""}
-              {view === "Edit" ? (
-                <EditComp
-                  setView={setView}
-                  list={list}
-                  setList={setList}
-                  getId={getId}
-                />
-              ) : (
-                ""
-              )}
+              {view === "Add" ? <AddComp /> : ""}
+              {view === "Edit" ? <EditComp /> : ""}
             </div>
           </MainTable>
         </Col>
       </Row>
     </>
   );
-};
-
-FoodTable.propTypes = {
-  setLoading: PropTypes.func.isRequired,
-  setList: PropTypes.func.isRequired,
-  list: PropTypes.array.isRequired,
-  loading: PropTypes.bool.isRequired,
-  view: PropTypes.string.isRequired,
-  setView: PropTypes.func.isRequired,
-  getId: PropTypes.string,
-  setId: PropTypes.func.isRequired,
-};
-
-FoodTable.defaultProps = {
-  setLoading: false,
-  setList: [],
-  list: [],
-  loading: false,
-  view: "",
-  setView: "",
-  getId: "",
-  setId: "",
 };
 
 export default FoodTable;

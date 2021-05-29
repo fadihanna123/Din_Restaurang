@@ -5,11 +5,3 @@ export interface Food {
   image: string;
   included: string;
 }
-export interface Props {
-  loading: boolean;
-  list: Food[];
-  setList?: (list: Food[]) => void;
-  setLoading?: (loading: boolean) => void;
-  error: string;
-  setError?: (error: string) => void;
-}
