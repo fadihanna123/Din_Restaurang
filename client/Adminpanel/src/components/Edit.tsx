@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect } from "react";
 import { useRecoilState } from "recoil";
-import { editFormState, getIdState, listState, viewState } from "State";
+import { editFormState, getIdState, listState, viewState } from "States";
 import styled from "styled-components";
 import { Food } from "typings";
 

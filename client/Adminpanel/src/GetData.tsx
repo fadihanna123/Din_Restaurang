@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect } from "react";
 import { useRecoilState } from "recoil";
-import { listState, loadingState } from "State";
+import { listState, loadingState } from "States";
 import { Food } from "typings";
 
 export async function GetData() {

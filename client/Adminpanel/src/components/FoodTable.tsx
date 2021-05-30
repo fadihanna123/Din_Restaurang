@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useRecoilState } from "recoil";
-import { getIdState, listState, loadingState, viewState } from "State";
+import { getIdState, listState, loadingState, viewState } from "States";
 import styled from "styled-components";
 import { Food } from "typings";
 

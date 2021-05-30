@@ -1,7 +1,7 @@
 import axios from "axios";
 import React from "react";
 import { useRecoilState } from "recoil";
-import { addFormState, listState } from "State";
+import { addFormState, listState } from "States";
 import styled from "styled-components";
 import { Food } from "typings";
 
