@@ -109,7 +109,7 @@ const Row = styled.div`
   }
 `;
 
-const Col = styled.div`
+const Col = styled.section`
   float: left;
   width: 100%;
   background: #dadada;

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { useRecoilState } from "recoil";
-import { errorState, listState, loadingState } from "State";
+import { errorState, listState, loadingState } from "States";
 
 const PhotosList = () => {
   const [err] = useRecoilState(errorState);
@@ -96,7 +96,7 @@ const ErrorData = styled.div`
   }
 `;
 
-const MainPhotos = styled.div`
+const MainPhotos = styled.section`
   font-size: 35px;
   margin-top: 80px;
   font-style: italic;

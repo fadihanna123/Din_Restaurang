@@ -1,4 +1,5 @@
 import axios from "axios";
+import AdminTitleComp from "components/AdminTitleComp";
 import FoodTable from "components/FoodTable";
 import Footer from "Includes/Footer";
 import Header from "Includes/Header";
@@ -12,7 +13,7 @@ const App = () => {
     <>
       <Container>
         <Header />
-        <Admin>Välkommen till din restaurang</Admin>
+        <AdminTitleComp />
         <FoodTable />
         <Footer />
       </Container>
@@ -31,17 +32,5 @@ const Container = styled.div`
     width: 100%;
     margin: 0;
     font-size: 16px;
-  }
-`;
-
-const Admin = styled.h1`
-  font-size: 30px;
-  font-style: italic;
-  margin-left: 800px;
-  margin-top: 80px;
-
-  @media (max-width: 1900px) {
-    margin: 10px;
-    text-align: center;
   }
 `;

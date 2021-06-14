@@ -1,7 +1,7 @@
 import axios from "axios";
-import { useEffect } from "react";
+import { useEffect, useCallback } from "react";
 import { useRecoilState } from "recoil";
-import { errorState, listState, loadingState } from "State";
+import { errorState, listState, loadingState } from "States";
 import { Food } from "typings";
 
 export async function GetData() {
@@ -9,17 +9,19 @@ export async function GetData() {
   const [, setList] = useRecoilState(listState);
   const [, setError] = useRecoilState(errorState);
 
-  useEffect(() => {
-    async function GetData(): Promise<void> {
-      try {
-        setLoading && setLoading(true);
-        const { data } = await axios.get<Food[]>("food");
-        setList && setList(data);
-      } catch (err) {
-        setError && setError(err.response);
-      } finally {
-        setLoading && setLoading(false);
-      }
+  const GetData = useCallback(async (): Promise<void> => {
+    try {
+      setLoading && setLoading(true);
+      const { data } = await axios.get<Food[]>("food");
+      setList && setList(data);
+    } catch (err) {
+      setError && setError(err.response);
+    } finally {
+      setLoading && setLoading(false);
     }
-  }, [setList, setLoading, setError]);
+  }, [setLoading, setList, setError]);
+
+  useEffect(() => {
+    GetData();
+  }, [setList, setLoading, setError, GetData]);
 }

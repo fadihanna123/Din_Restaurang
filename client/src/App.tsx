@@ -1,5 +1,6 @@
 import axios from "axios";
 import PhotosList from "components/PhotosList";
+import WelcomeComp from "components/WelcomeComp";
 import Footer from "Includes/Footer";
 import Header from "Includes/Header";
 import styled from "styled-components";
@@ -12,7 +13,7 @@ const App = () => {
     <>
       <Container>
         <Header />
-        <Welcome data-aos="zoom-in">Välkommen till din restaurang</Welcome>
+        <WelcomeComp />
         <PhotosList />
         <Footer />
       </Container>
@@ -32,17 +33,5 @@ const Container = styled.div`
     width: 100%;
     margin: 0;
     font-size: 16px;
-  }
-`;
-
-const Welcome = styled.h1`
-  font-size: 35px;
-  font-style: italic;
-  margin-left: 700px;
-  margin-top: 80px;
-
-  @media (max-width: 1900px) {
-    margin: 10px;
-    text-align: center;
   }
 `;

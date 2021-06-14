@@ -2,7 +2,11 @@ import Logo from "Images/logo.jpg";
 import styled from "styled-components";
 
 const Header = () => {
-  return <LogoBox></LogoBox>;
+  return (
+    <header>
+      <LogoBox></LogoBox>
+    </header>
+  );
 };
 
 export default Header;
