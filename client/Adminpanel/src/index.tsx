@@ -1,3 +1,5 @@
+import "normalize.css";
+
 import AOS from "aos";
 import App from "App";
 import GlobalStyles from "global";
