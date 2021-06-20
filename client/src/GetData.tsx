@@ -1,7 +1,8 @@
 import axios from "axios";
-import { useEffect, useCallback } from "react";
+import { useCallback, useEffect } from "react";
 import { useRecoilState } from "recoil";
 import { errorState, listState, loadingState } from "States";
+import { debounce } from "ts-debounce";
 import { Food } from "typings";
 
 export async function GetData() {
@@ -12,16 +13,17 @@ export async function GetData() {
   const GetData = useCallback(async (): Promise<void> => {
     try {
       setLoading && setLoading(true);
+
       const { data } = await axios.get<Food[]>("food");
       setList && setList(data);
     } catch (err) {
-      setError && setError(err.response);
+      setError && setError(err.message);
     } finally {
       setLoading && setLoading(false);
     }
   }, [setLoading, setList, setError]);
 
   useEffect(() => {
-    GetData();
+    debounce<any>(GetData(), 1500);
   }, [setList, setLoading, setError, GetData]);
 }

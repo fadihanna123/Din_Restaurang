@@ -16,17 +16,19 @@ const EditComp = () => {
   };
 
   useEffect(() => {
-    const item = list.find((item) => item._id === getId);
+    const item = list.find((item: any) => item._id === getId);
     if (item) setEditForm(item);
   }, [getId, list, setEditForm]);
 
   const EditItem = async (): Promise<void> => {
     try {
       await axios.put<Food>(`food/${getId}`, editForm);
+
       const temp = [...list];
       const index = temp.findIndex((i) => i._id === getId);
       temp[index] = editForm;
       setList(temp);
+
       setView("");
     } catch (err) {
       console.log(err);

@@ -16,10 +16,8 @@ const FoodTable = () => {
   const DeleteItem = async (id: string): Promise<void> => {
     try {
       setLoading(true);
-      await axios({
-        url: "http://localhost:5000/food/" + id,
-        method: "DELETE",
-      });
+
+      await axios.delete<Food>(`http://localhost:5000/food/${id}`);
       const temp = [...list].filter((item) => item._id !== id);
       setList(temp);
     } catch (err) {

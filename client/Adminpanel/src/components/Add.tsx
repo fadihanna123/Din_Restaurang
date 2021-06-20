@@ -18,7 +18,7 @@ const AddComp = () => {
       const { data } = await axios.post<Food>("food/add", addForm);
       setList([...list, data]);
     } catch (error) {
-      console.log(error.response);
+      console.log(error.message);
     }
   };
 
