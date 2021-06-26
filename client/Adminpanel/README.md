@@ -42,7 +42,7 @@ public/Favicon/site.webmanifest <br />
 .gitignore <br />
 README.md <br />
 package.json <br />
-pnpm-lock.yaml <br />
+yarn.lock <br />
 
 ### 1.3 Programmeringsspråk som används i projektet:
 
