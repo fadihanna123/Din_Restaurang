@@ -24,7 +24,7 @@ const AddComp = () => {
 
   return (
     <>
-      <MyAddForm>
+      <MyAddForm data-aos="flip-right">
         <Row>
           <LabelCol>
             <Label htmlFor="title">Titel:</Label>

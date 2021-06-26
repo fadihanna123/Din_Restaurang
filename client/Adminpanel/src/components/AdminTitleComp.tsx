@@ -3,7 +3,7 @@ import styled from "styled-components";
 const AdminTitleComp = () => {
   return (
     <>
-      <Admin>Välkommen till din restaurang</Admin>
+      <Admin data-aos="zoom-in">Välkommen till din restaurang</Admin>
     </>
   );
 };

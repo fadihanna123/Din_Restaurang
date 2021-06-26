@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useRecoilState } from "recoil";
 import { getIdState, listState, loadingState, viewState } from "States";
-import styled from "styled-components";
+import { Button, Col, DataTable, MainTable, Row, TableHead } from "styles";
 import { Food } from "typings";
 
 import AddComp from "./Add";
@@ -29,7 +29,7 @@ const FoodTable = () => {
 
   return (
     <>
-      <Row>
+      <Row data-aos="zoom-in">
         <br />
         <Col>
           <div id="data"></div>
@@ -80,7 +80,11 @@ const FoodTable = () => {
                 )}
               </tbody>
             </DataTable>
-            <Button className="spec" onClick={() => setView && setView("Add")}>
+            <Button
+              className="spec"
+              data-aos="flip-left"
+              onClick={() => setView && setView("Add")}
+            >
               Lägg till
             </Button>
             <div>
@@ -95,63 +99,3 @@ const FoodTable = () => {
 };
 
 export default FoodTable;
-
-const Row = styled.div`
-  margin: 0 10px 0 10px;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-
-  @media (max-width: 1900px) {
-    flex-direction: column;
-  }
-`;
-
-const Col = styled.section`
-  float: left;
-  width: 100%;
-  background: #dadada;
-
-  @media (max-width: 1900px) {
-    width: 100%;
-  }
-`;
-
-const MainTable = styled.div`
-  padding: 10px;
-  font-size: 16px;
-  text-align: center;
-  margin-top: 80px;
-
-  a {
-    text-decoration: none;
-    padding: 10px;
-  }
-
-  @media (max-width: 1900px) {
-    a {
-      display: flex;
-      flex-direction: column;
-    }
-  }
-`;
-
-const DataTable = styled.table`
-  padding: 10px;
-  width: 100%;
-
-  td {
-    padding: 5px;
-    width: 700px;
-  }
-`;
-
-const Button = styled.button`
-  padding: 10px;
-  margin: 10px;
-`;
-
-const TableHead = styled.thead`
-  background-color: black;
-  color: white;
-`;
