@@ -17,42 +17,40 @@ const PhotosList = () => {
   const [list] = useRecoilState(listState);
 
   return (
-    <>
-      <Row>
-        <br />
-        <MainPhotos>
-          {err ? (
-            <div style={{ color: "red" }}>{err}</div>
-          ) : !loading ? (
-            list.length > 0 ? (
-              list.map((item, i) => (
-                <Col key={i}>
-                  <FoodImg
-                    src={require("../Images/" + item.image).default}
-                    alt="Maträtten"
-                  />
-                  <FoodTitle>{item.title}</FoodTitle>
-                  <MainTxt>
-                    <span>Sorter: {item.sorts} </span>
-                    <br />
-                    Pris: {item.price} kr <br />
-                    Ingår: {item.included}
-                  </MainTxt>
-
+    <Row>
+      <br />
+      <MainPhotos>
+        {err ? (
+          <div style={{ color: "red" }}>{err}</div>
+        ) : !loading ? (
+          list.length > 0 ? (
+            list.map((item, i) => (
+              <Col key={i}>
+                <FoodImg
+                  src={require("../Images/" + item.image).default}
+                  alt="Maträtten"
+                />
+                <FoodTitle>{item.title}</FoodTitle>
+                <MainTxt>
+                  <span>Sorter: {item.sorts} </span>
                   <br />
-                </Col>
-              ))
-            ) : (
-              <ErrorData data-aos="zoom-out">
-                Inga data. Var vänlig försök igen
-              </ErrorData>
-            )
+                  Pris: {item.price} kr <br />
+                  Ingår: {item.included}
+                </MainTxt>
+
+                <br />
+              </Col>
+            ))
           ) : (
-            <Loading>Laddar...</Loading>
-          )}
-        </MainPhotos>
-      </Row>
-    </>
+            <ErrorData data-aos="zoom-out">
+              Inga data. Var vänlig försök igen
+            </ErrorData>
+          )
+        ) : (
+          <Loading>Laddar...</Loading>
+        )}
+      </MainPhotos>
+    </Row>
   );
 };
 

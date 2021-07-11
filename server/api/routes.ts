@@ -2,11 +2,12 @@ import { Request, Response } from "express";
 
 import { Food } from "../models";
 import { router } from "../config";
+import { IFood } from "../typings";
 
 // Routes
 router.get("/food", async (req: Request, res: Response) => {
   try {
-    const getFood = await Food.find({});
+    const getFood: IFood[] = await Food.find({});
     res.json(getFood);
   } catch (err) {
     console.log(err.message);

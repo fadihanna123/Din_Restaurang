@@ -1,11 +1,7 @@
 import styled from "styled-components";
 
 const AdminTitleComp = () => {
-  return (
-    <>
-      <Admin data-aos="zoom-in">Välkommen till din restaurang</Admin>
-    </>
-  );
+  return <Admin data-aos="zoom-in">Välkommen till din restaurang</Admin>;
 };
 
 export default AdminTitleComp;

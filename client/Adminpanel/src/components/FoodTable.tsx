@@ -28,73 +28,71 @@ const FoodTable = () => {
   };
 
   return (
-    <>
-      <Row data-aos="zoom-in">
-        <br />
-        <Col>
-          <div id="data"></div>
-          <MainTable>
-            <DataTable>
-              <TableHead>
-                <tr>
-                  <th>Title:</th>
-                  <th>Sorts:</th>
-                  <th>Pris:</th>
-                  <th>Ingår:</th>
-                  <th>Åtgärder:</th>
-                </tr>
-              </TableHead>
-              <tbody>
-                {!loading ? (
-                  list.length > 0 ? (
-                    list.map((item: Food, i: number) => (
-                      <tr key={i}>
-                        <td>{item.title}</td>
-                        <td>{item.sorts}</td>
-                        <td>{item.price} kr </td>
-                        <td>{item.included}</td>
-                        <td>
-                          <Button
-                            onClick={() => {
-                              setView && setView("Edit");
-                              setId && setId(item._id);
-                            }}
-                          >
-                            Ändra
-                          </Button>
-                          <Button onClick={() => DeleteItem(item._id)}>
-                            Radera
-                          </Button>
-                        </td>
-                      </tr>
-                    ))
-                  ) : (
-                    <tr>
-                      <td colSpan={7}>Inga data. Var vänlig lägg till data!</td>
+    <Row data-aos="zoom-in">
+      <br />
+      <Col>
+        <div id="data"></div>
+        <MainTable>
+          <DataTable>
+            <TableHead>
+              <tr>
+                <th>Title:</th>
+                <th>Sorts:</th>
+                <th>Pris:</th>
+                <th>Ingår:</th>
+                <th>Åtgärder:</th>
+              </tr>
+            </TableHead>
+            <tbody>
+              {!loading ? (
+                list.length > 0 ? (
+                  list.map((item: Food, i: number) => (
+                    <tr key={i}>
+                      <td>{item.title}</td>
+                      <td>{item.sorts}</td>
+                      <td>{item.price} kr </td>
+                      <td>{item.included}</td>
+                      <td>
+                        <Button
+                          onClick={() => {
+                            setView && setView("Edit");
+                            setId && setId(item._id);
+                          }}
+                        >
+                          Ändra
+                        </Button>
+                        <Button onClick={() => DeleteItem(item._id)}>
+                          Radera
+                        </Button>
+                      </td>
                     </tr>
-                  )
+                  ))
                 ) : (
                   <tr>
-                    <td colSpan={7}>Laddar...</td>
+                    <td colSpan={7}>Inga data. Var vänlig lägg till data!</td>
                   </tr>
-                )}
-              </tbody>
-            </DataTable>
-            <Button
-              className="spec"
-              data-aos="flip-left"
-              onClick={() => setView && setView("Add")}
-            >
-              Lägg till
-            </Button>
-            <div>
-              {view === "Add" ? <AddComp /> : ""}
-              {view === "Edit" ? <EditComp /> : ""}
-            </div>
-          </MainTable>
-        </Col>
-      </Row>
-    </>
+                )
+              ) : (
+                <tr>
+                  <td colSpan={7}>Laddar...</td>
+                </tr>
+              )}
+            </tbody>
+          </DataTable>
+          <Button
+            className="spec"
+            data-aos="flip-left"
+            onClick={() => setView && setView("Add")}
+          >
+            Lägg till
+          </Button>
+          <div>
+            {view === "Add" ? <AddComp /> : ""}
+            {view === "Edit" ? <EditComp /> : ""}
+          </div>
+        </MainTable>
+      </Col>
+    </Row>
   );
 };
 

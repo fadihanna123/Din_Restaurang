@@ -10,14 +10,12 @@ axios.defaults.headers["Content-Type"] = "application/json";
 
 const App = () => {
   return (
-    <>
-      <Container>
-        <Header />
-        <WelcomeComp />
-        <PhotosList />
-        <Footer />
-      </Container>
-    </>
+    <Container>
+      <Header />
+      <WelcomeComp />
+      <PhotosList />
+      <Footer />
+    </Container>
   );
 };
 
