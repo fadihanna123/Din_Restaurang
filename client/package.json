@@ -21,7 +21,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "postbuild": "purgecss --css build/static/css/*.css --content build/index.html build/static/js/*.js --output build/static/css"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -39,12 +40,11 @@
     ]
   },
   "devDependencies": {
-    "@pmmmwh/react-refresh-webpack-plugin": "^0.4.3",
+    "@fullhuman/postcss-purgecss": "^4.0.3",
     "@types/aos": "^3.0.3",
     "@types/react-router-dom": "^5.1.7",
     "@types/recoil": "^0.0.9",
     "@types/styled-components": "^5.1.10",
-    "react-refresh": "^0.10.0",
     "typescript": "^4.3.2"
   }
 }

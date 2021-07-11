@@ -43,6 +43,7 @@
     ]
   },
   "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^4.0.3",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.4.3",
     "@types/aos": "^3.0.3",
     "@types/recoil": "^0.0.9",
