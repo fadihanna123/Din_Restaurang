@@ -1,16 +1,5 @@
 import styled from "styled-components";
 
-export const Row = styled.div`
-  margin: 0 10px 0 10px;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-
-  @media (max-width: 1900px) {
-    flex-direction: column;
-  }
-`;
-
 export const Col = styled.section`
   float: left;
   width: 100%;
@@ -48,11 +37,6 @@ export const DataTable = styled.table`
     padding: 5px;
     width: 700px;
   }
-`;
-
-export const Button = styled.button`
-  padding: 10px;
-  margin: 10px;
 `;
 
 export const TableHead = styled.thead`

@@ -1,7 +1,13 @@
+import { useEffect } from "react";
+import sal from "sal.js";
 import styled from "styled-components";
 
 const AdminTitleComp = () => {
-  return <Admin data-aos="zoom-in">Välkommen till din restaurang</Admin>;
+  useEffect(() => {
+    sal();
+  }, []);
+
+  return <Admin data-sal="zoom-in">Välkommen till din restaurang</Admin>;
 };
 
 export default AdminTitleComp;

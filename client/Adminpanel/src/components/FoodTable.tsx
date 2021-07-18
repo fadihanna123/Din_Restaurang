@@ -1,34 +1,19 @@
-import axios from "axios";
 import { useRecoilState } from "recoil";
-import { getIdState, listState, loadingState, viewState } from "States";
+import { listState, loadingState, viewState } from "States";
 import { Button, Col, DataTable, MainTable, Row, TableHead } from "styles";
 import { Food } from "typings";
 
 import AddComp from "./Add";
 import EditComp from "./Edit";
+import FoodItem from "./FoodItem";
 
 const FoodTable = () => {
-  const [loading, setLoading] = useRecoilState(loadingState);
-  const [list, setList] = useRecoilState(listState);
-  const [, setId] = useRecoilState(getIdState);
+  const [loading] = useRecoilState(loadingState);
+  const [list] = useRecoilState(listState);
   const [view, setView] = useRecoilState(viewState);
 
-  const DeleteItem = async (id: string): Promise<void> => {
-    try {
-      setLoading(true);
-
-      await axios.delete<Food>(`http://localhost:5000/food/${id}`);
-      const temp = [...list].filter((item) => item._id !== id);
-      setList(temp);
-    } catch (err) {
-      console.log(err.message);
-    } finally {
-      setLoading && setLoading(false);
-    }
-  };
-
   return (
-    <Row data-aos="zoom-in">
+    <Row data-sal="zoom-in">
       <br />
       <Col>
         <div id="data"></div>
@@ -47,25 +32,7 @@ const FoodTable = () => {
               {!loading ? (
                 list.length > 0 ? (
                   list.map((item: Food, i: number) => (
-                    <tr key={i}>
-                      <td>{item.title}</td>
-                      <td>{item.sorts}</td>
-                      <td>{item.price} kr </td>
-                      <td>{item.included}</td>
-                      <td>
-                        <Button
-                          onClick={() => {
-                            setView && setView("Edit");
-                            setId && setId(item._id);
-                          }}
-                        >
-                          Ändra
-                        </Button>
-                        <Button onClick={() => DeleteItem(item._id)}>
-                          Radera
-                        </Button>
-                      </td>
-                    </tr>
+                    <FoodItem item={item} i={i} />
                   ))
                 ) : (
                   <tr>
@@ -81,15 +48,15 @@ const FoodTable = () => {
           </DataTable>
           <Button
             className="spec"
-            data-aos="flip-left"
+            data-sal="flip-left"
             onClick={() => setView && setView("Add")}
           >
             Lägg till
           </Button>
-          <div>
+          <section>
             {view === "Add" ? <AddComp /> : ""}
             {view === "Edit" ? <EditComp /> : ""}
-          </div>
+          </section>
         </MainTable>
       </Col>
     </Row>

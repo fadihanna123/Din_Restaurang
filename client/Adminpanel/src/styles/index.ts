@@ -1,1 +1,3 @@
-export * from "./foodTable";
+export * from "./foodTableStyles";
+export * from "./addFoodItemStyles";
+export * from "./editStyles";

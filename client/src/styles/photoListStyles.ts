@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Row = styled.div`
+export const Row = styled.section`
   margin: 0 10px 0 10px;
   overflow: hidden;
   display: flex;
@@ -10,7 +10,7 @@ export const Row = styled.div`
   }
 `;
 
-export const Col = styled.div`
+export const Col = styled.section`
   float: left;
   width: 15%;
   padding: 10px;
@@ -20,7 +20,7 @@ export const Col = styled.div`
   }
 `;
 
-export const Loading = styled.span`
+export const Loading = styled.p`
   position: absolute;
   top: 50%;
   left: 40%;
@@ -33,7 +33,7 @@ export const Loading = styled.span`
   }
 `;
 
-export const ErrorData = styled.div`
+export const ErrorData = styled.section`
   position: absolute;
   top: 50%;
   left: 37%;

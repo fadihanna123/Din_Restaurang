@@ -12,8 +12,10 @@ const App = () => {
   return (
     <Container>
       <Header />
-      <WelcomeComp />
-      <PhotosList />
+      <main>
+        <WelcomeComp />
+        <PhotosList />
+      </main>
       <Footer />
     </Container>
   );

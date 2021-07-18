@@ -1,48 +1,30 @@
+import { useEffect } from "react";
 import { useRecoilState } from "recoil";
+import sal from "sal.js";
 import { errorState, listState, loadingState } from "States";
-import {
-  Col,
-  ErrorData,
-  FoodImg,
-  FoodTitle,
-  Loading,
-  MainPhotos,
-  MainTxt,
-  Row,
-} from "styles";
+import { ErrorData, Loading, MainPhotos, Row } from "styles";
+import FoodItem from "./FoodItem";
 
 const PhotosList = () => {
   const [err] = useRecoilState(errorState);
   const [loading] = useRecoilState(loadingState);
   const [list] = useRecoilState(listState);
 
+  useEffect(() => {
+    sal();
+  }, []);
+
   return (
     <Row>
       <br />
       <MainPhotos>
         {err ? (
-          <div style={{ color: "red" }}>{err}</div>
+          <ErrorData>{err}</ErrorData>
         ) : !loading ? (
-          list.length > 0 ? (
-            list.map((item, i) => (
-              <Col key={i}>
-                <FoodImg
-                  src={require("../Images/" + item.image).default}
-                  alt="Maträtten"
-                />
-                <FoodTitle>{item.title}</FoodTitle>
-                <MainTxt>
-                  <span>Sorter: {item.sorts} </span>
-                  <br />
-                  Pris: {item.price} kr <br />
-                  Ingår: {item.included}
-                </MainTxt>
-
-                <br />
-              </Col>
-            ))
+          list.length ? (
+            list.map((item, i) => <FoodItem item={item} i={i} />)
           ) : (
-            <ErrorData data-aos="zoom-out">
+            <ErrorData data-sal="zoom-out">
               Inga data. Var vänlig försök igen
             </ErrorData>
           )
