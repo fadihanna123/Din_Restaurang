@@ -2,8 +2,10 @@ import { useEffect } from "react";
 import { useRecoilState } from "recoil";
 import sal from "sal.js";
 import { errorState, listState, loadingState } from "States";
-import { ErrorData, Loading, MainPhotos, Row } from "styles";
+import { ErrorData, Loading, Row } from "styles";
 import FoodItem from "./FoodItem";
+import styled from "@emotion/styled";
+import { typography, space } from "styled-system";
 
 const PhotosList = () => {
   const [err] = useRecoilState(errorState);
@@ -17,7 +19,7 @@ const PhotosList = () => {
   return (
     <Row>
       <br />
-      <MainPhotos>
+      <MainPhotos fontSize={35} mt={80} fontStyle="italic">
         {err ? (
           <ErrorData>{err}</ErrorData>
         ) : !loading ? (
@@ -37,3 +39,5 @@ const PhotosList = () => {
 };
 
 export default PhotosList;
+
+const MainPhotos = styled("section")(typography, space);

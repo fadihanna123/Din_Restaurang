@@ -46,25 +46,3 @@ export const ErrorData = styled.section`
     text-align: center;
   }
 `;
-
-export const MainPhotos = styled.section`
-  font-size: 35px;
-  margin-top: 80px;
-  font-style: italic;
-`;
-
-export const FoodImg = styled.img`
-  width: 100%;
-  height: 300px;
-  padding: 3px;
-`;
-
-export const FoodTitle = styled.h1`
-  text-align: center;
-  font-size: 25px;
-`;
-
-export const MainTxt = styled.p`
-  padding: 10px;
-  font-size: 20px;
-`;

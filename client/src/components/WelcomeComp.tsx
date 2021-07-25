@@ -7,7 +7,6 @@ const WelcomeComp = () => {
 export default WelcomeComp;
 
 const Welcome = styled.h1`
-  font-size: 35px;
   font-style: italic;
   margin-left: 700px;
   margin-top: 80px;

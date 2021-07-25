@@ -1,8 +1,19 @@
-import styled from "styled-components";
+import styled from "@emotion/styled";
+import { layout, grid, typography, space, color } from "styled-system";
 
 const Footer = () => {
   return (
-    <FooterBlock>
+    <FooterBlock
+      display="grid"
+      gridTemplateColumns="1fr"
+      textAlign="center"
+      fontSize={21}
+      ml={-100}
+      bg="#ADD8E6"
+      height={200}
+      m={10}
+      p={10}
+    >
       <h3>Din restaurang</h3>
       Telefonnummer:
       <span className="fa fa-phone">
@@ -16,14 +27,11 @@ const Footer = () => {
 
 export default Footer;
 
-const FooterBlock = styled.footer`
-  display: grid;
-  grid-template-columns: 1fr;
-  text-align: center;
-  font-size: 21px;
-  margin-left: -100px;
-  background-color: lightblue;
-  height: 200px;
-  margin: 10px;
-  padding: 10px;
-`;
+const FooterBlock = styled("footer")(
+  layout,
+  space,
+  layout,
+  color,
+  grid,
+  typography
+);
