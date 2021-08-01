@@ -1,11 +1,12 @@
+import styled from "@emotion/styled";
 import { useEffect } from "react";
 import { useRecoilState } from "recoil";
 import sal from "sal.js";
 import { errorState, listState, loadingState } from "States";
+import { space, typography } from "styled-system";
 import { ErrorData, Loading, Row } from "styles";
+
 import FoodItem from "./FoodItem";
-import styled from "@emotion/styled";
-import { typography, space } from "styled-system";
 
 const PhotosList = () => {
   const [err] = useRecoilState(errorState);

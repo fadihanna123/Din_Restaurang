@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-const WelcomeComp = () => {
-  return <Welcome data-sal="zoom-in">Välkommen till din restaurang</Welcome>;
-};
+const WelcomeComp = () => (
+  <Welcome data-sal="zoom-in">Välkommen till din restaurang</Welcome>
+);
 
 export default WelcomeComp;
 

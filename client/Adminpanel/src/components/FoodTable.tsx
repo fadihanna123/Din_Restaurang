@@ -1,5 +1,5 @@
 import { useRecoilState } from "recoil";
-import { listState, loadingState, viewState } from "States";
+import { listState, loadingState, viewState } from "states";
 import { Button, Col, DataTable, MainTable, Row, TableHead } from "styles";
 import { Food } from "typings";
 

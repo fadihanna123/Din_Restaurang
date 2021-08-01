@@ -1,23 +1,21 @@
 import axios from "axios";
 import AdminTitleComp from "components/AdminTitleComp";
 import FoodTable from "components/FoodTable";
-import Footer from "Includes/Footer";
-import Header from "Includes/Header";
+import Footer from "includes/Footer";
+import Header from "includes/Header";
 import styled from "styled-components";
 
 axios.defaults.baseURL = "http://localhost:5000/";
 axios.defaults.headers["Content-Type"] = "application/json";
 
-const App = () => {
-  return (
-    <Container>
-      <Header />
-      <AdminTitleComp />
-      <FoodTable />
-      <Footer />
-    </Container>
-  );
-};
+const App = () => (
+  <Container>
+    <Header />
+    <AdminTitleComp />
+    <FoodTable />
+    <Footer />
+  </Container>
+);
 
 export default App;
 

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useRecoilState } from "recoil";
-import { editFormState, getIdState, listState } from "States";
+import { editFormState, getIdState, listState } from "states";
 import { EditForm, Row, LabelCol, Label, Col15, Input, Button } from "styles";
 import { EditItem } from "../functions/EditItem";
 

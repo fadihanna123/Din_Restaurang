@@ -9,15 +9,16 @@ export async function GetData() {
   const [, setLoading] = useRecoilState(loadingState);
   const [, setList] = useRecoilState(listState);
   const [, setError] = useRecoilState(errorState);
+  const endPoint: string = "food";
 
   const GetData = useCallback(async (): Promise<void> => {
     try {
       setLoading && setLoading(true);
 
-      const { data } = await axios.get<Food[]>("food");
+      const { data } = await axios.get<Food[]>(endPoint);
       setList && setList(data);
     } catch (err) {
-      setError && setError(err.message);
+      setError && setError((err as Error).message);
     } finally {
       setLoading && setLoading(false);
     }

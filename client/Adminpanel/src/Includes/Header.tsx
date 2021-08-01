@@ -1,13 +1,11 @@
-import Logo from "Images/logo.jpg";
+import Logo from "images/logo.jpg";
 import styled from "styled-components";
 
-const Header = () => {
-  return (
-    <header>
-      <LogoBox></LogoBox>
-    </header>
-  );
-};
+const Header = () => (
+  <header>
+    <LogoBox></LogoBox>
+  </header>
+);
 
 export default Header;
 

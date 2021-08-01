@@ -4,15 +4,11 @@ import { Col } from "styles";
 import { Food } from "typings";
 
 const FoodItem = ({ item, i }: { item: Food; i: number }) => {
+  const FoodImgLink: string = require("../images/" + item.image).default;
+
   return (
     <Col key={i}>
-      <FoodImg
-        width={1}
-        height={300}
-        p={3}
-        src={require("../Images/" + item.image).default}
-        alt="Maträtten"
-      />
+      <FoodImg width={1} height={300} p={3} src={FoodImgLink} alt="Maträtten" />
       <FoodTitle textAlign="center" fontSize={25}>
         {item.title}
       </FoodTitle>
@@ -27,7 +23,6 @@ const FoodItem = ({ item, i }: { item: Food; i: number }) => {
     </Col>
   );
 };
-
 export default FoodItem;
 
 const FoodImg = styled("img")(layout, space);

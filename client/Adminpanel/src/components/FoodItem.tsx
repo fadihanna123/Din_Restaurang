@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useRecoilState } from "recoil";
-import { getIdState, listState, loadingState, viewState } from "States";
+import { getIdState, listState, loadingState, viewState } from "states";
 import { Button } from "styles";
 import { Food } from "typings";
 
@@ -12,9 +12,11 @@ const FoodItem = ({ item, i }: { item: Food; i: number }) => {
 
   const DeleteItem = async (id: string): Promise<void> => {
     try {
+      const endPoint: string = `http://localhost:5000/food/${id}`;
+
       setLoading(true);
 
-      await axios.delete<Food>(`http://localhost:5000/food/${id}`);
+      await axios.delete<Food>(endPoint);
       const temp = [...list].filter((item) => item._id !== id);
       setList(temp);
     } catch (err) {

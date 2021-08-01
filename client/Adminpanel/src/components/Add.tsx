@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useRecoilState } from "recoil";
 import sal from "sal.js";
-import { addFormState } from "States";
+import { addFormState } from "states";
 import { Row, Button, MyAddForm, LabelCol, Label, Col20, Input } from "styles";
 import { AddItem } from "../functions/AddItem";
 

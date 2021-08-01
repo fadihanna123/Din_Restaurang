@@ -23,26 +23,26 @@ src/App.tsx <br />
 src/index.tsx <br />
 typings/ <br />
 typings/index.tsx <br />
-src/Includes/Header.tsx <br />
-src/Includes/Footer.tsx <br />
-src/Images/logo.jpg <br />
+src/includes/Header.tsx <br />
+src/includes/Footer.tsx <br />
+src/images/logo.jpg <br />
 public/ <br />
 public/index.html <br />
 public/robots.txt <br />
-public/Favicon/ <br />
-public/Favicon/android-chrome-192x192.png <br />
-public/Favicon/android-chrome-512x512.png <br />
-public/Favicon/apple-touch-icon.png <br />
-public/Favicon/browserconfig.xml <br />
-public/Favicon/favicon-16x16.png <br />
-public/Favicon/favicon-32x32.png <br />
-public/Favicon/favicon.ico <br />
-public/Favicon/mstile-150x150.png <br />
-public/Favicon/site.webmanifest <br />
+public/favicon/ <br />
+public/favicon/android-chrome-192x192.png <br />
+public/favicon/android-chrome-512x512.png <br />
+public/favicon/apple-touch-icon.png <br />
+public/favicon/browserconfig.xml <br />
+public/favicon/favicon-16x16.png <br />
+public/favicon/favicon-32x32.png <br />
+public/favicon/favicon.ico <br />
+public/favicon/mstile-150x150.png <br />
+public/favicon/site.webmanifest <br />
 .gitignore <br />
 README.md <br />
 package.json <br />
-pnpm-lock.yaml <br />
+yarn.lock <br />
 
 ### 1.3 Programmeringsspråk som används i projektet:
 
