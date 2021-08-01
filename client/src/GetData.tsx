@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useCallback, useEffect } from "react";
 import { useRecoilState } from "recoil";
-import { errorState, listState, loadingState } from "States";
+import { errorState, listState, loadingState } from "states";
 import { debounce } from "ts-debounce";
 import { Food } from "typings";
 

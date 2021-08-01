@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { useEffect } from "react";
 import { useRecoilState } from "recoil";
 import sal from "sal.js";
-import { errorState, listState, loadingState } from "States";
+import { errorState, listState, loadingState } from "states";
 import { space, typography } from "styled-system";
 import { ErrorData, Loading, Row } from "styles";
 

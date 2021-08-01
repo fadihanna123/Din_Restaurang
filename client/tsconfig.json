@@ -17,5 +17,5 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["src", "src/States/State.ts"]
+  "include": ["src", "src/states/State.ts"]
 }
