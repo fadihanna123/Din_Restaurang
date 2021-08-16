@@ -2,7 +2,7 @@ import "normalize.css";
 import "sal.js/dist/sal.css";
 
 import App from "App";
-import GlobalStyles from "global";
+import GlobalStyles from "styles";
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router } from "react-router-dom";
