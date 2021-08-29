@@ -108,7 +108,7 @@ api/index.ts <br />
 api/routes.ts <br />
 config/ <br />
 config/index.ts <br />
-config/database.ts <br />
+config/db.ts <br />
 config/GlobalSettings.ts <br />
 config/settings.ts <br />
 models/ <br />
