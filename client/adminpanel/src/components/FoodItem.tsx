@@ -1,10 +1,17 @@
 import axios from "axios";
+import { FC } from "react";
 import { useRecoilState } from "recoil";
 import { getIdState, listState, loadingState, viewState } from "states";
 import { Button } from "styles";
 import { Food } from "typings";
 
-const FoodItem = ({ item, i }: { item: Food; i: number }) => {
+const FoodItem: FC<{
+  _id: string;
+  title: string;
+  sorts: string;
+  included: string;
+  price: number;
+}> = ({ _id, title, sorts, included, price }) => {
   const [, setView] = useRecoilState(viewState);
   const [, setId] = useRecoilState(getIdState);
   const [, setLoading] = useRecoilState(loadingState);
@@ -17,31 +24,31 @@ const FoodItem = ({ item, i }: { item: Food; i: number }) => {
       setLoading(true);
 
       await axios.delete<Food>(endPoint);
-      const temp = [...list].filter((item) => item._id !== id);
+      const temp = [...list].filter((item) => _id !== id);
       setList(temp);
     } catch (err) {
-      console.log(err.message);
+      console.log((err as Error).message);
     } finally {
       setLoading && setLoading(false);
     }
   };
 
   return (
-    <tr key={i}>
-      <td>{item.title}</td>
-      <td>{item.sorts}</td>
-      <td>{item.price} kr </td>
-      <td>{item.included}</td>
+    <tr>
+      <td>{title}</td>
+      <td>{sorts}</td>
+      <td>{price} kr </td>
+      <td>{included}</td>
       <td>
         <Button
           onClick={() => {
             setView && setView("Edit");
-            setId && setId(item._id);
+            setId && setId(_id);
           }}
         >
           Ändra
         </Button>
-        <Button onClick={() => DeleteItem(item._id)}>Radera</Button>
+        <Button onClick={() => DeleteItem(_id)}>Radera</Button>
       </td>
     </tr>
   );

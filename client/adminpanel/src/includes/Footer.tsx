@@ -1,6 +1,7 @@
+import { FC } from "react";
 import styled from "styled-components";
 
-const Footer = () => (
+const Footer: FC = () => (
   <FooterBlock>
     <h3>Din restaurang</h3>
     Telefonnummer:

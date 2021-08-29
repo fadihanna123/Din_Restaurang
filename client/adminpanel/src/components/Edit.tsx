@@ -1,20 +1,20 @@
-import React, { useEffect } from "react";
+import React, { FC, useEffect } from "react";
 import { useRecoilState } from "recoil";
 import { editFormState, getIdState, listState } from "states";
 import { EditForm, Row, LabelCol, Label, Col15, Input, Button } from "styles";
 import { EditItem } from "../functions/EditItem";
 
-const EditComp = () => {
+const EditComp: FC = () => {
   const [editForm, setEditForm] = useRecoilState(editFormState);
   const [list] = useRecoilState(listState);
   const [getId] = useRecoilState(getIdState);
 
-  const typer = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const typer = (e: React.ChangeEvent<HTMLInputElement>) =>
     setEditForm({ ...editForm, [e.target.name]: e.target.value });
-  };
 
   useEffect(() => {
     const item = list.find((item: any) => item._id === getId);
+
     if (item) setEditForm(item);
   }, [getId, list, setEditForm]);
 

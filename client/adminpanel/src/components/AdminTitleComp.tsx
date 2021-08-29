@@ -1,8 +1,8 @@
-import { useEffect } from "react";
+import { FC, useEffect } from "react";
 import sal from "sal.js";
 import styled from "styled-components";
 
-const AdminTitleComp = () => {
+const AdminTitleComp: FC = () => {
   useEffect(() => {
     sal();
   }, []);

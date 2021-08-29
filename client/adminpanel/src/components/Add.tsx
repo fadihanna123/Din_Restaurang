@@ -1,16 +1,15 @@
-import React, { useEffect } from "react";
+import React, { FC, useEffect } from "react";
 import { useRecoilState } from "recoil";
 import sal from "sal.js";
 import { addFormState } from "states";
 import { Row, Button, MyAddForm, LabelCol, Label, Col20, Input } from "styles";
 import { AddItem } from "../functions/AddItem";
 
-const AddComp = () => {
+const AddComp: FC = () => {
   const [addForm, setAddForm] = useRecoilState(addFormState);
 
-  const typer = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const typer = (e: React.ChangeEvent<HTMLInputElement>) =>
     setAddForm({ ...addForm, [e.target.name]: e.target.value });
-  };
 
   useEffect(() => {
     sal();

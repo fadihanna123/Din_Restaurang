@@ -18,11 +18,12 @@ export async function GetData() {
         const { data } = await axios.get<Food[]>(endPoint);
         setList(data);
       } catch (err) {
-        console.log(err.response);
+        console.log((err as Error).message);
       } finally {
         setLoading(false);
       }
     }
+
     debounce<any>(GetData(), 1500);
   }, [setList, setLoading]);
 }

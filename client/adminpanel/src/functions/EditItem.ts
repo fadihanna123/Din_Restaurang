@@ -20,6 +20,6 @@ export const EditItem = async (): Promise<void> => {
 
     setView("");
   } catch (err) {
-    console.log(err);
+    console.log((err as Error).message);
   }
 };

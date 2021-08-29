@@ -1,3 +1,4 @@
+import { FC } from "react";
 import { useRecoilState } from "recoil";
 import { listState, loadingState, viewState } from "states";
 import { Button, Col, DataTable, MainTable, Row, TableHead } from "styles";
@@ -7,7 +8,7 @@ import AddComp from "./Add";
 import EditComp from "./Edit";
 import FoodItem from "./FoodItem";
 
-const FoodTable = () => {
+const FoodTable: FC = () => {
   const [loading] = useRecoilState(loadingState);
   const [list] = useRecoilState(listState);
   const [view, setView] = useRecoilState(viewState);
@@ -30,10 +31,23 @@ const FoodTable = () => {
             </TableHead>
             <tbody>
               {!loading ? (
-                list.length > 0 ? (
-                  list.map((item: Food, i: number) => (
-                    <FoodItem item={item} i={i} />
-                  ))
+                list.length ? (
+                  list.map(
+                    (
+                      { _id, title, sorts, included, price }: Food,
+                      i: number
+                    ) => {
+                      const props = {
+                        _id,
+                        title,
+                        sorts,
+                        included,
+                        price,
+                      };
+
+                      return <FoodItem key={_id} {...props} />;
+                    }
+                  )
                 ) : (
                   <tr>
                     <td colSpan={7}>Inga data. Var vänlig lägg till data!</td>

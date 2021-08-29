@@ -1,3 +1,3 @@
 export * from "./GlobalSettings";
-export * from "./database";
+export * from "./db";
 export * from "./settings";

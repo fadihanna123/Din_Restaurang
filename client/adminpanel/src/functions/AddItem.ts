@@ -11,7 +11,7 @@ export const AddItem = async (): Promise<void> => {
   try {
     const { data } = await axios.post<Food>(endPoint, addForm);
     setList([...list, data]);
-  } catch (error) {
-    console.log((error as Error).message);
+  } catch (err) {
+    console.log((err as Error).message);
   }
 };

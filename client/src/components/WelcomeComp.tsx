@@ -1,6 +1,7 @@
+import { FC } from "react";
 import styled from "styled-components";
 
-const WelcomeComp = () => (
+const WelcomeComp: FC = () => (
   <Welcome data-sal="zoom-in">Välkommen till din restaurang</Welcome>
 );
 
