@@ -38,10 +38,10 @@ src/images/logo.jpg <br />
 src/images/pannbiff.jpg <br />
 src/images/pizza.jpg <br />
 src/images/sushi.jpg <br />
-src/includes/ <br />
-src/includes/Header.tsx <br />
-src/includes/Footer.tsx <br />
-src/includes/index.ts <br />
+src/inc/ <br />
+src/inc/Header.tsx <br />
+src/inc/Footer.tsx <br />
+src/inc/index.ts <br />
 src/states/ <br />
 src/states/index.ts <br />
 src/styles <br />
