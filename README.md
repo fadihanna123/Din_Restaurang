@@ -13,9 +13,9 @@ src/components/PhotosList.tsx <br />
 src/global.tsx <br />
 src/App.tsx <br />
 src/index.tsx <br />
-src/Includes/ <br />
-src/Includes/Header.tsx <br />
-src/Includes/Footer.tsx <br />
+src/inc/ <br />
+src/inc/Header.tsx <br />
+src/inc/Footer.tsx <br />
 src/typings/ <br />
 src/typings/index.ts <br />
 src/GetData.tsx <br />
@@ -69,10 +69,10 @@ src/images/logo.jpg <br />
 src/images/pannbiff.jpg <br />
 src/images/pizza.jpg <br />
 src/images/sushi.jpg <br />
-src/includes/ <br />
-src/includes/Header.tsx <br />
-src/includes/Footer.tsx <br />
-src/includes/index.ts <br />
+src/inc/ <br />
+src/inc/Header.tsx <br />
+src/inc/Footer.tsx <br />
+src/inc/index.ts <br />
 src/states/ <br />
 src/states/index.ts <br />
 src/styles <br />
