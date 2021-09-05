@@ -23,8 +23,8 @@ src/App.tsx <br />
 src/index.tsx <br />
 typings/ <br />
 typings/index.tsx <br />
-src/includes/Header.tsx <br />
-src/includes/Footer.tsx <br />
+src/inc/Header.tsx <br />
+src/inc/Footer.tsx <br />
 src/images/logo.jpg <br />
 public/ <br />
 public/index.html <br />
