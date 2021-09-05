@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const Footer: FC = () => (
   <FooterBlock>
-    <h3>Din restaurang</h3>
+    <h2>Din restaurang</h2>
     Telefonnummer:
     <span className="fa fa-phone">
       <a href="tel:084414563">08-441 45 63</a>
@@ -24,5 +24,5 @@ const FooterBlock = styled.footer`
   background-color: lightblue;
   height: 200px;
   margin: 10px;
-  padding: 10px;
+  padding: 30px;
 `;

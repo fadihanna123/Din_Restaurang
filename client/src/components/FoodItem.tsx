@@ -4,27 +4,29 @@ import { layout, space, typography } from "styled-system";
 import { Col } from "styles";
 import { Food } from "typings";
 
-const FoodItem: FC<{
-  _id: string;
-  title: string;
-  sorts: string;
-  included: string;
-  price: number;
-  image: string;
-}> = ({ _id, title, sorts, included, price, image }: Food) => {
-  const FoodImgLink: string = require("../images/" + image).default;
+const FoodItem: FC<{ item: Food }> = ({ item }: { item: Food }) => {
+  const FoodImgLink: string = require("../images/" + item.image).default;
 
   return (
     <Col>
-      <FoodImg width={1} height={300} p={3} src={FoodImgLink} alt="Maträtten" />
+      <FoodImg
+        width="auto"
+        height="auto"
+        maxWidth="100%"
+        maxHeight="100%"
+        src={FoodImgLink}
+        alt={item.title}
+        aria-label={item.title}
+        loading="lazy"
+      />
       <FoodTitle textAlign="center" fontSize={25}>
-        {title}
+        {item.title}
       </FoodTitle>
       <MainTxt p={10} fontSize={20}>
-        <span>Sorter: {sorts} </span>
+        <span>Sorter: {item.sorts} </span>
         <br />
-        Pris: {price} kr <br />
-        Ingår: {included}
+        Pris: {item.price} kr <br />
+        Ingår: {item.included}
       </MainTxt>
 
       <br />

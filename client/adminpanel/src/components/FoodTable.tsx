@@ -1,7 +1,9 @@
-import { FC } from "react";
+import { getData } from "functions";
+import { FC, useEffect } from "react";
 import { useRecoilState } from "recoil";
 import { listState, loadingState, viewState } from "states";
 import { Button, Col, DataTable, MainTable, Row, TableHead } from "styles";
+import { debounce } from "ts-debounce";
 import { Food } from "typings";
 
 import AddComp from "./Add";
@@ -9,9 +11,13 @@ import EditComp from "./Edit";
 import FoodItem from "./FoodItem";
 
 const FoodTable: FC = () => {
-  const [loading] = useRecoilState(loadingState);
-  const [list] = useRecoilState(listState);
+  const [loading, setLoading] = useRecoilState(loadingState);
+  const [list, setList] = useRecoilState(listState);
   const [view, setView] = useRecoilState(viewState);
+
+  useEffect(() => {
+    debounce<any>(getData(setLoading, setList), 1500);
+  }, [setLoading, setList]);
 
   return (
     <Row data-sal="zoom-in">
@@ -32,22 +38,9 @@ const FoodTable: FC = () => {
             <tbody>
               {!loading ? (
                 list.length ? (
-                  list.map(
-                    (
-                      { _id, title, sorts, included, price }: Food,
-                      i: number
-                    ) => {
-                      const props = {
-                        _id,
-                        title,
-                        sorts,
-                        included,
-                        price,
-                      };
-
-                      return <FoodItem key={_id} {...props} />;
-                    }
-                  )
+                  list.map((item: Food) => (
+                    <FoodItem key={item._id} item={item} />
+                  ))
                 ) : (
                   <tr>
                     <td colSpan={7}>Inga data. Var vänlig lägg till data!</td>

@@ -12,9 +12,9 @@ const Footer: FC = () => (
     bg="#ADD8E6"
     height={200}
     m={10}
-    p={10}
+    p={30}
   >
-    <h3>Din restaurang</h3>
+    <h2>Din restaurang</h2>
     Telefonnummer:
     <span className="fa fa-phone">
       <a href="tel:084414563">08-441 45 63</a>

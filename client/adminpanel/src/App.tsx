@@ -1,8 +1,8 @@
 import axios from "axios";
 import AdminTitleComp from "components/AdminTitleComp";
 import FoodTable from "components/FoodTable";
-import Footer from "includes/Footer";
-import Header from "includes/Header";
+import Footer from "inc/Footer";
+import Header from "inc/Header";
 import { FC } from "react";
 import styled from "styled-components";
 

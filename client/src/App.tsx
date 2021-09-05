@@ -1,8 +1,8 @@
 import axios from "axios";
 import PhotosList from "components/PhotosList";
 import WelcomeComp from "components/WelcomeComp";
-import Footer from "includes/Footer";
-import Header from "includes/Header";
+import Footer from "inc/Footer";
+import Header from "inc/Header";
 import { FC } from "react";
 import styled from "styled-components";
 

@@ -49,7 +49,7 @@ export const Row = styled.section`
 
 export const Col = styled.section`
   float: left;
-  width: 15%;
+  width: 20%;
   padding: 10px;
 
   @media (max-width: 1900px) {

@@ -6,12 +6,8 @@ import { Button } from "styles";
 import { Food } from "typings";
 
 const FoodItem: FC<{
-  _id: string;
-  title: string;
-  sorts: string;
-  included: string;
-  price: number;
-}> = ({ _id, title, sorts, included, price }) => {
+  item: Food;
+}> = ({ item }: { item: Food }) => {
   const [, setView] = useRecoilState(viewState);
   const [, setId] = useRecoilState(getIdState);
   const [, setLoading] = useRecoilState(loadingState);
@@ -24,7 +20,7 @@ const FoodItem: FC<{
       setLoading(true);
 
       await axios.delete<Food>(endPoint);
-      const temp = [...list].filter((item) => _id !== id);
+      const temp = [...list].filter((item) => item._id !== id);
       setList(temp);
     } catch (err) {
       console.log((err as Error).message);
@@ -33,22 +29,25 @@ const FoodItem: FC<{
     }
   };
 
+  const loadDeleteItem = (): void => {
+    DeleteItem(item._id);
+  };
+
+  const editHandler = (): void => {
+    setView && setView("Edit");
+
+    setId && setId(item._id);
+  };
+
   return (
     <tr>
-      <td>{title}</td>
-      <td>{sorts}</td>
-      <td>{price} kr </td>
-      <td>{included}</td>
+      <td>{item.title}</td>
+      <td>{item.sorts}</td>
+      <td>{item.price} kr </td>
+      <td>{item.included}</td>
       <td>
-        <Button
-          onClick={() => {
-            setView && setView("Edit");
-            setId && setId(_id);
-          }}
-        >
-          Ändra
-        </Button>
-        <Button onClick={() => DeleteItem(_id)}>Radera</Button>
+        <Button onClick={editHandler}>Ändra</Button>
+        <Button onClick={loadDeleteItem}>Radera</Button>
       </td>
     </tr>
   );
