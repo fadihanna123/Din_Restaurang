@@ -26,7 +26,7 @@ router.get("/food/:id", async (req, res): Promise<void> => {
 
 router.post("/food/add", async (req, res): Promise<void> => {
   try {
-    const FoodModel = new Food();
+    const FoodModel: IFood = new Food();
     FoodModel.title = req.body.title;
     FoodModel.sorts = req.body.sorts;
     FoodModel.price = req.body.price;
