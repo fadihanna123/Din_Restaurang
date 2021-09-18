@@ -49,6 +49,9 @@ yarn.lock <br />
 **Adminpanel**
 
 src/ <br />
+src/app/ <br />
+src/app/index.ts <br />
+src/app/Layout.tsx <br />
 src/components/ <br />
 src/components/Add.tsx <br />
 src/components/AdminTitleComp.tsx <br />
