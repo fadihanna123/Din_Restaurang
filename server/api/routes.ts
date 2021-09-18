@@ -1,8 +1,10 @@
-import { Request, Response } from "express";
+import { Request, Response, Router } from "express";
 
 import { Food } from "../models";
-import { router } from "../config";
+
 import { IFood } from "../typings";
+
+const router: Router = Router();
 
 // Routes
 router.get("/food", async (req: Request, res: Response): Promise<void> => {
