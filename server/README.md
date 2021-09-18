@@ -7,17 +7,11 @@ HTTP-metoder som kan användas: GET, POST, DELETE, PUT.
 api/ <br />
 api/index.ts <br />
 api/routes.ts <br />
-config/ <br />
-config/index.ts <br />
-config/db.ts <br />
-config/GlobalSettings.ts <br />
-config/settings.ts <br />
 models/ <br />
 models/index.ts <br />
 models/model.ts <br />
 typings/ <br />
 typings/index.ts <br />
-.env <br />
 .gitignore <br />
 server.ts <br />
 package.json <br />

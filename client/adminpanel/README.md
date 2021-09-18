@@ -18,6 +18,9 @@ För att bygga projektet i statisk form och är redo för publicering.<br>
 ### 1.2 Mappstruktur
 
 src/ <br />
+src/app/ <br />
+src/app/index.ts <br />
+src/app/Layout.tsx <br />
 src/components/ <br />
 src/components/Add.tsx <br />
 src/components/AdminTitleComp.tsx <br />
@@ -63,7 +66,6 @@ public/favicon/favicon-32x32.png <br />
 public/favicon/favicon.ico <br />
 public/favicon/mstile-150x150.png <br />
 public/favicon/site.webmanifest <br />
-.env <br />
 .gitignore <br />
 README.md <br />
 package.json <br />

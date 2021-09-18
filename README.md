@@ -94,7 +94,6 @@ public/favicon/favicon-32x32.png <br />
 public/favicon/favicon.ico <br />
 public/favicon/mstile-150x150.png <br />
 public/favicon/site.webmanifest <br />
-.env <br />
 .gitignore <br />
 README.md <br />
 package.json <br />
@@ -106,17 +105,11 @@ yarn.lock <br />
 api/ <br />
 api/index.ts <br />
 api/routes.ts <br />
-config/ <br />
-config/index.ts <br />
-config/db.ts <br />
-config/GlobalSettings.ts <br />
-config/settings.ts <br />
 models/ <br />
 models/index.ts <br />
 models/model.ts <br />
 typings/ <br />
 typings/index.ts <br />
-.env <br />
 .gitignore <br />
 server.ts <br />
 package.json <br />
