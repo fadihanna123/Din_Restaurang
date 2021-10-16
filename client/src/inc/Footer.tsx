@@ -1,5 +1,4 @@
-import styled from "@emotion/styled";
-import { color, grid, layout, space, typography } from "styled-system";
+import { FooterBlock } from "styles";
 
 const Footer: React.FC = () => (
   <FooterBlock
@@ -24,12 +23,3 @@ const Footer: React.FC = () => (
 );
 
 export default Footer;
-
-const FooterBlock = styled("footer")(
-  layout,
-  space,
-  layout,
-  color,
-  grid,
-  typography
-);
