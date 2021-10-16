@@ -1,17 +1,15 @@
-import styled from "@emotion/styled";
 import { getData } from "functions";
-import { FC, useEffect } from "react";
+import { useEffect } from "react";
 import { useRecoilState } from "recoil";
 import sal from "sal.js";
 import { errorState, listState, loadingState } from "states";
-import { space, typography } from "styled-system";
-import { ErrorData, Loading, Row } from "styles";
+import { ErrorData, Loading, MainPhotos, Row } from "styles";
 import { debounce } from "ts-debounce";
 import { Food } from "typings";
 
 import FoodItem from "./FoodItem";
 
-const PhotosList: FC = () => {
+const PhotosList: React.FC = () => {
   const [err, setError] = useRecoilState(errorState);
   const [loading, setLoading] = useRecoilState(loadingState);
   const [list, setList] = useRecoilState(listState);
@@ -45,5 +43,3 @@ const PhotosList: FC = () => {
 };
 
 export default PhotosList;
-
-const MainPhotos = styled("section")(typography, space);

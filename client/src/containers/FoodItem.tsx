@@ -1,11 +1,8 @@
-import styled from "@emotion/styled";
-import { FC } from "react";
-import { layout, space, typography } from "styled-system";
-import { Col } from "styles";
+import { Col, FoodImg, FoodTitle, MainTxt } from "styles";
 import { Food } from "typings";
 
-const FoodItem: FC<{ item: Food }> = ({ item }: { item: Food }) => {
-  const FoodImgLink: string = require("../images/" + item.image).default;
+const FoodItem: React.FC<{ item: Food }> = ({ item }: { item: Food }) => {
+  const FoodImgLink: string = require("../assets/" + item.image).default;
 
   return (
     <Col>
@@ -34,9 +31,3 @@ const FoodItem: FC<{ item: Food }> = ({ item }: { item: Food }) => {
   );
 };
 export default FoodItem;
-
-const FoodImg = styled("img")(layout, space);
-
-const FoodTitle = styled("h1")(typography);
-
-const MainTxt = styled("p")(typography, space);

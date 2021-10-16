@@ -1,19 +1,7 @@
-import { FC } from "react";
-import styled from "styled-components";
+import { Welcome } from "styles";
 
-const WelcomeComp: FC = () => (
+const WelcomeComp: React.FC = () => (
   <Welcome data-sal="zoom-in">Välkommen till din restaurang</Welcome>
 );
 
 export default WelcomeComp;
-
-const Welcome = styled.h1`
-  font-style: italic;
-  margin-left: 700px;
-  margin-top: 80px;
-
-  @media (max-width: 1900px) {
-    margin: 10px;
-    text-align: center;
-  }
-`;

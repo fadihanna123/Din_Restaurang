@@ -1,8 +1,7 @@
 import styled from "@emotion/styled";
-import { FC } from "react";
 import { color, grid, layout, space, typography } from "styled-system";
 
-const Footer: FC = () => (
+const Footer: React.FC = () => (
   <FooterBlock
     display="grid"
     gridTemplateColumns="1fr"

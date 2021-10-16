@@ -1,8 +1,7 @@
-import Logo from "images/logo.jpg";
-import { FC } from "react";
+import Logo from "assets/logo.jpg";
 import styled from "styled-components";
 
-const Header: FC = () => (
+const Header: React.FC = () => (
   <header>
     <LogoBox></LogoBox>
   </header>

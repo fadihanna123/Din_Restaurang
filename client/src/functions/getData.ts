@@ -1,5 +1,6 @@
-import axios from "axios";
 import { Food } from "typings";
+import { request } from "api";
+import { food_api } from "utils";
 
 export const getData = async (
   setLoading: (loading: boolean) => void,
@@ -7,11 +8,10 @@ export const getData = async (
   setError: (error: string) => void
 ): Promise<void> => {
   try {
-    const endPoint: string = "food";
-
     setLoading && setLoading(true);
 
-    const { data } = await axios.get<Food[]>(endPoint);
+    const data: Food[] = await request(food_api as string);
+
     setList && setList(data);
   } catch (err) {
     setError && setError((err as Error).message);
