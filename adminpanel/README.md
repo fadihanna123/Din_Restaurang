@@ -1,7 +1,7 @@
 ## 1. Din Restaurang Adminpanel
 
 Den här är adminpanel som tillhör Din restaurang hemisda som finns i: <br />
-https://github.com/fadihanna123/react_visa <br />
+https://github.com/fadihanna123/Din_Restaurang/tree/master/dinrestaurang <br />
 Här kan du lägga till/ändra/radera maträtter. <br />
 
 ### 1.1 Installation
