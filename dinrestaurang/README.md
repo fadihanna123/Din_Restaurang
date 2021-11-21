@@ -2,7 +2,7 @@
 
 Din restaurang erbjuder 5 maträtter. <br />
 **Adminpanel**: <br />
-https://github.com/fadihanna123/Din_restaurang_admin <br />
+https://github.com/fadihanna123/Din_Restaurang/tree/master/adminpanel <br />
 
 ### 1.1 Installation
 
