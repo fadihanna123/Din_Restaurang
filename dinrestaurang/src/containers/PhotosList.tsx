@@ -17,7 +17,7 @@ const PhotosList: React.FC = () => {
   useEffect(() => {
     sal();
 
-    debounce<any>(getData(setLoading, setList, setError), 1500);
+    debounce(getData(setLoading, setList, setError) as any, 1500);
   }, [setList, setLoading, setError]);
 
   return (

@@ -23,7 +23,7 @@ const FoodTable: FC = () => {
   const [view, setView] = useRecoilState(viewState);
 
   useEffect(() => {
-    debounce<any>(getData(setLoading, setList), 1500);
+    debounce(getData(setLoading, setList) as any, 1500);
   }, [setLoading, setList]);
 
   return (
