@@ -29,7 +29,7 @@ const corsOptions = {
 server.use(morgan("dev"));
 server.use(limiter);
 server.use(helmet());
-server.use(cors());
+server.use(cors(corsOptions));
 server.use(express.json({ limit: "1kb", type: "application/json" }));
 server.use(routes);
 server.use(errorHandler);
