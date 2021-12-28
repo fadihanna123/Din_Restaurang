@@ -1,6 +1,4 @@
-import { Document } from "mongoose";
-
-export interface IFood extends Document {
+export interface IFood {
   title: string;
   sorts: string;
   price: number;

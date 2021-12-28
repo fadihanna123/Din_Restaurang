@@ -1,21 +1,19 @@
 import "dotenv/config";
 
+import routes from "api/routes";
 import cors from "cors";
 import express from "express";
-import mongoose from "mongoose";
-
-import routes from "./api/routes";
+import helmet from "helmet";
+import morgan from "morgan";
+import { logger } from "tools";
+import { allowedURL, errorHandler, serverPort } from "utils";
+import rateLimit from "express-rate-limit";
 
 const server = express();
 
-const { SERVERPORT, ALLOWED_URL } = process.env;
+const limiter = rateLimit({ windowMs: 3600000, max: 45 });
 
-// Anslutning till Mongodbdatabasen.
-mongoose.connect(<string>process.env.DATABASE_URL, () =>
-  console.log(` \n Connected... \n `)
-);
-
-var whiteList: string[] = [ALLOWED_URL as string];
+const whiteList = [allowedURL as string];
 
 const corsOptions = {
   origin: (origin: any, callback: any) => {
@@ -27,12 +25,14 @@ const corsOptions = {
   },
 };
 
-// Inställningar
-server.use(cors(corsOptions));
-server.use(express.json());
+// Settings
+server.use(morgan("dev"));
+server.use(limiter);
+server.use(helmet());
+server.use(cors());
+server.use(express.json({ limit: "1kb", type: "application/json" }));
 server.use(routes);
+server.use(errorHandler);
 
-const port: number = parseInt(<string>SERVERPORT);
-server.listen(port, () =>
-  console.log(`\n Servern startar på port ${port} \n `)
-);
+const port: number = parseInt(<string>serverPort);
+server.listen(port, () => logger.debug(`Servern startar på port ${port}`));
