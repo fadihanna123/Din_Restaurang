@@ -1,8 +1,8 @@
-const { SERVERPORT, ALLOWED_URL, APIKEY, AUTHORIZATION } = process.env;
+const { SERVERPORT, ALLOWED_URLS, APIKEY, AUTHORIZATION } = process.env;
 
 export const serverPort = SERVERPORT;
 
-export const allowedURL = ALLOWED_URL;
+export const allowedURL = ALLOWED_URLS;
 
 export const apiKey = APIKEY;
 
