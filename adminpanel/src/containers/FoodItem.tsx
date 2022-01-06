@@ -1,43 +1,14 @@
-import axios from "axios";
-import { FC } from "react";
-import { useRecoilState } from "recoil";
-import { getIdState, listState, loadingState, viewState } from "states";
-import { Button } from "styles/global";
-import { Food } from "typings";
+import { editHandler, loadDeleteItem } from 'functions';
+import { useDispatch, useSelector } from 'react-redux';
+import { Button } from 'styles/global';
+import { Food, ListReducerTypes } from 'typings';
 
-const FoodItem: FC<{
+const FoodItem: React.FC<{
   item: Food;
 }> = ({ item }: { item: Food }) => {
-  const [, setView] = useRecoilState(viewState);
-  const [, setId] = useRecoilState(getIdState);
-  const [, setLoading] = useRecoilState(loadingState);
-  const [list, setList] = useRecoilState(listState);
+  const list = useSelector((state: ListReducerTypes) => state.listReducer);
 
-  const DeleteItem = async (id: string): Promise<void> => {
-    try {
-      const endPoint: string = `http://localhost:5000/food/${id}`;
-
-      setLoading(true);
-
-      await axios.delete<Food>(endPoint);
-      const temp = [...list].filter((item) => item._id !== id);
-      setList(temp);
-    } catch (err) {
-      console.log((err as Error).message);
-    } finally {
-      setLoading && setLoading(false);
-    }
-  };
-
-  const loadDeleteItem = (): void => {
-    DeleteItem(item._id);
-  };
-
-  const editHandler = (): void => {
-    setView && setView("Edit");
-
-    setId && setId(item._id);
-  };
+  const dispatch = useDispatch();
 
   return (
     <tr>
@@ -46,8 +17,10 @@ const FoodItem: FC<{
       <td>{item.price} kr </td>
       <td>{item.included}</td>
       <td>
-        <Button onClick={editHandler}>Ändra</Button>
-        <Button onClick={loadDeleteItem}>Radera</Button>
+        <Button onClick={() => editHandler(item, dispatch)}>Ändra</Button>
+        <Button onClick={() => loadDeleteItem(item, list, dispatch)}>
+          Radera
+        </Button>
       </td>
     </tr>
   );

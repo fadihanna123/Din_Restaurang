@@ -1,25 +1,30 @@
-import axios from "axios";
-import { useRecoilState } from "recoil";
-import { editFormState, getIdState, listState, viewState } from "states";
-import { Food } from "typings";
+import { request } from 'api';
+import { useDispatch, useSelector } from 'react-redux';
+import { toast } from 'react-toastify';
+import { setList, setView } from 'redux/actions';
+import { EditFormReducerTypes, Food, GetIdReducerTypes, ListReducerTypes } from 'typings';
 
 export const EditItem = async (): Promise<void> => {
-  const [getId] = useRecoilState(getIdState);
-  const [editForm] = useRecoilState(editFormState);
-  const [list, setList] = useRecoilState(listState);
-  const [, setView] = useRecoilState(viewState);
+  const getId = useSelector((state: GetIdReducerTypes) => state.getIdReducer);
+  const editForm = useSelector(
+    (state: EditFormReducerTypes) => state.editFormReducer
+  );
+  const list = useSelector((state: ListReducerTypes) => state.listReducer);
+
+  const dispatch = useDispatch();
+
   const endPoint: string = `food/${getId}`;
 
   try {
-    await axios.put<Food>(endPoint, editForm);
+    await request.put<Food>(endPoint, editForm);
 
     const temp = [...list];
     const index = temp.findIndex((i) => i._id === getId);
-    temp[index] = editForm as any;
-    setList(temp);
+    temp[index] = editForm;
+    dispatch(setList(temp));
 
-    setView("");
+    dispatch(setView(""));
   } catch (err) {
-    console.log((err as Error).message);
+    toast.error((err as Error).message);
   }
 };

@@ -1,13 +1,13 @@
-import React, { useEffect } from "react";
-import sal from "sal.js";
-import { Col20, Label, LabelCol, MyAddForm, Row } from "styles/global";
+import React, { useEffect } from 'react';
+import sal from 'sal.js';
+import { Col20, Label, LabelCol, MyAddForm, Row } from 'styles/global';
 
-import AddBtn from "./forms/AddBtn";
-import ImageField from "./forms/ImageField";
-import IncludedField from "./forms/IncludedField";
-import PriceField from "./forms/PriceField";
-import SortsField from "./forms/SortsField";
-import TitleField from "./forms/TitleField";
+import AddBtn from '../components/forms/AddBtn';
+import ImageField from './forms/AddImageField';
+import IncludedField from './forms/AddIncludedField';
+import PriceField from './forms/AddPriceField';
+import SortsField from './forms/AddSortsField';
+import TitleField from './forms/AddTitleField';
 
 const AddComp: React.FC = () => {
   useEffect(() => {

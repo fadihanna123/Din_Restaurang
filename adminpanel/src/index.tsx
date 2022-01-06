@@ -1,18 +1,20 @@
-import "normalize.css";
-import "sal.js/dist/sal.css";
+import 'normalize.css';
+import 'react-toastify/dist/ReactToastify.css';
+import 'sal.js/dist/sal.css';
 
-import App from "containers/App";
-import GlobalStyles from "styles/global";
-import React from "react";
-import ReactDOM from "react-dom";
-import { RecoilRoot } from "recoil";
+import App from 'containers/App';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { store } from 'redux/store';
+import GlobalStyles from 'styles/global';
 
 ReactDOM.render(
   <React.StrictMode>
     <GlobalStyles />
-    <RecoilRoot>
+    <Provider store={store}>
       <App />
-    </RecoilRoot>
+    </Provider>
   </React.StrictMode>,
   document.getElementById("root")
 );

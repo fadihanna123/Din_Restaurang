@@ -1,7 +1,6 @@
-import { FC } from "react";
-import styled from "styled-components";
+import { FooterBlock } from 'styles';
 
-const Footer: FC = () => (
+const Footer: React.FC = () => (
   <FooterBlock>
     <h2>Din restaurang</h2>
     Telefonnummer:
@@ -14,15 +13,3 @@ const Footer: FC = () => (
 );
 
 export default Footer;
-
-const FooterBlock = styled.footer`
-  display: grid;
-  grid-template-columns: 1fr;
-  text-align: center;
-  font-size: 21px;
-  margin-left: -100px;
-  background-color: lightblue;
-  height: 200px;
-  margin: 10px;
-  padding: 30px;
-`;

@@ -1,25 +1,23 @@
-import axios from "axios";
+import axios, { AxiosResponse } from 'axios';
 
-export const request: {
-  get: Function;
-  post: Function;
-  put: Function;
-  delete: Function;
-} = {
-  get: async (url: string): Promise<void> => await axios.get(url),
+export const request = {
+  get: async <T>(url: string): Promise<AxiosResponse<T, any>> =>
+    await axios.get<T>(url),
 
-  post: async (
+  post: async <T>(
     url: string,
     data: any,
     headers?: { headers: {} }
-  ): Promise<void> => await axios.post(url, data, headers),
+  ): Promise<AxiosResponse<T, any>> => await axios.post<T>(url, data, headers),
 
-  put: async (
+  put: async <T>(
     url: string,
     data: any,
     headers?: { headers: {} }
-  ): Promise<void> => await axios.put(url, data, headers),
+  ): Promise<AxiosResponse<T, any>> => await axios.put<T>(url, data, headers),
 
-  delete: async (url: string, headers?: { headers: {} }): Promise<void> =>
-    await axios.delete(url, headers),
+  delete: async <T>(
+    url: string,
+    headers?: { headers: {} }
+  ): Promise<AxiosResponse<T, any>> => await axios.delete<T>(url, headers),
 };

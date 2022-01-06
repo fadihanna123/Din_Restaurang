@@ -1,19 +1,20 @@
-import React, { useEffect } from "react";
-import { useRecoilState } from "recoil";
-import { editFormState, getIdState, listState } from "states";
-import { EditForm, Row, LabelCol, Label, Col15, Input, Button } from "styles";
-import { EditItem, editTyper } from "functions";
+import EditFoodBtn from 'components/forms/EditFoodBtn';
+import { editTyper } from 'functions';
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Col15, EditForm, Input, Label, LabelCol, Row } from 'styles';
+import { EditFormReducerTypes } from 'typings';
+
+import { useEditItem } from '../hooks/useEditItem';
 
 const EditComp: React.FC = () => {
-  const [editForm, setEditForm] = useRecoilState(editFormState);
-  const [list] = useRecoilState(listState);
-  const [getId] = useRecoilState(getIdState);
+  const editForm = useSelector(
+    (state: EditFormReducerTypes) => state.editFormReducer
+  );
 
-  useEffect(() => {
-    const item = list.find((item: any) => item._id === getId);
+  const dispatch = useDispatch();
 
-    if (item) setEditForm(item);
-  }, [getId, list, setEditForm]);
+  useEditItem();
 
   return (
     <EditForm>
@@ -27,12 +28,11 @@ const EditComp: React.FC = () => {
             id="title"
             value={editForm.title}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              editTyper(e, editForm, setEditForm)
+              editTyper(e, editForm, dispatch)
             }
           />
         </Col15>
       </Row>
-
       <Row>
         <LabelCol>
           <Label htmlFor="sorts">Sorts:</Label>
@@ -43,12 +43,11 @@ const EditComp: React.FC = () => {
             id="sorts"
             value={editForm.sorts}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              editTyper(e, editForm, setEditForm)
+              editTyper(e, editForm, dispatch)
             }
           />
         </Col15>
       </Row>
-
       <Row>
         <LabelCol>
           <Label htmlFor="price">Pris:</Label>
@@ -57,14 +56,13 @@ const EditComp: React.FC = () => {
           <Input
             name="price"
             id="price"
-            value={editForm.price}
+            value={editForm.price || ""}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              editTyper(e, editForm, setEditForm)
+              editTyper(e, editForm, dispatch)
             }
           />
         </Col15>
       </Row>
-
       <Row>
         <LabelCol>
           <Label htmlFor="image">Bildfilen:</Label>
@@ -75,12 +73,11 @@ const EditComp: React.FC = () => {
             name="image"
             value={editForm.image}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              editTyper(e, editForm, setEditForm)
+              editTyper(e, editForm, dispatch)
             }
           />
         </Col15>
       </Row>
-
       <Row>
         <LabelCol>
           <Label htmlFor="included">Ingår:</Label>
@@ -91,14 +88,12 @@ const EditComp: React.FC = () => {
             id="included"
             value={editForm.included}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              editTyper(e, editForm, setEditForm)
+              editTyper(e, editForm, dispatch)
             }
           />
         </Col15>
       </Row>
-      <Button type="submit" onClick={EditItem}>
-        Ändra
-      </Button>
+      <EditFoodBtn />
     </EditForm>
   );
 };

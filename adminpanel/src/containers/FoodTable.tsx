@@ -1,30 +1,27 @@
-import { getData } from "functions";
-import { FC, useEffect } from "react";
-import { useRecoilState } from "recoil";
-import { listState, loadingState, viewState } from "states";
-import {
-  Button,
-  Col,
-  DataTable,
-  MainTable,
-  Row,
-  TableHead,
-} from "styles/global";
-import { debounce } from "ts-debounce";
-import { Food } from "typings";
+import { getData } from 'functions';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { setView } from 'redux/actions';
+import { Button, Col, DataTable, MainTable, Row, TableHead } from 'styles/global';
+import { debounce } from 'ts-debounce';
+import { ListReducerTypes, LoadingReducerTypes, ViewReducerTypes } from 'typings';
 
-import AddComp from "./Add";
-import EditComp from "./Edit";
-import FoodItem from "./FoodItem";
+import AddComp from './Add';
+import EditComp from './Edit';
+import FoodItem from './FoodItem';
 
-const FoodTable: FC = () => {
-  const [loading, setLoading] = useRecoilState(loadingState);
-  const [list, setList] = useRecoilState(listState);
-  const [view, setView] = useRecoilState(viewState);
+const FoodTable: React.FC = () => {
+  const loading = useSelector(
+    (state: LoadingReducerTypes) => state.loadingReducer
+  );
+  const list = useSelector((state: ListReducerTypes) => state.listReducer);
+  const view = useSelector((state: ViewReducerTypes) => state.viewReducer);
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    debounce(getData(setLoading, setList) as any, 1500);
-  }, [setLoading, setList]);
+    debounce(getData(dispatch) as any, 1500);
+  }, [dispatch]);
 
   return (
     <Row data-sal="zoom-in">
@@ -45,9 +42,7 @@ const FoodTable: FC = () => {
             <tbody>
               {!loading ? (
                 list.length ? (
-                  list.map((item: Food) => (
-                    <FoodItem key={item._id} item={item} />
-                  ))
+                  list.map((item) => <FoodItem key={item._id} item={item} />)
                 ) : (
                   <tr>
                     <td colSpan={7}>Inga data. Var vänlig lägg till data!</td>
@@ -63,14 +58,12 @@ const FoodTable: FC = () => {
           <Button
             className="spec"
             data-sal="flip-left"
-            onClick={() => setView && setView("Add")}
+            onClick={() => dispatch(setView("Add"))}
           >
             Lägg till
           </Button>
-          <section>
-            {view === "Add" ? <AddComp /> : ""}
-            {view === "Edit" ? <EditComp /> : ""}
-          </section>
+          <section>{view === "Add" && <AddComp />}</section>
+          <section>{view === "Edit" && <EditComp />}</section>
         </MainTable>
       </Col>
     </Row>

@@ -1,9 +1,10 @@
-import { IEditForm } from "typings";
+import { Dispatch } from 'redux';
+import { setEditForm } from 'redux/actions';
+import { IEditForm } from 'typings';
 
-const editTyper = (
+export const editTyper = (
   e: React.ChangeEvent<HTMLInputElement>,
   editForm: IEditForm,
-  setEditForm: (editForm: IEditForm) => void
-): void => setEditForm({ ...editForm, [e.target.name]: e.target.value });
-
-export { editTyper };
+  dispatch: Dispatch<any>
+): Object =>
+  dispatch(setEditForm({ ...editForm, [e.target.name]: e.target.value }));

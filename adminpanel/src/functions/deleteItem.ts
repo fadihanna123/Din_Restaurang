@@ -4,14 +4,19 @@ import { Dispatch } from 'redux';
 import { setList, setLoading } from 'redux/actions';
 import { Food } from 'typings';
 
-export const getData = async (dispatch: Dispatch<any>): Promise<void> => {
+export const DeleteItem = async (
+  id: string,
+  list: Food[],
+  dispatch: Dispatch<any>
+): Promise<void> => {
   try {
-    const endPoint: string = "food";
+    const endPoint = `food/${id}`;
 
     dispatch(setLoading(true));
 
-    const { data } = await request.get<Food[]>(endPoint);
-    dispatch(setList(data));
+    await request.delete<Food>(endPoint);
+    const temp = [...list].filter((item) => item._id !== id);
+    dispatch(setList(temp));
   } catch (err) {
     toast.error((err as Error).message);
   } finally {

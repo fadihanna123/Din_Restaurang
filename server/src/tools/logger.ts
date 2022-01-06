@@ -1,5 +1,5 @@
-import { DateTime } from "luxon";
-import winston, { format } from "winston";
+import { DateTime } from 'luxon';
+import winston, { format } from 'winston';
 
 const { combine, printf, prettyPrint, timestamp } = format;
 
@@ -14,7 +14,6 @@ const myFormat = printf(({ level, message, label, timestamp }) => {
 export const logger = winston.createLogger({
   level: "debug",
   format: winston.format.json(),
-  defaultMeta: { service: "user-service" },
 
   transports: [
     new winston.transports.File({

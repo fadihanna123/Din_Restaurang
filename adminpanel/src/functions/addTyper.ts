@@ -1,9 +1,9 @@
-import { AddForm } from "typings";
+import { Dispatch } from 'redux';
+import { setAddForm } from 'redux/actions';
+import { AddForm } from 'typings';
 
-const addTyper = (
+export const addTyper = (
   e: React.ChangeEvent<HTMLInputElement>,
   addForm: AddForm,
-  setAddForm: (addForm: AddForm) => void
-) => setAddForm({ ...addForm, [e.target.name]: e.target.value });
-
-export { addTyper };
+  dispatch: Dispatch<any>
+) => dispatch(setAddForm({ ...addForm, [e.target.name]: e.target.value }));

@@ -1,17 +1,23 @@
-import axios from "axios";
-import { useRecoilState } from "recoil";
-import { addFormState, listState } from "states";
-import { Food } from "typings";
+import { request } from 'api';
+import { useDispatch, useSelector } from 'react-redux';
+import { toast } from 'react-toastify';
+import { setList } from 'redux/actions';
+import { AddFormReducerTypes, Food, ListReducerTypes } from 'typings';
 
 export const AddItem = async (): Promise<void> => {
-  const [addForm] = useRecoilState(addFormState);
-  const [list, setList] = useRecoilState(listState);
+  const addForm = useSelector(
+    (state: AddFormReducerTypes) => state.addFormReducer
+  );
+  const list = useSelector((state: ListReducerTypes) => state.listReducer);
+
+  const dispatch = useDispatch();
+
   const endPoint: string = "food/add";
 
   try {
-    const { data } = await axios.post<Food>(endPoint, addForm);
-    setList([...list, data]);
+    const { data } = await request.post<Food>(endPoint, addForm);
+    dispatch(setList([...list, data]));
   } catch (err) {
-    console.log((err as Error).message);
+    toast.error((err as Error).message);
   }
 };
