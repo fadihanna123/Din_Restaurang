@@ -7,13 +7,13 @@ import rateLimit from 'express-rate-limit';
 import helmet from 'helmet';
 import morgan from 'morgan';
 import { logger } from 'tools';
-import { allowedURL, errorHandler, serverPort } from 'utils';
+import { allowedURLs, errorHandler, serverPort } from 'utils';
 
 const server = express();
 
 const limiter = rateLimit({ windowMs: 3600000, max: 45 });
 
-const whiteList = allowedURL?.split(", ");
+const whiteList = allowedURLs?.split(", ");
 
 const corsOptions = {
   origin: (origin: any, callback: any) => {
