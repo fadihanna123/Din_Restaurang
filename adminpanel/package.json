@@ -1,11 +1,10 @@
 {
   "name": "dinrestaurang_adminpanel",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "author": "Fadi Hanna",
   "license": "MIT",
   "dependencies": {
-    "@types/jest": "^27.0.3",
-    "@types/node": "^17.0.5",
+    "@types/node": "^17.0.9",
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
     "axios": "^0.24.0",
@@ -42,6 +41,6 @@
     ]
   },
   "devDependencies": {
-    "@types/styled-components": "^5.1.19"
+    "@types/styled-components": "^5.1.20"
   }
 }
