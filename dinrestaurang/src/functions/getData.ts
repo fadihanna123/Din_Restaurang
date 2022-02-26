@@ -1,21 +1,16 @@
-import { Food } from "typings";
-import { request } from "api";
-import { food_api } from "utils";
+import { Food } from 'typings';
+
+import { getFoodData } from './api';
 
 export const getData = async (
   setLoading: (loading: boolean) => void,
   setList: (list: Food[]) => void,
   setError: (error: string) => void
 ): Promise<void> => {
-  try {
-    setLoading && setLoading(true);
+  setLoading && setLoading(true);
 
-    const data: Food[] = await request.get(food_api);
-
-    setList && setList(data);
-  } catch (err) {
-    setError && setError((err as Error).message);
-  } finally {
-    setLoading && setLoading(false);
-  }
+  getFoodData()
+    .then((data: any) => setList && setList(data))
+    .catch((err: Error) => setError && setError(err.message))
+    .finally(() => setLoading && setLoading(false));
 };
