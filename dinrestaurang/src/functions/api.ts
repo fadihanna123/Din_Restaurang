@@ -1,6 +1,6 @@
 import { request } from 'api';
 import { AxiosResponse } from 'axios';
-import { Food } from 'typings';
+import { Food } from 'models';
 import { food_api } from 'utils';
 
 export const getFoodData = async (): Promise<void | AxiosResponse<

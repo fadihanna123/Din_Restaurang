@@ -1,5 +1,5 @@
-import { atom } from "recoil";
-import { Food } from "typings";
+import { Food } from 'models';
+import { atom } from 'recoil';
 
 export const loadingState = atom<boolean>({
   key: "loadingState",

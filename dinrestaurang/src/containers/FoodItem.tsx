@@ -1,5 +1,5 @@
-import { Col, FoodImg, FoodTitle, MainTxt } from "styles";
-import { Food } from "typings";
+import { Food } from 'models';
+import { Col, FoodImg, FoodTitle, MainTxt } from 'styles';
 
 const FoodItem: React.FC<{ item: Food }> = ({ item }: { item: Food }) => {
   const FoodImgLink: string = require("../assets/" + item.image).default;

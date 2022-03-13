@@ -1,4 +1,4 @@
-import { Food } from 'typings';
+import { Food } from 'models';
 
 import { getFoodData } from './api';
 
