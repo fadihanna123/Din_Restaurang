@@ -1,13 +1,13 @@
-import { getData } from "functions";
-import { useEffect } from "react";
-import { useRecoilState } from "recoil";
-import sal from "sal.js";
-import { errorState, listState, loadingState } from "states";
-import { ErrorData, Loading, MainPhotos, Row } from "styles";
-import { debounce } from "ts-debounce";
-import { Food } from "typings";
+import { getData } from 'functions';
+import { Food } from 'models';
+import { useEffect } from 'react';
+import { useRecoilState } from 'recoil';
+import sal from 'sal.js';
+import { errorState, listState, loadingState } from 'states';
+import { ErrorData, Loading, MainPhotos, Row } from 'styles';
+import { debounce } from 'ts-debounce';
 
-import FoodItem from "./FoodItem";
+import FoodItem from './FoodItem';
 
 const PhotosList: React.FC = () => {
   const [err, setError] = useRecoilState(errorState);
