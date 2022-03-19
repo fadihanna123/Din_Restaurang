@@ -102,7 +102,7 @@ package.json <br />
 tsconfig.json <br />
 yarn.lock <br />
 
-### 1.1.2 Backend: <br />
+### 1.1.2 Backend:
 api/ <br />
 api/index.ts <br />
 api/routes.ts <br />
