@@ -47,7 +47,6 @@ tsconfig.json <br />
 yarn.lock <br />
 
 **Adminpanel**
-
 src/ <br />
 src/app/ <br />
 src/app/index.ts <br />
@@ -104,7 +103,6 @@ tsconfig.json <br />
 yarn.lock <br />
 
 ### 1.1.2 Backend: <br />
-
 api/ <br />
 api/index.ts <br />
 api/routes.ts <br />
