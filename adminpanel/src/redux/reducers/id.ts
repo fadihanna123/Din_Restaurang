@@ -1,4 +1,4 @@
-import { ActionTypes } from 'typings';
+import { ActionTypes } from 'models';
 import { SET_ID } from 'utils/constants';
 
 const initialState: string | null = "";

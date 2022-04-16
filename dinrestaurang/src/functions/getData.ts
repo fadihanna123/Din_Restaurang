@@ -7,7 +7,7 @@ export const getData = async (
   setList: (list: Food[]) => void,
   setError: (error: string) => void
 ): Promise<void> => {
-  setLoading && setLoading(true);
+  if (setLoading) setLoading(true);
 
   getFoodData()
     .then((data: any) => setList && setList(data))

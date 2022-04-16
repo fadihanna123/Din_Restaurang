@@ -1,7 +1,7 @@
+import { GetIdReducerTypes, ListReducerTypes } from 'models';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setEditForm } from 'redux/actions';
-import { GetIdReducerTypes, ListReducerTypes } from 'typings';
 
 export const useEditItem = () => {
   const list = useSelector((state: ListReducerTypes) => state.listReducer);
@@ -10,7 +10,7 @@ export const useEditItem = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const item = list.find((item) => item._id === getId);
+    const item = list.find((item) => item.id === getId);
 
     if (item) dispatch(setEditForm(item));
   }, [dispatch, getId, list]);

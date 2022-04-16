@@ -1,4 +1,4 @@
-import { ActionTypes, Food } from 'typings';
+import { ActionTypes, Food } from 'models';
 import { SET_LIST } from 'utils/constants';
 
 const initialState: Food[] = [];

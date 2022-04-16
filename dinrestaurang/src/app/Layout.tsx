@@ -1,13 +1,12 @@
-import WelcomeComp from "components/WelcomeComp";
-import PhotosList from "containers/PhotosList";
-import Footer from "inc/Footer";
-import Header from "inc/Header";
-import React from "react";
-import { Container } from "styles";
+import WelcomeComp from 'components/WelcomeComp';
+import PhotosList from 'containers/PhotosList';
+import Footer from 'inc/Footer';
+import React from 'react';
+import { Container } from 'styles';
 
 const Layout: React.FC = () => (
   <Container>
-    <Header />
+    <p>hej</p>
     <main>
       <WelcomeComp />
       <PhotosList />

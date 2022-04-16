@@ -1,4 +1,4 @@
-import { ActionTypes } from 'typings';
+import { ActionTypes } from 'models';
 import { SET_ADD_FORM } from 'utils/constants';
 
 const initialState = {

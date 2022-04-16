@@ -1,8 +1,8 @@
 import { request } from 'api';
+import { Food } from 'models';
 import { toast } from 'react-toastify';
 import { Dispatch } from 'redux';
 import { setList, setLoading } from 'redux/actions';
-import { Food } from 'typings';
 
 export const getData = async (dispatch: Dispatch<any>): Promise<void> => {
   try {

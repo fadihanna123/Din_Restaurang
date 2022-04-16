@@ -13,5 +13,4 @@ export const listState = atom<Food[]>({
 
 export const errorState = atom<string>({
   key: "errorState",
-  default: "",
 });

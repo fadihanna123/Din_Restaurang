@@ -17,7 +17,7 @@ const whiteList = allowedURLs?.split(", ");
 
 const corsOptions = {
   origin: (origin: any, callback: any) => {
-    if (whiteList!.indexOf(origin) !== -1) {
+    if (whiteList?.indexOf(origin) !== -1) {
       callback(null, true);
     } else {
       callback(new Error("Not allowed by CORS"));
@@ -34,5 +34,5 @@ server.use(express.json({ limit: "1kb", type: "application/json" }));
 server.use(routes);
 server.use(errorHandler);
 
-const port: number = parseInt(<string>serverPort);
+const port: number = parseInt(serverPort as string, 10);
 server.listen(port, () => logger.debug(`Servern startar på port ${port}`));
