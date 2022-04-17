@@ -1,7 +1,7 @@
 import { editHandler, loadDeleteItem } from 'functions';
+import { Food, ListReducerTypes } from 'models';
 import { useDispatch, useSelector } from 'react-redux';
 import { Button } from 'styles/global';
-import { Food, ListReducerTypes } from 'typings';
 
 const FoodItem: React.FC<{
   item: Food;

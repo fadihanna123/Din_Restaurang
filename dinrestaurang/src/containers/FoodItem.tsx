@@ -2,8 +2,6 @@ import { Food } from 'models';
 import { Col, FoodImg, FoodTitle, MainTxt } from 'styles';
 
 const FoodItem: React.FC<{ item: Food }> = ({ item }: { item: Food }) => {
-  const FoodImgLink: string = require("../assets/" + item.image).default;
-
   return (
     <Col>
       <FoodImg
@@ -11,7 +9,7 @@ const FoodItem: React.FC<{ item: Food }> = ({ item }: { item: Food }) => {
         height="auto"
         maxWidth="100%"
         maxHeight="100%"
-        src={FoodImgLink}
+        src={`../assets/${item.image}`}
         alt={item.title}
         aria-label={item.title}
         loading="lazy"

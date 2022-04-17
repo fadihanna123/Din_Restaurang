@@ -1,8 +1,8 @@
 import { request } from 'api';
+import { AddFormReducerTypes, Food, ListReducerTypes } from 'models';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 import { setList } from 'redux/actions';
-import { AddFormReducerTypes, Food, ListReducerTypes } from 'typings';
 
 export const AddItem = async (): Promise<void> => {
   const addForm = useSelector(

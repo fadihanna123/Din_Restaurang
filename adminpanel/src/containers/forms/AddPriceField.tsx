@@ -1,7 +1,7 @@
 import { addTyper } from 'functions';
+import { AddFormReducerTypes } from 'models';
 import { useDispatch, useSelector } from 'react-redux';
 import { Input } from 'styles/global';
-import { AddFormReducerTypes } from 'typings';
 
 const AddPriceField: React.FC = () => {
   const addForm = useSelector(

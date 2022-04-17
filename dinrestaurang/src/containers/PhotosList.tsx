@@ -28,7 +28,8 @@ const PhotosList: React.FC = () => {
           <ErrorData>{err}</ErrorData>
         ) : !loading ? (
           list.length ? (
-            list.map((item: Food) => <FoodItem key={item._id} item={item} />)
+            // eslint-disable-next-line no-underscore-dangle
+            list.map((item: Food) => <FoodItem key={item.id} item={item} />)
           ) : (
             <ErrorData data-sal="zoom-out">
               Inga data. Var vänlig försök igen

@@ -1,0 +1,7 @@
+server/node_modules
+dinrestaurang/node_modules
+adminpanel/node_modules
+server/.eslintrc.js
+dinrestaurang/.eslintrc.js
+adminpanel/.eslintrc.js
+*.html

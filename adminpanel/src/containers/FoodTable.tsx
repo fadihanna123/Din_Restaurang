@@ -1,10 +1,10 @@
 import { getData } from 'functions';
+import { ListReducerTypes, LoadingReducerTypes, ViewReducerTypes } from 'models';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setView } from 'redux/actions';
 import { Button, Col, DataTable, MainTable, Row, TableHead } from 'styles/global';
 import { debounce } from 'ts-debounce';
-import { ListReducerTypes, LoadingReducerTypes, ViewReducerTypes } from 'typings';
 
 import AddComp from './Add';
 import EditComp from './Edit';
@@ -42,7 +42,7 @@ const FoodTable: React.FC = () => {
             <tbody>
               {!loading ? (
                 list.length ? (
-                  list.map((item) => <FoodItem key={item._id} item={item} />)
+                  list.map((item) => <FoodItem key={item.id} item={item} />)
                 ) : (
                   <tr>
                     <td colSpan={7}>Inga data. Var vänlig lägg till data!</td>
