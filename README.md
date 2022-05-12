@@ -80,6 +80,9 @@ yarn.lock <br />
 
 **Adminpanel** <br />
 src/ <br />
+src/api/ <br />
+src/api/index.ts <br />
+src/api/request.ts <br />
 src/app/ <br />
 src/app/index.ts <br />
 src/app/Layout.tsx <br />
@@ -95,14 +98,17 @@ src/functions/AddItem.ts <br />
 src/functions/EditItem.ts <br />
 src/functions/GetData.tsx <br />
 src/functions/index.ts <br />
-src/images/ <br />
-src/images/burgare.jpg <br />
-src/images/falafel.jpg <br />
-src/images/kebab.jpg <br />
-src/images/logo.jpg <br />
-src/images/pannbiff.jpg <br />
-src/images/pizza.jpg <br />
-src/images/sushi.jpg <br />
+src/hooks/ <br />
+src/hooks/index.ts <br />
+src/hooks/useEditItem.tsx <br />
+src/assets/ <br />
+src/assets/burgare.jpg <br />
+src/assets/falafel.jpg <br />
+src/assets/kebab.jpg <br />
+src/assets/logo.jpg <br />
+src/assets/pannbiff.jpg <br />
+src/assets/pizza.jpg <br />
+src/assets/sushi.jpg <br />
 src/inc/ <br />
 src/inc/Header.tsx <br />
 src/inc/Footer.tsx <br />
@@ -115,6 +121,7 @@ src/typings/ <br />
 src/typings/index.ts <br />
 src/App.tsx <br />
 src/index.tsx <br />
+src/react-app-env.d.ts <br />
 public/ <br />
 public/index.html <br />
 public/robots.txt <br />
@@ -128,6 +135,8 @@ public/favicon/favicon-32x32.png <br />
 public/favicon/favicon.ico <br />
 public/favicon/mstile-150x150.png <br />
 public/favicon/site.webmanifest <br />
+eslintrc.js <br />
+.env.example <br />
 .gitignore <br />
 README.md <br />
 package.json <br />
