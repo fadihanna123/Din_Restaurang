@@ -18,6 +18,9 @@ För att bygga projektet i statisk form och är redo för publicering.<br>
 ### 1.2 Mappstruktur
 
 src/ <br />
+src/api/ <br />
+src/api/index.ts <br />
+src/api/request.ts <br />
 src/app/ <br />
 src/app/index.ts <br />
 src/app/Layout.tsx <br />
