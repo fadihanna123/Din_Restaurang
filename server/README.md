@@ -24,6 +24,7 @@ yarn.lock <br />
 Du behöver skapa "restaurangdata" tabellen. <br />
 Du behöver skapa dessa kolumner i denna tabell :<br />
 **restaurangdata**<br />
+`id` Number, <br />
 `title` String, <br />
 `sorts` String, <br />
 `price` Number, <br />
@@ -32,7 +33,7 @@ Du behöver skapa dessa kolumner i denna tabell :<br />
 
 Du behöver redigera anslutningsuppgifter som finns i filen .env rad 13 i variablen DATABASE_URL från localhost till din egen.<br />
 **Exempel efter redigering:**<br />
-DATABASE_URL="mongodb://localhost:27017/xxx"
+DATABASE_URL="postgresql://local:123@localhost:5432/xxx"
 <br />
 
 **Programmeringsspråk som används:**<br />
