@@ -144,16 +144,18 @@ tsconfig.json <br />
 yarn.lock <br />
 
 ### 1.1.2 Backend:
-api/ <br />
-api/index.ts <br />
-api/routes.ts <br />
-models/ <br />
-models/index.ts <br />
-models/model.ts <br />
-typings/ <br />
-typings/index.ts <br />
+src/
+src/api/ <br />
+src/api/index.ts <br />
+src/api/routes.ts <br />
+src/models/ <br />
+src/models/index.ts <br />
+src/models/model.ts <br />
+src/typings/ <br />
+src/typings/index.ts <br />
 .gitignore <br />
-server.ts <br />
+src/server.ts <br />
+.eslintrc.js <br />
 package.json <br />
 README.md <br />
 tsconfig.json <br />
