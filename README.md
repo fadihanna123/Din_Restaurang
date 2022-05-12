@@ -7,76 +7,76 @@ Din restaurang erbjuder 5 maträtter och i adminpanel kan du administrera alla m
 ### 1.1.1 Frontend:
 
 **Din restaurang** <br />
-src/
-src/api/
-src/api/index.ts
-src/api/request.ts
-src/app/
-src/app/index.tsx
-src/app/Layout.tsx
-src/assets/
-src/assets/burgare.jpg
-src/assets/falfael.jpg
-src/assets/kebab.jpg
-src/assets/logo.jpg
-src/assets/pannbiff.jpg
-src/assets/pizza.jpg
-src/assets/sushi.jpg
-src/components
-src/components/index.ts
-src/components/WelcomeComp.tsx
-src/containers
-src/containers/index.ts
-src/containers/App.tsx
-src/containers/FoodItem.tsx
-src/containers/PhotosList.tsx
-src/functions/
-src/functions/getData.ts
-src/functions/index.ts
-src/inc/
-src/inc/Header.tsx
-src/inc/Footer.tsx
-src/inc/index.ts
-src/states/
-src/states/index.tsx
-src/styles/
-src/styles/foodItemStyles.ts
-src/styles/footerStyles.ts
-src/styles/global.ts
-src/styles/headerStyles.ts
-src/styles/index.ts
-src/styles/layoutStyles.ts
-src/styles/photoListStyles.ts
-src/styles/welcomeStyles.ts
-typings/
-typings/index.ts
-utils/
-utils/index.ts
-utils/envsVariables.ts
-src/index.tsx
-src/react-app-env.d.ts
-public/
-public/index.html
-public/robots.txt
-public/assets/
-public/assets/icons/
-public/assets/icons/favicon
-public/assets/icons/favicon/android-chrome-192x192.png
-public/assets/icons/favicon/android-chrome-512x512.png
-public/assets/icons/favicon/apple-touch-icon.png
-public/assets/icons/favicon/browserconfig.xml
-public/assets/icons/favicon/favicon-16x16.png
-public/assets/icons/favicon/favicon-32x32.png
-public/assets/icons/favicon/favicon.ico
-public/assets/icons/favicon/mstile-150x150.png
-public/assets/icons/favicon/site.webmanifest
-.env.example
-.gitignore
-.eslintrc.js
-README.md
-package.json
-tsconfig.json
-yarn.lock
+src/ <br />
+src/api/ <br />
+src/api/index.ts <br />
+src/api/request.ts <br />
+src/app/ <br />
+src/app/index.tsx <br />
+src/app/Layout.tsx <br />
+src/assets/ <br />
+src/assets/burgare.jpg <br />
+src/assets/falfael.jpg <br />
+src/assets/kebab.jpg <br />
+src/assets/logo.jpg <br />
+src/assets/pannbiff.jpg <br />
+src/assets/pizza.jpg <br />
+src/assets/sushi.jpg <br />
+src/components <br />
+src/components/index.ts <br />
+src/components/WelcomeComp.tsx <br />
+src/containers <br />
+src/containers/index.ts <br />
+src/containers/App.tsx <br />
+src/containers/FoodItem.tsx <br />
+src/containers/PhotosList.tsx <br />
+src/functions/ <br />
+src/functions/getData.ts <br />
+src/functions/index.ts <br />
+src/inc/ <br />
+src/inc/Header.tsx <br />
+src/inc/Footer.tsx <br />
+src/inc/index.ts <br />
+src/states/ <br />
+src/states/index.tsx <br />
+src/styles/ <br />
+src/styles/foodItemStyles.ts <br />
+src/styles/footerStyles.ts <br />
+src/styles/global.ts <br />
+src/styles/headerStyles.ts <br />
+src/styles/index.ts <br />
+src/styles/layoutStyles.ts <br />
+src/styles/photoListStyles.ts <br />
+src/styles/welcomeStyles.ts <br />
+typings/ <br />
+typings/index.ts <br />
+utils/ <br />
+utils/index.ts <br />
+utils/envsVariables.ts <br />
+src/index.tsx <br />
+src/react-app-env.d.ts <br />
+public/ <br />
+public/index.html <br />
+public/robots.txt <br />
+public/assets/ <br />
+public/assets/icons/ <br />
+public/assets/icons/favicon <br />
+public/assets/icons/favicon/android-chrome-192x192.png <br />
+public/assets/icons/favicon/android-chrome-512x512.png <br />
+public/assets/icons/favicon/apple-touch-icon.png <br />
+public/assets/icons/favicon/browserconfig.xml <br />
+public/assets/icons/favicon/favicon-16x16.png <br />
+public/assets/icons/favicon/favicon-32x32.png <br />
+public/assets/icons/favicon/favicon.ico <br />
+public/assets/icons/favicon/mstile-150x150.png <br />
+public/assets/icons/favicon/site.webmanifest <br />
+.env.example <br />
+.gitignore <br />
+.eslintrc.js <br />
+README.md <br />
+package.json <br />
+tsconfig.json <br />
+yarn.lock <br />
 
 **Adminpanel** <br />
 src/ <br />
