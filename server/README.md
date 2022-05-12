@@ -15,6 +15,7 @@ src/typings/ <br />
 src/typings/index.ts <br />
 .gitignore <br />
 src/server.ts <br />
+.eslintrc.js <br />
 package.json <br />
 README.md <br />
 tsconfig.json <br />
