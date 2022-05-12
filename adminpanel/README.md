@@ -66,6 +66,7 @@ public/favicon/favicon-32x32.png <br />
 public/favicon/favicon.ico <br />
 public/favicon/mstile-150x150.png <br />
 public/favicon/site.webmanifest <br />
+.env.example <br />
 .gitignore <br />
 README.md <br />
 package.json <br />
