@@ -80,6 +80,8 @@ public/assets/icons/favicon/favicon-32x32.png <br />
 public/assets/icons/favicon/favicon.ico <br />
 public/assets/icons/favicon/mstile-150x150.png <br />
 public/assets/icons/favicon/site.webmanifest <br />
+.env <br />
+.env.example <br />
 .gitignore <br />
 .eslintrc.js <br />
 README.md <br />
