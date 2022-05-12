@@ -153,8 +153,8 @@ src/models/index.ts <br />
 src/models/model.ts <br />
 src/typings/ <br />
 src/typings/index.ts <br />
-.gitignore <br />
 src/server.ts <br />
+.gitignore <br />
 .eslintrc.js <br />
 package.json <br />
 README.md <br />
