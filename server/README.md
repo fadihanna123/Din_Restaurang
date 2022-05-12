@@ -4,16 +4,17 @@ Via denna Rest webbtjänst kan man ha åtkomst till json data i själva webbsida
 HTTP-metoder som kan användas: GET, POST, DELETE, PUT.
 
 **Mappstruktur**<br />
-api/ <br />
-api/index.ts <br />
-api/routes.ts <br />
-models/ <br />
-models/index.ts <br />
-models/model.ts <br />
-typings/ <br />
-typings/index.ts <br />
+src/
+src/api/ <br />
+src/api/index.ts <br />
+src/api/routes.ts <br />
+src/models/ <br />
+src/models/index.ts <br />
+src/models/model.ts <br />
+src/typings/ <br />
+src/typings/index.ts <br />
 .gitignore <br />
-server.ts <br />
+src/server.ts <br />
 package.json <br />
 README.md <br />
 tsconfig.json <br />
