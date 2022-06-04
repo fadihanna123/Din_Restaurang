@@ -1,6 +1,6 @@
-import Layout from 'app/Layout';
-import axios from 'axios';
-import { apiKey, authorizationKey, backendURL } from 'utils/envs';
+import Layout from "app/Layout";
+import axios from "axios";
+import { apiKey, authorizationKey, backendURL } from "utils/envs";
 
 const globalHeader: string = "application/json";
 
