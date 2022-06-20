@@ -1,7 +1,10 @@
 {
   "name": "dinrestaurang_adminpanel",
-  "version": "0.1.6",
-  "author": "Fadi Hanna",
+  "version": "0.1.7",
+  "author": {
+    "name": "Fadi Hanna",
+    "email": "fhanna181@gmail.com"
+  },
   "license": "MIT",
   "dependencies": {
     "@types/node": "^17.0.24",
@@ -48,6 +51,10 @@
     "eslint-plugin-jsdoc": "^39.2.0",
     "eslint-plugin-prefer-arrow": "^1.2.3",
     "prettier": "^2.6.2",
-    "typescript": "^4.6.3"
+    "typescript": "^4.7.4"
+  },
+  "engines": {
+    "node": ">=14.17.0",
+    "npm": ">=6.0.0"
   }
 }

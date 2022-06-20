@@ -1,16 +1,16 @@
-import { Food } from 'models';
-import { atom } from 'recoil';
+import { Food } from "models";
+import { atom } from "recoil";
 
 export const loadingState = atom<boolean>({
-  key: "loadingState",
-  default: false,
+    key: "loadingState",
+    default: false,
 });
 
 export const listState = atom<Food[]>({
-  key: "listState",
-  default: [],
+    key: "listState",
+    default: [],
 });
 
 export const errorState = atom<string>({
-  key: "errorState",
+    key: "errorState",
 });
