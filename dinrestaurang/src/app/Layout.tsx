@@ -6,7 +6,6 @@ import { Container } from "styles";
 
 const Layout: React.FC = () => (
     <Container>
-        <p>hej</p>
         <main>
             <WelcomeComp />
             <PhotosList />

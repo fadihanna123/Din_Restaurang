@@ -28,7 +28,6 @@ const PhotosList: React.FC = () => {
                     <ErrorData>{err}</ErrorData>
                 ) : !loading ? (
                     list.length ? (
-                        // eslint-disable-next-line no-underscore-dangle
                         list.map((item: Food) => (
                             <FoodItem key={item.id} item={item} />
                         ))
