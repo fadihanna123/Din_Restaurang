@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
-import { space, typography } from "styled-system";
+import styled from '@emotion/styled';
+import { space, typography } from 'styled-system';
 
-export const MainPhotos = styled("section")(typography, space);
+export const MainPhotos = styled('section')(typography, space);

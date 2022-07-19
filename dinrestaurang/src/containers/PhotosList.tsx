@@ -1,47 +1,53 @@
-import { getData } from "functions";
-import { Food } from "models";
-import { useEffect } from "react";
-import { useRecoilState } from "recoil";
-import sal from "sal.js";
-import { errorState, listState, loadingState } from "states";
-import { ErrorData, Loading, MainPhotos, Row } from "styles";
-import { debounce } from "ts-debounce";
+import { getData } from 'functions';
+import { ErrorReducerTypes, Food, ListReducerTypes, LoadingReducerTypes } from 'models';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import sal from 'sal.js';
+import { ErrorData, Loading, MainPhotos, Row } from 'styles';
+import { debounce } from 'ts-debounce';
 
-import FoodItem from "./FoodItem";
+import FoodItem from './FoodItem';
 
 const PhotosList: React.FC = () => {
-    const [err, setError] = useRecoilState(errorState);
-    const [loading, setLoading] = useRecoilState(loadingState);
-    const [list, setList] = useRecoilState(listState);
+  const dispatch = useDispatch();
+  const err = useSelector(
+    (state: ErrorReducerTypes) => state.errorReducer
+  );
 
-    useEffect(() => {
-        sal();
+  const loading = useSelector(
+    (state: LoadingReducerTypes) => state.loadingReducer
+  );
 
-        debounce(getData(setLoading, setList, setError) as any, 1500);
-    }, [setList, setLoading, setError]);
+  const list = useSelector(
+    (state: ListReducerTypes) => state.listReducer
+  );
 
-    return (
-        <Row>
-            <br />
-            <MainPhotos fontSize={35} mt={80} fontStyle="italic">
-                {err ? (
-                    <ErrorData>{err}</ErrorData>
-                ) : !loading ? (
-                    list.length ? (
-                        list.map((item: Food) => (
-                            <FoodItem key={item.id} item={item} />
-                        ))
-                    ) : (
-                        <ErrorData data-sal="zoom-out">
-                            Inga data. Var vänlig försök igen
-                        </ErrorData>
-                    )
-                ) : (
-                    <Loading>Laddar...</Loading>
-                )}
-            </MainPhotos>
-        </Row>
-    );
+  useEffect(() => {
+    sal();
+
+    debounce(getData(dispatch) as any, 1500);
+  }, []);
+
+  return (
+    <Row>
+      <br />
+      <MainPhotos fontSize={35} mt={80} fontStyle='italic'>
+        {err ? (
+          <ErrorData>{err}</ErrorData>
+        ) : !loading ? (
+          list.length ? (
+            list.map((item: Food) => (
+              <FoodItem key={item.id} item={item} />
+            ))
+          ) : (
+            <ErrorData>Inga data. Var vänlig försök igen</ErrorData>
+          )
+        ) : (
+          <Loading>Laddar...</Loading>
+        )}
+      </MainPhotos>
+    </Row>
+  );
 };
 
 export default PhotosList;

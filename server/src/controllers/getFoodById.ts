@@ -2,17 +2,18 @@ import { prisma } from 'db';
 import { Request, Response } from 'express';
 import { logger } from 'tools';
 import { apiKey, authorizationKey } from 'utils';
+import { storeError } from 'utils/storeError';
 
 export const getFoodById = async (
   req: Request,
   res: Response
 ): Promise<void> => {
   if (
-    req.get("apiKey") === apiKey &&
-    req.get("Authorization") === authorizationKey
+    req.get('apiKey') === apiKey &&
+    req.get('Authorization') === authorizationKey
   ) {
     try {
-      const id: number = Number(req.params.id);
+      const id = Number(req.params.id);
       const getFoodById = await prisma.food.findUnique({
         where: {
           id,
@@ -21,11 +22,23 @@ export const getFoodById = async (
 
       res.json(getFoodById);
     } catch (err) {
+      storeError(
+        (err as Error).message,
+        'GET',
+        `/food/${req.params.id}`
+      );
+
       logger.error((err as Error).message);
     }
   } else {
-    logger.error("No headers provided on GET /food/:id!");
+    storeError(
+      'No headers provided!',
+      'GET',
+      `/food/${req.params.id}`
+    );
 
-    res.json({ message: "FORBIDDEN" });
+    logger.error('No headers provided on GET /food/:id!');
+
+    res.json({ message: 'FORBIDDEN' });
   }
 };

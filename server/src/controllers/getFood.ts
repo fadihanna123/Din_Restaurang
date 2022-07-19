@@ -2,21 +2,27 @@ import { prisma } from 'db';
 import { Request, Response } from 'express';
 import { logger } from 'tools';
 import { apiKey, authorizationKey } from 'utils';
+import { storeError } from 'utils/storeError';
 
-export const getFood = async (req: Request, res: Response): Promise<void> => {
+export const getFood = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
   if (
-    req.get("apiKey") === apiKey &&
-    req.get("Authorization") === authorizationKey
+    req.get('apiKey') === apiKey &&
+    req.get('Authorization') === authorizationKey
   ) {
     try {
       const getFood = await prisma.food.findMany();
       res.json(getFood);
     } catch (err) {
+      storeError((err as Error).message, 'GET', '/food');
       logger.error((err as Error).message);
     }
   } else {
-    logger.error("No headers provided on GET/food!");
+    storeError('No headers provided!', 'GET', '/food');
+    logger.error('No headers provided on GET/food!');
 
-    res.json({ message: "FORBIDDEN" });
+    res.json({ message: 'FORBIDDEN' });
   }
 };

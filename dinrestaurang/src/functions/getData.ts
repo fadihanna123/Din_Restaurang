@@ -1,18 +1,15 @@
-import { Food } from "models";
+import { Dispatch } from 'redux';
+import { setError, setList, setLoading } from 'redux/actions';
 
-import { getFoodData } from "./api";
+import { getFoodData } from './api';
 
 export const getData = async (
-    setLoading: (loading: boolean) => void,
-    setList: (list: Food[]) => void,
-    setError: (error: string) => void
+  dispatch: Dispatch<any>
 ): Promise<void> => {
-    if (setLoading) {
-        setLoading(true);
-    }
+  dispatch(setLoading(true));
 
-    getFoodData()
-        .then((data: any) => setList && setList(data))
-        .catch((err: Error) => setError && setError(err.message))
-        .finally(() => setLoading && setLoading(false));
+  getFoodData()
+    .then((data: any) => dispatch(setList(data)))
+    .catch((err: Error) => dispatch(setError(err.message)))
+    .finally(() => dispatch(setLoading(false)));
 };
