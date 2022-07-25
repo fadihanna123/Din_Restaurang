@@ -4,10 +4,8 @@ import { logger } from 'tools';
 import { apiKey, authorizationKey } from 'utils';
 import { storeError } from 'utils/storeError';
 
-export const getFood = async (
-  req: Request,
-  res: Response
-): Promise<void> => {
+export const getFood = async (req: Request, res: Response) => {
+  console.log(req.headers.authorization);
   if (
     req.get('apiKey') === apiKey &&
     req.get('Authorization') === authorizationKey

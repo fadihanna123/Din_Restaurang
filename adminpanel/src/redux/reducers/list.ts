@@ -1,17 +1,17 @@
-import { ActionTypes, Food } from "models";
-import { SET_LIST } from "utils/constants";
+import { ActionTypes, Food } from 'models';
+import { SET_LIST } from 'utils/constants';
 
 const initialState: Food[] = [];
 
 export const listReducer = (
-    state = initialState,
-    { type, payload }: ActionTypes
+  state = initialState,
+  { type, payload }: ActionTypes
 ) => {
-    switch (type) {
-        case SET_LIST:
-            return payload;
+  switch (type) {
+    case SET_LIST:
+      return payload;
 
-        default:
-            return state;
-    }
+    default:
+      return state;
+  }
 };

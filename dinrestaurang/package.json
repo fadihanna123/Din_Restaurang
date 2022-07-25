@@ -1,6 +1,6 @@
 {
   "name": "dinrestaurang",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "private": "true",
   "author": {
     "name": "Fadi Hanna",
@@ -18,7 +18,7 @@
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.2",
     "react-scripts": "5.0.1",
-    "react-toastify": "^9.0.5",
+    "react-toastify": "^9.0.7",
     "redux": "^4.2.0",
     "redux-devtools-extension": "^2.13.9",
     "sal.js": "^0.8.5",

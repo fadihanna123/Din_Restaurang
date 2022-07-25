@@ -15,7 +15,7 @@ Happy linting! 💖
 module.exports = {
   env: {
     browser: true,
-    es6: true,
+    es2022: true,
     node: true,
   },
   root: true,
@@ -135,7 +135,6 @@ module.exports = {
     'no-bitwise': 'off',
     'no-caller': 'error',
     'no-cond-assign': 'error',
-    'no-console': 'error',
     'no-debugger': 'error',
     'no-empty': 'error',
     'no-empty-function': [

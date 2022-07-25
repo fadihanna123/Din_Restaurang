@@ -3,6 +3,7 @@ import PhotosList from 'containers/PhotosList';
 import Footer from 'inc/Footer';
 import Header from 'inc/Header';
 import React from 'react';
+import { ToastContainer } from 'react-toastify';
 import { Container } from 'styles';
 
 const Layout: React.FC = () => (
@@ -13,6 +14,7 @@ const Layout: React.FC = () => (
       <PhotosList />
     </main>
     <Footer />
+    <ToastContainer />
   </Container>
 );
 
