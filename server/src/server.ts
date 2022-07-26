@@ -14,7 +14,7 @@ import { allowedURLs, crtFile, errorHandler, keyFile, serverPort } from 'utils';
 const server = express();
 
 // Settings
-const limiter = rateLimit({ windowMs: 3600000, max: 55 });
+const limiter = rateLimit({ windowMs: 3600000, max: 429 });
 
 const whiteList = allowedURLs?.split(', ');
 
