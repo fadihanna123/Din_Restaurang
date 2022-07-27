@@ -5,30 +5,30 @@ const { combine, printf, prettyPrint, timestamp } = format;
 
 const myFormat = printf(({ level, message, label, timestamp }) => {
   timestamp = DateTime.fromJSDate(new Date(timestamp)).toFormat(
-    "yyyy-MM-dd HH:mm"
+    'yyyy-MM-dd HH:mm'
   );
 
   return `{\n 'time': '${timestamp}',\n 'label': ['${label}'],\n 'level': '${level}',\n 'message': '${message}'\n}`;
 });
 
 export const logger = winston.createLogger({
-  level: "debug",
+  level: 'debug',
   format: winston.format.json(),
 
   transports: [
     new winston.transports.File({
-      filename: "src/logs/error.log",
+      filename: 'src/logs/error.log',
       format: combine(prettyPrint(), timestamp(), myFormat),
-      level: "error",
+      level: 'error',
     }),
     new winston.transports.File({
-      filename: "src/logs/debug.log",
+      filename: 'src/logs/debug.log',
       format: combine(prettyPrint(), timestamp(), myFormat),
     }),
   ],
 });
 
-if (process.env.NODE_ENV !== "production") {
+if (process.env.NODE_ENV !== 'production') {
   logger.add(
     new winston.transports.Console({
       format: winston.format.simple(),
