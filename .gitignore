@@ -2,4 +2,4 @@ server/.env
 server/logs/
 dinrestaurang/.env
 adminpanel/.env
-.vscode
+.vscode/launch.json
