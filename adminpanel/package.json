@@ -1,8 +1,13 @@
 {
   "name": "dinrestaurang_adminpanel",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "private": "true",
   "lastUpgrade": "20220801",
+  "bugs": "https://github.com/fadihanna123/Din_Restaurang/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fadihanna123/Din_Restaurang/tree/master/adminpanel"
+  },
   "author": {
     "name": "Fadi Hanna",
     "email": "fhanna181@gmail.com"

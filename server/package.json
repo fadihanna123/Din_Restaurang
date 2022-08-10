@@ -1,7 +1,12 @@
 {
   "name": "dinrestaurang",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "lastUpgrade": "20220801",
+  "bugs": "https://github.com/fadihanna123/Din_Restaurang/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fadihanna123/Din_Restaurang/tree/master/server"
+  },
   "license": "MIT",
   "private": "true",
   "author": {
