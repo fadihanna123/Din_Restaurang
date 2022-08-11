@@ -3,4 +3,3 @@ server/logs/
 dinrestaurang/.env
 adminpanel/.env
 .vscode/launch.json
-.vscode/extensions.json
