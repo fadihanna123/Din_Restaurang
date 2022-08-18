@@ -13,5 +13,6 @@
     "**/dinrestaurang/node_modules/**": true,
     "**/adminpanel/node_modules/**": true
   },
-  "git.ignoreLimitWarning": true
+  "git.ignoreLimitWarning": true,
+  "terminal.integrated.defaultProfile.windows": "Git Bash"
 }
