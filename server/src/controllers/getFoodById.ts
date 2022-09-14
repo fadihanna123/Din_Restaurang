@@ -4,6 +4,19 @@ import { logger } from 'tools';
 import { apiKey, authorizationKey } from 'utils';
 import { storeError } from 'utils/storeError';
 
+/**
+ * @author Fadi Hanna <fhanna181@gmail.com>
+ */
+
+/**
+ * Get a food item by id.
+ *
+ * @route GET /food/:id
+ * @param req
+ * @param res
+ * @returns Promise
+ */
+
 export const getFoodById = async (
   req: Request,
   res: Response
@@ -22,20 +35,12 @@ export const getFoodById = async (
 
       res.json(getFoodById);
     } catch (err) {
-      storeError(
-        (err as Error).message,
-        'GET',
-        `/food/${req.params.id}`
-      );
+      storeError((err as Error).message, 'GET', `/food/${req.params.id}`);
 
       logger.error((err as Error).message);
     }
   } else {
-    storeError(
-      'No headers provided!',
-      'GET',
-      `/food/${req.params.id}`
-    );
+    storeError('No headers provided!', 'GET', `/food/${req.params.id}`);
 
     logger.error('No headers provided on GET /food/:id!');
 

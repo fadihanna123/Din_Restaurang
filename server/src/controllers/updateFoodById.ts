@@ -5,6 +5,19 @@ import { apiKey, authorizationKey } from 'utils';
 import { storeError } from 'utils/storeError';
 import { storeLog } from 'utils/storeLog';
 
+/**
+ * @author Fadi Hanna <fhanna181@gmail.com>
+ */
+
+/**
+ * Update a food item by id.
+ *
+ * @route PUT /food/:id
+ * @param req - Request
+ * @param res - Response
+ * @returns Promise
+ */
+
 export const updateFoodById = async (
   req: Request,
   res: Response
@@ -20,20 +33,12 @@ export const updateFoodById = async (
       storeLog('Changed', 'PUT', `/food/${id}`);
       res.send({ message: 'Changed' });
     } catch (err) {
-      storeError(
-        (err as Error).message,
-        'PUT',
-        `/food/${req.params.id}`
-      );
+      storeError((err as Error).message, 'PUT', `/food/${req.params.id}`);
 
       logger.error((err as Error).message);
     }
   } else {
-    storeError(
-      'No headers provided!',
-      'PUT',
-      `/food/${req.params.id}`
-    );
+    storeError('No headers provided!', 'PUT', `/food/${req.params.id}`);
 
     logger.error('No headers provided on PUT /food/:id!');
 

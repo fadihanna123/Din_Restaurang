@@ -4,6 +4,17 @@ import { setError, setList, setLoading } from 'redux/actions';
 
 import { getFoodData } from './api';
 
+/**
+ * @author Fadi Hanna <fhanna181@gmail.com>
+ */
+
+/**
+ * Get all food items.
+ *
+ * @param dispatch - Dispatch
+ * @returns Promise
+ */
+
 export const getData = async (
   dispatch: Dispatch<any>
 ): Promise<void> => {

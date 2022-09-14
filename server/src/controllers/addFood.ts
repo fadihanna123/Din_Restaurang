@@ -4,10 +4,20 @@ import { logger } from 'tools';
 import { apiKey, authorizationKey } from 'utils';
 import { storeError } from 'utils/storeError';
 
-export const addFood = async (
-  req: Request,
-  res: Response
-): Promise<void> => {
+/**
+ * @author Fadi Hanna <fhanna181@gmail.com>
+ */
+
+/**
+ * Add a food item.
+ *
+ * @route POST /food/add
+ * @param req - Request
+ * @param res - Response
+ * @returns Promise.
+ */
+
+export const addFood = async (req: Request, res: Response): Promise<void> => {
   if (
     req.get('apiKey') === apiKey &&
     req.get('Authorization') === authorizationKey

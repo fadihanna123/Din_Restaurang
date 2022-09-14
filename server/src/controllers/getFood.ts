@@ -4,6 +4,19 @@ import { logger } from 'tools';
 import { apiKey, authorizationKey } from 'utils';
 import { storeError } from 'utils/storeError';
 
+/**
+ * @author Fadi Hanna <fhanna181@gmail.com>
+ */
+
+/**
+ * Get all food items.
+ *
+ * @route GET /food
+ * @param req - Request
+ * @param res - Response
+ * @returns Promise
+ */
+
 export const getFood = async (req: Request, res: Response) => {
   console.log(req.headers.authorization);
   if (

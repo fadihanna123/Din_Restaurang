@@ -5,6 +5,19 @@ import { apiKey, authorizationKey } from 'utils';
 import { storeError } from 'utils/storeError';
 import { storeLog } from 'utils/storeLog';
 
+/**
+ * @author Fadi Hanna <fhanna181@gmail.com>
+ */
+
+/**
+ * Delete a food item.
+ *
+ * @route DELETE /food/:id
+ * @param req - Request
+ * @param res - Response
+ * @returns Promise
+ */
+
 export const deleteFoodById = async (
   req: Request,
   res: Response
@@ -21,20 +34,12 @@ export const deleteFoodById = async (
 
       res.send({ message: 'Deleted' });
     } catch (err) {
-      storeError(
-        (err as Error).message,
-        'DELETE',
-        `/food/${req.params.id}`
-      );
+      storeError((err as Error).message, 'DELETE', `/food/${req.params.id}`);
 
       logger.error((err as Error).message);
     }
   } else {
-    storeError(
-      'No headers provided!',
-      'DELETE',
-      `/food/${req.params.id}`
-    );
+    storeError('No headers provided!', 'DELETE', `/food/${req.params.id}`);
 
     logger.error('No headers provided on DELETE /food/:id!');
 

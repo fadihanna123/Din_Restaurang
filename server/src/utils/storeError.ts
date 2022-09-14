@@ -1,6 +1,19 @@
 import { prisma } from 'db';
 import { DateTime } from 'luxon';
 
+/**
+ * @author Fadi Hanna <fhanna181@gmail.com>
+ */
+
+/**
+ * Store errors in the database.
+ *
+ * @param message - String
+ * @param method - String
+ * @param located - String
+ * @returns Promise
+ */
+
 export const storeError = async (
   message: string,
   method: string,

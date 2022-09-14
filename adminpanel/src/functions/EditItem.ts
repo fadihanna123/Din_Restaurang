@@ -4,16 +4,22 @@ import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 import { setList, setView } from 'redux/actions';
 
+/**
+ * @author Fadi Hanna <fhanna181@gmail.com>
+ */
+
+/**
+ * Edit a food item.
+ *
+ * @returns Promise
+ */
+
 export const EditItem = async (): Promise<void> => {
-  const getId = useSelector(
-    (state: GetIdReducerTypes) => state.getIdReducer
-  );
+  const getId = useSelector((state: GetIdReducerTypes) => state.getIdReducer);
   const editForm = useSelector(
     (state: EditFormReducerTypes) => state.editFormReducer
   );
-  const list = useSelector(
-    (state: ListReducerTypes) => state.listReducer
-  );
+  const list = useSelector((state: ListReducerTypes) => state.listReducer);
 
   const dispatch = useDispatch();
 

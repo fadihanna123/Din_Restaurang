@@ -4,6 +4,19 @@ import { toast } from 'react-toastify';
 import { Dispatch } from 'redux';
 import { setList, setLoading } from 'redux/actions';
 
+/**
+ * @author Fadi Hanna <fhanna181@gmail.com>
+ */
+
+/**
+ * Delete a food item.
+ *
+ * @param id - String
+ * @param list - Food list
+ * @param dispatch - Dispatch
+ * @returns Promise
+ */
+
 export const DeleteItem = async (
   id: string,
   list: Food[],
