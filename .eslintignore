@@ -5,3 +5,4 @@ server/.eslintrc.js
 dinrestaurang/.eslintrc.js
 adminpanel/.eslintrc.js
 *.html
+server/src/tools/docs.ts
