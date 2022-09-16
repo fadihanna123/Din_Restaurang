@@ -1,6 +1,6 @@
 {
   "name": "dinrestaurang",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "lastUpgrade": "20220801",
   "bugs": "https://github.com/fadihanna123/Din_Restaurang/issues",
   "repository": {
@@ -14,7 +14,8 @@
     "email": "fhanna181@gmail.com"
   },
   "scripts": {
-    "start": "apidoc -i src/ -o docs/ && prisma db push && prisma db pull && prisma generate && ts-node-dev -r tsconfig-paths/register src/server"
+    "start": "pnpm dbDocs && apidoc -i src/ -o docs/ && prisma db push && prisma db pull && prisma generate && ts-node-dev -r tsconfig-paths/register src/server",
+    "dbDocs": "npx prisma generate"
   },
   "prisma": {
     "schema": "src/prisma/schema.prisma"
@@ -51,6 +52,7 @@
     "node-cron": "^3.0.2",
     "prettier": "^2.7.1",
     "prisma": "^4.3.1",
+    "prisma-docs-generator": "^0.5.0",
     "typescript": "^4.8.2"
   },
   "engines": {
