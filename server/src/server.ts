@@ -9,8 +9,10 @@ import rateLimit from 'express-rate-limit';
 import fs from 'fs';
 import helmet from 'helmet';
 import https from 'https';
+import ip from 'ip';
 import morgan from 'morgan';
-import { allowedURLs, crtFile, errorHandler, keyFile, serverPort } from 'utils';
+import { logger } from 'tools';
+import { allowedURLs, crtFile, errorHandler, keyFile, serverPort, storeLog } from 'utils';
 
 const server = express();
 
@@ -34,12 +36,29 @@ const httpsOptions = {
   cert: fs.readFileSync(crtFile as string),
 };
 
+server.use((req, res, next) => {
+  const ipAddress = ip.address();
+
+  logger.info(`Method: ${req.method}, URL: ${req.url}, IP: ${ipAddress}`);
+
+  console.log(`Method: ${req.method}, URL: ${req.url}, IP: ${ipAddress}`);
+
+  storeLog(
+    `Method: ${req.method}, URL: ${req.url}, IP: ${ipAddress}`,
+    req.method,
+    req.url
+  );
+
+  next();
+});
+
 server.use(morgan('dev'));
 server.use(limiter);
 server.use(helmet());
 server.use(cors(corsOptions));
 server.use(express.json({ limit: '1kb', type: 'application/json' }));
 server.use(routes);
+server.use((_, res) => res.send('This route does not exist!'));
 server.use(errorHandler);
 
 export const port: number = parseInt(serverPort as string, 10);
