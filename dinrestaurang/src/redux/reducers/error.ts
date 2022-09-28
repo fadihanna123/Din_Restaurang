@@ -1,5 +1,5 @@
-import { ActionTypes } from 'models';
-import { SET_ERROR } from 'utils/constants';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { RootState } from 'redux/app';
 
 /**
  * @author Fadi Hanna <fhanna181@gmail.com>
@@ -7,23 +7,16 @@ import { SET_ERROR } from 'utils/constants';
 
 const initialState: string = '';
 
-/**
- * Error reducer.
- *
- * @param state - String
- * @param Actiontypes
- * @returns String | void
- */
+export const errorSlice = createSlice({
+  name: 'error',
+  initialState,
+  reducers: {
+    setError: (state, action: PayloadAction<string>) =>
+      (state = action.payload),
+  },
+});
 
-export const errorReducer = (
-  state = initialState,
-  { type, payload }: ActionTypes
-) => {
-  switch (type) {
-    case SET_ERROR:
-      return payload;
+export const { setError } = errorSlice.actions;
 
-    default:
-      return state;
-  }
-};
+export default errorSlice.reducer;
+export const getError = (state: RootState) => state.error;

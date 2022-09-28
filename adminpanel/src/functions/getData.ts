@@ -2,7 +2,7 @@ import { request } from 'api';
 import { Food } from 'models';
 import { toast } from 'react-toastify';
 import { Dispatch } from 'redux';
-import { setList, setLoading } from 'redux/actions';
+import { setList, setLoading } from 'redux/reducers';
 
 /**
  * @author Fadi Hanna <fhanna181@gmail.com>

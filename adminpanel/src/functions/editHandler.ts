@@ -1,6 +1,6 @@
 import { Food } from 'models';
 import { Dispatch } from 'redux';
-import { setId, setView } from 'redux/actions';
+import { setId, setView } from 'redux/reducers';
 
 /**
  * @author Fadi Hanna <fhanna181@gmail.com>

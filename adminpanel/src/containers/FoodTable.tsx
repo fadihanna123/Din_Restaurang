@@ -1,8 +1,7 @@
 import { getData } from 'functions';
-import { ListReducerTypes, LoadingReducerTypes, ViewReducerTypes } from 'models';
 import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { setView } from 'redux/actions';
+import { useAppDispatch, useAppSelector } from 'redux/app/hooks';
+import { getList, getLoading, getView, setView } from 'redux/reducers';
 import { Button, Col, DataTable, MainTable, Row, TableHead } from 'styles/global';
 import { debounce } from 'ts-debounce';
 
@@ -11,17 +10,11 @@ import EditComp from './Edit';
 import FoodItem from './FoodItem';
 
 const FoodTable: React.FC = () => {
-  const loading = useSelector(
-    (state: LoadingReducerTypes) => state.loadingReducer
-  );
-  const list = useSelector(
-    (state: ListReducerTypes) => state.listReducer
-  );
-  const view = useSelector(
-    (state: ViewReducerTypes) => state.viewReducer
-  );
+  const loading = useAppSelector(getLoading);
+  const list = useAppSelector(getList);
+  const view = useAppSelector(getView);
 
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     debounce(getData(dispatch) as any, 1500);
@@ -46,14 +39,10 @@ const FoodTable: React.FC = () => {
             <tbody>
               {!loading ? (
                 list.length ? (
-                  list.map((item) => (
-                    <FoodItem key={item.id} item={item} />
-                  ))
+                  list.map((item) => <FoodItem key={item.id} item={item} />)
                 ) : (
                   <tr>
-                    <td colSpan={7}>
-                      Inga data. Var vänlig lägg till data!
-                    </td>
+                    <td colSpan={7}>Inga data. Var vänlig lägg till data!</td>
                   </tr>
                 )
               ) : (

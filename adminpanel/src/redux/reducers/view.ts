@@ -1,5 +1,7 @@
-import { ActionTypes } from 'models';
-import { SET_VIEW } from 'utils/constants';
+import { createSlice } from '@reduxjs/toolkit';
+import { RootState } from 'redux/app';
+
+import type { PayloadAction } from '@reduxjs/toolkit';
 
 /**
  * @author Fadi Hanna <fhanna181@gmail.com>
@@ -7,23 +9,15 @@ import { SET_VIEW } from 'utils/constants';
 
 const initialState: string = '';
 
-/**
- * View reducer.
- *
- * @param state - String
- * @param Actiontypes
- * @returns String | void
- */
+export const viewSlice = createSlice({
+  name: 'view',
+  initialState,
+  reducers: {
+    setView: (state, action: PayloadAction<string>) => (state = action.payload),
+  },
+});
 
-export const viewReducer = (
-  state = initialState,
-  { type, payload }: ActionTypes
-) => {
-  switch (type) {
-    case SET_VIEW:
-      return payload;
+export const { setView } = viewSlice.actions;
 
-    default:
-      return state;
-  }
-};
+export default viewSlice.reducer;
+export const getView = (state: RootState) => state.view;

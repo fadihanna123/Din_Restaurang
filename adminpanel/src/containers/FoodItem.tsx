@@ -1,16 +1,15 @@
 import { editHandler, loadDeleteItem } from 'functions';
-import { Food, ListReducerTypes } from 'models';
-import { useDispatch, useSelector } from 'react-redux';
+import { Food } from 'models';
+import { useAppDispatch, useAppSelector } from 'redux/app/hooks';
+import { getList } from 'redux/reducers';
 import { Button } from 'styles/global';
 
 const FoodItem: React.FC<{
   item: Food;
 }> = ({ item }: { item: Food }) => {
-  const list = useSelector(
-    (state: ListReducerTypes) => state.listReducer
-  );
+  const list = useAppSelector(getList);
 
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   return (
     <tr>
@@ -19,9 +18,7 @@ const FoodItem: React.FC<{
       <td>{item.price} kr </td>
       <td>{item.included}</td>
       <td>
-        <Button onClick={() => editHandler(item, dispatch)}>
-          Ändra
-        </Button>
+        <Button onClick={() => editHandler(item, dispatch)}>Ändra</Button>
         <Button onClick={() => loadDeleteItem(item, list, dispatch)}>
           Radera
         </Button>

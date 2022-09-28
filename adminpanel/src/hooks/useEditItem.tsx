@@ -1,17 +1,12 @@
-import { GetIdReducerTypes, ListReducerTypes } from 'models';
 import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { setEditForm } from 'redux/actions';
+import { useAppDispatch, useAppSelector } from 'redux/app/hooks';
+import { getIdState, getList, setEditForm } from 'redux/reducers';
 
 export const useEditItem = () => {
-  const list = useSelector(
-    (state: ListReducerTypes) => state.listReducer
-  );
-  const getId = useSelector(
-    (state: GetIdReducerTypes) => state.getIdReducer
-  );
+  const list = useAppSelector(getList);
+  const getId = useAppSelector(getIdState);
 
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     const item = list.find((item) => item.id === getId);

@@ -1,11 +1,14 @@
-import { ActionTypes } from 'models';
-import { SET_EDIT_FORM } from 'utils/constants';
+import { createSlice } from '@reduxjs/toolkit';
+import { IEditForm } from 'models';
+import { RootState } from 'redux/app';
+
+import type { PayloadAction } from '@reduxjs/toolkit';
 
 /**
  * @author Fadi Hanna <fhanna181@gmail.com>
  */
 
-const initialState = {
+const initialState: IEditForm = {
   id: '',
   title: '',
   sorts: '',
@@ -14,23 +17,16 @@ const initialState = {
   included: '',
 };
 
-/**
- * Edit-form reducer.
- *
- * @param state - Edit-form values
- * @param Actiontypes
- * @returns Edit-form object
- */
+export const editFormSlice = createSlice({
+  name: 'editForm',
+  initialState,
+  reducers: {
+    setEditForm: (state, action: PayloadAction<IEditForm>) =>
+      (state = action.payload),
+  },
+});
 
-export const editFormReducer = (
-  state = initialState,
-  { type, payload }: ActionTypes
-) => {
-  switch (type) {
-    case SET_EDIT_FORM:
-      return payload;
+export const { setEditForm } = editFormSlice.actions;
 
-    default:
-      return state;
-  }
-};
+export default editFormSlice.reducer;
+export const getEditForm = (state: RootState) => state.editForm;

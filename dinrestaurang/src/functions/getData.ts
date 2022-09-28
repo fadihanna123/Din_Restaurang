@@ -1,6 +1,6 @@
 import { toast } from 'react-toastify';
 import { Dispatch } from 'redux';
-import { setError, setList, setLoading } from 'redux/actions';
+import { setError, setList, setLoading } from 'redux/reducers';
 
 import { getFoodData } from './api';
 
@@ -15,9 +15,7 @@ import { getFoodData } from './api';
  * @returns Promise
  */
 
-export const getData = async (
-  dispatch: Dispatch<any>
-): Promise<void> => {
+export const getData = async (dispatch: Dispatch<any>): Promise<void> => {
   dispatch(setLoading(true));
 
   getFoodData()

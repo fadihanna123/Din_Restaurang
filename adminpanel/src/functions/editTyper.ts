@@ -1,6 +1,6 @@
 import { IEditForm } from 'models';
 import { Dispatch } from 'redux';
-import { setEditForm } from 'redux/actions';
+import { setEditForm } from 'redux/reducers';
 
 /**
  * @author Fadi Hanna <fhanna181@gmail.com>

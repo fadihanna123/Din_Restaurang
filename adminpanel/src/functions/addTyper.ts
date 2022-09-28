@@ -1,6 +1,6 @@
 import { AddForm } from 'models';
 import { Dispatch } from 'redux';
-import { setAddForm } from 'redux/actions';
+import { setAddForm } from 'redux/reducers';
 
 /**
  * @author Fadi Hanna <fhanna181@gmail.com>

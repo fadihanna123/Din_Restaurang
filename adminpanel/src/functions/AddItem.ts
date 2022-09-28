@@ -1,8 +1,8 @@
 import { request } from 'api';
-import { AddFormReducerTypes, Food, ListReducerTypes } from 'models';
+import { Food } from 'models';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
-import { setList } from 'redux/actions';
+import { getAddForm, getList, setList } from 'redux/reducers';
 
 /**
  * @author Fadi Hanna <fhanna181@gmail.com>
@@ -15,10 +15,8 @@ import { setList } from 'redux/actions';
  */
 
 export const AddItem = async (): Promise<void> => {
-  const addForm = useSelector(
-    (state: AddFormReducerTypes) => state.addFormReducer
-  );
-  const list = useSelector((state: ListReducerTypes) => state.listReducer);
+  const addForm = useSelector(getAddForm);
+  const list = useSelector(getList);
 
   const dispatch = useDispatch();
 

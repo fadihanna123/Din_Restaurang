@@ -1,11 +1,14 @@
-import { ActionTypes } from 'models';
-import { SET_ADD_FORM } from 'utils/constants';
+import { createSlice } from '@reduxjs/toolkit';
+import { AddForm } from 'models';
+import { RootState } from 'redux/app';
+
+import type { PayloadAction } from '@reduxjs/toolkit';
 
 /**
  * @author Fadi Hanna <fhanna181@gmail.com>
  */
 
-const initialState = {
+const initialState: AddForm = {
   title: '',
   sorts: '',
   price: null,
@@ -13,23 +16,16 @@ const initialState = {
   included: '',
 };
 
-/**
- * Add form reducer.
- *
- * @param state - Add-form values
- * @param Actiontypes
- * @returns Add-Form object
- */
+export const addFormSlice = createSlice({
+  name: 'addForm',
+  initialState,
+  reducers: {
+    setAddForm: (state, action: PayloadAction<AddForm>) =>
+      (state = action.payload),
+  },
+});
 
-export const addFormReducer = (
-  state = initialState,
-  { type, payload }: ActionTypes
-) => {
-  switch (type) {
-    case SET_ADD_FORM:
-      return payload;
+export const { setAddForm } = addFormSlice.actions;
 
-    default:
-      return state;
-  }
-};
+export default addFormSlice.reducer;
+export const getAddForm = (state: RootState) => state.addForm;

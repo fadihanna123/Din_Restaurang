@@ -1,26 +1,20 @@
+import FoodItem from 'components/FoodItem';
 import { getData } from 'functions';
-import { ErrorReducerTypes, Food, ListReducerTypes, LoadingReducerTypes } from 'models';
+import { Food } from 'models';
 import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useAppDispatch, useAppSelector } from 'redux/app';
+import { getError, getList, getLoading } from 'redux/reducers';
 import sal from 'sal.js';
 import { ErrorData, Loading, MainPhotos, Row } from 'styles';
 import { debounce } from 'ts-debounce';
 
-import FoodItem from './FoodItem';
-
 const PhotosList: React.FC = () => {
-  const dispatch = useDispatch();
-  const err = useSelector(
-    (state: ErrorReducerTypes) => state.errorReducer
-  );
+  const dispatch = useAppDispatch();
+  const err = useAppSelector(getError);
 
-  const loading = useSelector(
-    (state: LoadingReducerTypes) => state.loadingReducer
-  );
+  const loading = useAppSelector(getLoading);
 
-  const list = useSelector(
-    (state: ListReducerTypes) => state.listReducer
-  );
+  const list = useAppSelector(getList);
 
   useEffect(() => {
     sal();
@@ -36,9 +30,7 @@ const PhotosList: React.FC = () => {
           <ErrorData>{err}</ErrorData>
         ) : !loading ? (
           list.length ? (
-            list.map((item: Food) => (
-              <FoodItem key={item.id} item={item} />
-            ))
+            list.map((item: Food) => <FoodItem key={item.id} item={item} />)
           ) : (
             <ErrorData>Inga data. Var vänlig försök igen</ErrorData>
           )

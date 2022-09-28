@@ -1,29 +1,24 @@
-import { ActionTypes } from 'models';
-import { SET_ID } from 'utils/constants';
+import { createSlice } from '@reduxjs/toolkit';
+import { RootState } from 'redux/app';
+
+import type { PayloadAction } from '@reduxjs/toolkit';
 
 /**
  * @author Fadi Hanna <fhanna181@gmail.com>
  */
 
-const initialState: string | null = '';
+const initialState = '' as string | null;
 
-/**
- * Id reducer.
- *
- * @param state - String | null
- * @param Actiontypes
- * @returns String | void
- */
+export const idSlice = createSlice({
+  name: 'id',
+  initialState,
+  reducers: {
+    setId: (state, action: PayloadAction<string | null>) =>
+      (state = action.payload),
+  },
+});
 
-export const idReducer = (
-  state = initialState,
-  { type, payload }: ActionTypes
-) => {
-  switch (type) {
-    case SET_ID:
-      return payload;
+export const { setId } = idSlice.actions;
 
-    default:
-      return state;
-  }
-};
+export default idSlice.reducer;
+export const getIdState = (state: RootState) => state.id;

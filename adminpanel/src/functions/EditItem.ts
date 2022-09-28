@@ -1,8 +1,8 @@
 import { request } from 'api';
-import { EditFormReducerTypes, Food, GetIdReducerTypes, ListReducerTypes } from 'models';
-import { useDispatch, useSelector } from 'react-redux';
+import { Food } from 'models';
 import { toast } from 'react-toastify';
-import { setList, setView } from 'redux/actions';
+import { useAppDispatch, useAppSelector } from 'redux/app/hooks';
+import { getEditForm, getIdState, getList, setList, setView } from 'redux/reducers';
 
 /**
  * @author Fadi Hanna <fhanna181@gmail.com>
@@ -15,13 +15,11 @@ import { setList, setView } from 'redux/actions';
  */
 
 export const EditItem = async (): Promise<void> => {
-  const getId = useSelector((state: GetIdReducerTypes) => state.getIdReducer);
-  const editForm = useSelector(
-    (state: EditFormReducerTypes) => state.editFormReducer
-  );
-  const list = useSelector((state: ListReducerTypes) => state.listReducer);
+  const getId = useAppSelector(getIdState);
+  const editForm = useAppSelector(getEditForm);
+  const list = useAppSelector(getList);
 
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const endPoint: string = `food/${getId}`;
 
@@ -30,7 +28,7 @@ export const EditItem = async (): Promise<void> => {
 
     const temp = [...list];
     const index = temp.findIndex((i: Food) => i.id === getId);
-    temp[index] = editForm;
+    temp[index] = editForm as Food;
     dispatch(setList(temp));
 
     dispatch(setView(''));
