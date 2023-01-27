@@ -11,10 +11,11 @@ import { getFoodData } from './api';
 /**
  * Get all food items.
  *
+ * @function getData
+ * @async
  * @param dispatch - Dispatch
- * @returns Promise
+ * @returns { Promise<void> } Promise
  */
-
 export const getData = async (dispatch: Dispatch<any>): Promise<void> => {
   dispatch(setLoading(true));
 

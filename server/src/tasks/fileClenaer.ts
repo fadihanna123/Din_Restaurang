@@ -1,5 +1,9 @@
 import fs from 'fs';
 
+/**
+ * @function fileCleaner
+ * @returns { void }
+ */
 export const fileCleaner = () => {
   const logsPath: string = './src/logs/debug.log';
   const errorPath: string = './src/logs/error.log';

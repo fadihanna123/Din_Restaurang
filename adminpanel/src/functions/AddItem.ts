@@ -10,10 +10,10 @@ import { getAddForm, getList, setList } from 'redux/reducers';
 
 /**
  * Add a food item.
- *
- * @returns Promise
+ * @function AddItem
+ * @async
+ * @returns { Promise<void> } Promise
  */
-
 export const AddItem = async (): Promise<void> => {
   const addForm = useSelector(getAddForm);
   const list = useSelector(getList);

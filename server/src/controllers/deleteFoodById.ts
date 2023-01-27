@@ -12,10 +12,12 @@ import { storeLog } from 'utils/storeLog';
 /**
  * Delete a food item.
  *
+ * @function deleteFoodById
+ * @async
  * @route DELETE /food/:id
- * @param req - Request
- * @param res - Response
- * @returns Promise
+ * @param { Request } req - Request
+ * @param { Response } res - Response
+ * @returns { Promise<void> } Promise
  */
 
 export const deleteFoodById = async (

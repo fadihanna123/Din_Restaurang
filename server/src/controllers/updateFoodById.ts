@@ -12,12 +12,13 @@ import { storeLog } from 'utils/storeLog';
 /**
  * Update a food item by id.
  *
+ * @async
+ * @function updateFoodById
  * @route PUT /food/:id
- * @param req - Request
- * @param res - Response
- * @returns Promise
+ * @param { Request } req - Request
+ * @param { Response } res - Response
+ * @returns { Promise<void> } Promise
  */
-
 export const updateFoodById = async (
   req: Request,
   res: Response

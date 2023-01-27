@@ -11,12 +11,13 @@ import { storeError } from 'utils/storeError';
 /**
  * Get a food item by id.
  *
+ * @async
+ * @function getFoodById
  * @route GET /food/:id
- * @param req
- * @param res
- * @returns Promise
+ * @param { Request } req
+ * @param { Response } res
+ * @returns { Promise<void> } Promise
  */
-
 export const getFoodById = async (
   req: Request,
   res: Response

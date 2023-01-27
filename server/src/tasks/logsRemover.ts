@@ -1,6 +1,11 @@
 import { prisma } from 'db';
 
-export const logsRemover = async () => {
+/**
+ * @function logsRemover
+ * @async
+ * @returns { Promise<void> }
+ */
+export const logsRemover = async (): Promise<void> => {
   await prisma.logs.deleteMany();
   await prisma.errors.deleteMany();
 };

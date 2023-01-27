@@ -9,10 +9,11 @@ import { storeLog } from 'utils/storeLog';
 /**
  * Listen to the server.
  *
- * @returns Void
+ * @function listenFn
+ * @returns { void } Void
  */
 
-export const listenFn = () => {
+export const listenFn = (): void => {
   storeLog(`Servern startar på port ${port}`, '', '/');
   logger.debug(`Servern startar på port ${port}`);
 };

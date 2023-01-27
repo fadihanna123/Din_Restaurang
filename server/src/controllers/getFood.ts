@@ -11,13 +11,14 @@ import { storeError } from 'utils/storeError';
 /**
  * Get all food items.
  *
+ * @function getFood
+ * @async
  * @route GET /food
- * @param req - Request
- * @param res - Response
- * @returns Promise
+ * @param { Request } req - Request
+ * @param { Response } res - Response
+ * @returns { Promise<void> } Promise
  */
-
-export const getFood = async (req: Request, res: Response) => {
+export const getFood = async (req: Request, res: Response): Promise<void> => {
   if (
     req.get('apiKey') === apiKey &&
     req.get('Authorization') === authorizationKey
