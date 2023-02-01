@@ -10,6 +10,7 @@ import { getAddForm, getList, setList } from 'redux/reducers';
 
 /**
  * Add a food item.
+ *
  * @function AddItem
  * @async
  * @returns { Promise<void> } Promise
