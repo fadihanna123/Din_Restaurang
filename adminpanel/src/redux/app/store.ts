@@ -6,6 +6,7 @@ import idReducer from '../reducers/id';
 import listReducer from '../reducers/list';
 import loadingReducer from '../reducers/loading';
 import viewReducer from '../reducers/view';
+import errorReducer from '../reducers/error';
 
 export const store = configureStore({
   reducer: {
@@ -15,6 +16,7 @@ export const store = configureStore({
     loading: loadingReducer,
     view: viewReducer,
     id: idReducer,
+    error: errorReducer,
   },
 });
 

@@ -2,7 +2,15 @@ import { getData } from 'functions';
 import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from 'redux/app/hooks';
 import { getList, getLoading, getView, setView } from 'redux/reducers';
-import { Button, Col, DataTable, MainTable, Row, TableHead } from 'styles/global';
+import { getError } from 'redux/reducers/error';
+import {
+  Button,
+  Col,
+  DataTable,
+  MainTable,
+  Row,
+  TableHead,
+} from 'styles/global';
 import { debounce } from 'ts-debounce';
 
 import AddComp from './Add';
@@ -13,6 +21,7 @@ const FoodTable: React.FC = () => {
   const loading = useAppSelector(getLoading);
   const list = useAppSelector(getList);
   const view = useAppSelector(getView);
+  const error = useAppSelector(getError);
 
   const dispatch = useAppDispatch();
 
@@ -37,7 +46,11 @@ const FoodTable: React.FC = () => {
               </tr>
             </TableHead>
             <tbody>
-              {!loading ? (
+              {error ? (
+                <td colSpan={7}>
+                  Det finns server fel. Var vänlig kom senare.{' '}
+                </td>
+              ) : !loading ? (
                 list.length ? (
                   list.map((item) => <FoodItem key={item.id} item={item} />)
                 ) : (
@@ -52,13 +65,15 @@ const FoodTable: React.FC = () => {
               )}
             </tbody>
           </DataTable>
-          <Button
-            className='spec'
-            data-sal='flip-left'
-            onClick={() => dispatch(setView('Add'))}
-          >
-            Lägg till
-          </Button>
+          {!error && (
+            <Button
+              className='spec'
+              data-sal='flip-left'
+              onClick={() => dispatch(setView('Add'))}
+            >
+              Lägg till
+            </Button>
+          )}
           <section>{view === 'Add' && <AddComp />}</section>
           <section>{view === 'Edit' && <EditComp />}</section>
         </MainTable>

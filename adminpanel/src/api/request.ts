@@ -8,19 +8,16 @@ export const request = {
     url: string,
     data: any,
     headers?: { headers: Record<string, never> }
-  ): Promise<AxiosResponse<T, any>> =>
-    await axios.post<T>(url, data, headers),
+  ): Promise<AxiosResponse<T, any>> => await axios.post<T>(url, data, headers),
 
   put: async <T>(
     url: string,
     data: any,
     headers?: { headers: Record<string, never> }
-  ): Promise<AxiosResponse<T, any>> =>
-    await axios.put<T>(url, data, headers),
+  ): Promise<AxiosResponse<T, any>> => await axios.put<T>(url, data, headers),
 
   delete: async <T>(
     url: string,
     headers?: { headers: Record<string, never> }
-  ): Promise<AxiosResponse<T, any>> =>
-    await axios.delete<T>(url, headers),
+  ): Promise<AxiosResponse<T, any>> => await axios.delete<T>(url, headers),
 };
