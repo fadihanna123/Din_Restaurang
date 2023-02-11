@@ -1,6 +1,8 @@
 import { prisma } from 'db';
-import { Request, Response } from 'express';
+import { Response } from 'express';
+import { IFood } from 'models';
 import { logger } from 'tools';
+import { TypedRequestBody } from 'types';
 import { apiKey, authorizationKey } from 'utils';
 import { storeError } from 'utils/storeError';
 import { storeLog } from 'utils/storeLog';
@@ -15,12 +17,12 @@ import { storeLog } from 'utils/storeLog';
  * @async
  * @function updateFoodById
  * @route PUT /food/:id
- * @param { Request } req - Request
+ * @param { TypedRequestBody<IFood> } req - Request
  * @param { Response } res - Response
  * @returns { Promise<void> } Promise
  */
 export const updateFoodById = async (
-  req: Request,
+  req: TypedRequestBody<IFood>,
   res: Response
 ): Promise<void> => {
   if (

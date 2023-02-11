@@ -1,6 +1,8 @@
 import { prisma } from 'db';
 import { Request, Response } from 'express';
+import { IFood } from 'models';
 import { logger } from 'tools';
+import { TypedRequestBody } from 'types';
 import { apiKey, authorizationKey } from 'utils';
 import { storeError } from 'utils/storeError';
 
@@ -14,11 +16,14 @@ import { storeError } from 'utils/storeError';
  * @function addFood
  * @async
  * @route POST /food/add
- * @param { Request } req - Request
+ * @param { TypedRequestBody<IFood> } req - Request
  * @param { Response } res - Response
  * @returns { Promise<void> } Promise.
  */
-export const addFood = async (req: Request, res: Response): Promise<void> => {
+export const addFood = async (
+  req: TypedRequestBody<IFood>,
+  res: Response
+): Promise<void> => {
   if (
     req.get('apiKey') === apiKey &&
     req.get('Authorization') === authorizationKey

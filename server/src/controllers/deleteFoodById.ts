@@ -15,11 +15,10 @@ import { storeLog } from 'utils/storeLog';
  * @function deleteFoodById
  * @async
  * @route DELETE /food/:id
- * @param { Request } req - Request
+ * @param { TypedRequestBody<IFood> } req - Request
  * @param { Response } res - Response
  * @returns { Promise<void> } Promise
  */
-
 export const deleteFoodById = async (
   req: Request,
   res: Response
