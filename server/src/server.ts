@@ -54,5 +54,5 @@ server.use(routes);
 server.use((_, res) => res.send('This route does not exist!'));
 server.use(errorHandler);
 
-export const port: number = parseInt(serverPort as string, 10);
+export const port: number = serverPort || 5000;
 server.listen(port, listenFn);

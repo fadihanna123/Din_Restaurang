@@ -1,5 +1,5 @@
 import { prisma } from 'db';
-import { Request, Response } from 'express';
+import { Response } from 'express';
 import { IFood } from 'models';
 import { logger } from 'tools';
 import { TypedRequestBody } from 'types';
