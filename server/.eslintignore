@@ -1,5 +1,4 @@
 node_modules
-.eslintrc.js
 *.html
 src/tools/docs.ts
 docs/*

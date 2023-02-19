@@ -23,14 +23,14 @@ export const getData = async (dispatch: Dispatch<any>): Promise<void> => {
 
     const { data } = await request.get<Food[]>(endPoint);
     dispatch(setList(data));
-  } catch (err: any) {
-    if (err.code === 'ERR_NETWORK') {
+  } catch (err) {
+    if ((err as { code: string }).code === 'ERR_NETWORK') {
       toast.error("Servern dosent't respond", {
         toastId: 'fetchError',
       });
-      dispatch(setError(err.message));
+      dispatch(setError((err as Error).message));
     } else {
-      toast.error(err.message, {
+      toast.error((err as Error).message, {
         toastId: 'fetchError',
       });
     }

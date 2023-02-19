@@ -2,7 +2,13 @@ import { request } from 'api';
 import { Food } from 'models';
 import { toast } from 'react-toastify';
 import { useAppDispatch, useAppSelector } from 'redux/app/hooks';
-import { getEditForm, getIdState, getList, setList, setView } from 'redux/reducers';
+import {
+  getEditForm,
+  getIdState,
+  getList,
+  setList,
+  setView,
+} from 'redux/reducers';
 
 /**
  * @author Fadi Hanna <fhanna181@gmail.com>
