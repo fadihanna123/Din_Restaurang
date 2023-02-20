@@ -1,3 +1,4 @@
+import React from 'react';
 import { getData } from 'functions';
 import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from 'redux/app/hooks';

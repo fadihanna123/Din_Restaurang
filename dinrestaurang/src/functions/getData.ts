@@ -14,9 +14,9 @@ import { getFoodData } from './api';
  * @function getData
  * @async
  * @param dispatch - Dispatch
- * @returns { Promise<void> } Promise
+ * @returns { void } Promise
  */
-export const getData = async (dispatch: Dispatch<any>): Promise<void> => {
+export const getData = (dispatch: Dispatch<any>): void => {
   dispatch(setLoading(true));
 
   getFoodData()

@@ -7,6 +7,7 @@ import { getError, getList, getLoading } from 'redux/reducers';
 import sal from 'sal.js';
 import { ErrorData, Loading, MainPhotos, Row } from 'styles';
 import { debounce } from 'ts-debounce';
+import React from 'react';
 
 const PhotosList: React.FC = () => {
   const dispatch = useAppDispatch();

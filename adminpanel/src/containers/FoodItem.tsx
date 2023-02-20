@@ -1,3 +1,4 @@
+import React from 'react';
 import { editHandler, loadDeleteItem } from 'functions';
 import { Food } from 'models';
 import { useAppDispatch, useAppSelector } from 'redux/app/hooks';

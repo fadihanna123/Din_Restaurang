@@ -1,3 +1,4 @@
+import React from 'react';
 import AdminTitleComp from 'containers/AdminTitleComp';
 import FoodTable from 'containers/FoodTable';
 import Footer from 'inc/Footer';

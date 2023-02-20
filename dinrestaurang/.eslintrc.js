@@ -8,20 +8,36 @@ const config = {
   extends: [
     'plugin:@typescript-eslint/recommended',
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
+    'eslint:recommended',
+    'plugin:react/recommended',
   ],
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
   parser: '@typescript-eslint/parser',
   parserOptions: {
     project: ['tsconfig.json'],
     sourceType: 'module',
     tsconfigRootDir: __dirname,
+    ecmaFeatures: {
+      jsx: true,
+    },
   },
   plugins: [
     'eslint-plugin-import',
     'eslint-plugin-jsdoc',
     'eslint-plugin-prefer-arrow',
     '@typescript-eslint',
+    'react',
   ],
   rules: {
+    'react/jsx-uses-react': 'error',
+    'react/jsx-uses-vars': 'error',
+    '@typescript-eslint/no-unsafe-member-access': 'off',
+    '@typescript-eslint/no-unsafe-argument': 'off',
+    '@typescript-eslint/no-unsafe-assignment': 'off',
     'no-console': 'error',
     '@typescript-eslint/adjacent-overload-signatures': 'error',
     '@typescript-eslint/array-type': [
@@ -57,7 +73,6 @@ const config = {
       },
     ],
     '@typescript-eslint/consistent-type-assertions': 'error',
-    'no-console': 'error',
     '@typescript-eslint/dot-notation': 'error',
     '@typescript-eslint/member-ordering': 'off',
     '@typescript-eslint/no-empty-function': [

@@ -1,3 +1,4 @@
+import React from 'react';
 import Layout from 'app/Layout';
 import axios from 'axios';
 import { apiKey, authorizationKey, backendURL } from 'utils';

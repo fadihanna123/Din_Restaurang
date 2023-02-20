@@ -1,11 +1,8 @@
 import { Food } from 'models';
 import { Col, FoodImg, FoodTitle, MainTxt } from 'styles';
+import React from 'react';
 
-const FoodItem: React.FC<{ item: Food }> = ({
-  item,
-}: {
-  item: Food;
-}) => (
+const FoodItem: React.FC<{ item: Food }> = ({ item }: { item: Food }) => (
   <Col>
     <FoodImg
       width='auto'
