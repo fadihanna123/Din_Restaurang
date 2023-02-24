@@ -1,6 +1,6 @@
 {
-  "name": "dinrestaurang",
-  "version": "1.0.24",
+  "name": "dinrestaurang_server",
+  "version": "1.0.25",
   "lastUpgrade": "20230201",
   "bugs": "https://github.com/fadihanna123/Din_Restaurang/issues",
   "repository": {
@@ -14,10 +14,12 @@
     "email": "fhanna181@gmail.com"
   },
   "scripts": {
-    "dev": "pnpm dbDocs && apidoc -i src/ -o docs/ && pnpm seed && ts-node-dev -r tsconfig-paths/register src/server",
+    "dev": "ts-node-dev -r tsconfig-paths/register src/server",
+    "docs": "apidoc -i src/ -o docs/",
     "seed": "prisma db push && prisma db pull && prisma generate ",
     "seed-delete": "prisma migrate dev",
     "lint": "eslint .",
+    "format": "prettier -w .",
     "dbDocs": "npx prisma generate"
   },
   "prisma": {
@@ -50,9 +52,11 @@
     "@typescript-eslint/eslint-plugin": "^5.50.0",
     "@typescript-eslint/parser": "^5.50.0",
     "eslint": "^8.33.0",
+    "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-jsdoc": "^39.7.5",
     "eslint-plugin-prefer-arrow": "^1.2.3",
+    "eslint-plugin-prettier": "^4.2.1",
     "ip": "^1.1.8",
     "node-cron": "^3.0.2",
     "prettier": "^2.8.3",

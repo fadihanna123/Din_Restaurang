@@ -1,4 +1,10 @@
-import { addFood, deleteFoodById, getFood, getFoodById, updateFoodById } from 'controllers';
+import {
+  addFood,
+  deleteFoodById,
+  getFood,
+  getFoodById,
+  updateFoodById,
+} from 'controllers';
 import { Router } from 'express';
 
 const router = Router();

@@ -34,6 +34,7 @@ server.use((req, res, next) => {
 
   logger.info(`Method: ${req.method}, URL: ${req.url}, IP: ${ipAddress}`);
 
+  // eslint-disable-next-line no-console
   console.log(`Method: ${req.method}, URL: ${req.url}, IP: ${ipAddress}`);
 
   storeLog(

@@ -10,6 +10,7 @@ const config = {
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
     'eslint:recommended',
     'plugin:react/recommended',
+    'plugin:prettier/recommended',
   ],
   settings: {
     react: {
@@ -33,6 +34,7 @@ const config = {
     'react',
   ],
   rules: {
+    'react/react-in-jsx-scope': 0,
     'react/jsx-uses-react': 'error',
     'react/jsx-uses-vars': 'error',
     '@typescript-eslint/no-unsafe-member-access': 'off',
