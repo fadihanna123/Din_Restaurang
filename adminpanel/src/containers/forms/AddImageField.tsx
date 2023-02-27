@@ -2,6 +2,7 @@ import { addTyper } from 'functions';
 import { useAppDispatch, useAppSelector } from 'redux/app/hooks';
 import { getAddForm } from 'redux/reducers';
 import { Input } from 'styles/global';
+import React from 'react';
 
 const AddImageField: React.FC = () => {
   const addForm = useAppSelector(getAddForm);

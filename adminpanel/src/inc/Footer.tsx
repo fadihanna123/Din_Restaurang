@@ -1,3 +1,4 @@
+import React from 'react';
 import { FooterBlock } from 'styles';
 
 const Footer: React.FC = () => (

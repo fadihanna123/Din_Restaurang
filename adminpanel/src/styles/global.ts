@@ -86,13 +86,11 @@ export const Input = styled.input`
   margin-bottom: 10px;
   appearance: none;
   border-radius: 0.25rem;
-  transition: border-color 0.15s ease-in-out,
-    box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 
   &:focus {
     border-color: #0275d8;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset,
-      0 0 8px lightblue;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px lightblue;
     outline: 0 none;
   }
 `;

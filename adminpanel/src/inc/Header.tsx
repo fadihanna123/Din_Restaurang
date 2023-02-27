@@ -1,3 +1,4 @@
+import React from 'react';
 import { LogoBox } from 'styles';
 
 const Header: React.FC = () => (

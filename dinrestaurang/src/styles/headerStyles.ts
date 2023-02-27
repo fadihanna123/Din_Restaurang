@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import Logo from "assets/logo.jpg";
+import styled from 'styled-components';
+import Logo from 'assets/logo.jpg';
 
 export const LogoBox = styled.div`
   display: grid;

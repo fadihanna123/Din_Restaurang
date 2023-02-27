@@ -7,14 +7,13 @@ import type { PayloadAction } from '@reduxjs/toolkit';
  * @author Fadi Hanna <fhanna181@gmail.com>
  */
 
-const initialState = '' as string | null;
+const initialState = '' as string;
 
 export const idSlice = createSlice({
   name: 'id',
   initialState,
   reducers: {
-    setId: (state, action: PayloadAction<string | null>) =>
-      (state = action.payload),
+    setId: (state, action: PayloadAction<string>) => (state = action.payload),
   },
 });
 

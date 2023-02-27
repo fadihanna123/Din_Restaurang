@@ -1,3 +1,4 @@
+import React from 'react';
 import { AddItem } from 'functions';
 import { Button } from 'styles/global';
 
