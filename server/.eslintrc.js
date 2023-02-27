@@ -44,8 +44,6 @@ const config = {
     'node/no-missing-import': 'off',
     'node/no-unpublished-import': 'off',
     '@typescript-eslint/no-unsafe-call': 'off',
-    '@typescript-eslint/no-unsafe-call': 'off',
-    '@typescript-eslint/no-unsafe-argument': 'off',
     '@typescript-eslint/no-floating-promises': 'off',
     'no-console': 'error',
     '@typescript-eslint/naming-convention': 'off',

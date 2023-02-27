@@ -1,7 +1,7 @@
 const config = {
   env: {
     browser: true,
-    es6: true,
+    es2022: true,
     node: true,
   },
   root: true,
@@ -20,6 +20,7 @@ const config = {
   parser: '@typescript-eslint/parser',
   parserOptions: {
     project: ['tsconfig.json'],
+    ecmaVersion: 2023,
     sourceType: 'module',
     tsconfigRootDir: __dirname,
     ecmaFeatures: {
