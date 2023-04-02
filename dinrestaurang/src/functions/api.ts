@@ -11,7 +11,7 @@ import { food_api } from 'utils/envs';
  *
  *@function getFoodData
  * @async
- * @returns { Promise<void> } Promise contains food array
+ * @returns Promise contains food array
  */
 export const getFoodData = async () =>
   await request.get<Food[]>(food_api as string);

@@ -13,7 +13,7 @@ import { getAddForm, getList, setList } from 'redux/reducers';
  *
  * @function AddItem
  * @async
- * @returns { Promise<void> } Promise
+ * @returns Promise
  */
 export const AddItem = async (): Promise<void> => {
   const addForm = useSelector(getAddForm);
@@ -21,7 +21,7 @@ export const AddItem = async (): Promise<void> => {
 
   const dispatch = useDispatch();
 
-  const endPoint: string = 'food/add';
+  const endPoint = 'food/add';
 
   try {
     const { data } = await request.post<Food>(endPoint, addForm);

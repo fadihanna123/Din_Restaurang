@@ -1,7 +1,6 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import sal from 'sal.js';
 import { Admin } from 'styles';
-import React from 'react';
 
 const AdminTitleComp: React.FC = () => {
   useEffect(() => {

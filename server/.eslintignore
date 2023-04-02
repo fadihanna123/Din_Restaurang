@@ -1,4 +1,3 @@
 node_modules
-*.html
-src/tools/docs.ts
-docs/*
+docs
+dbDocs

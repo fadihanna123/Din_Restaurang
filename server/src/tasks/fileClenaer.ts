@@ -5,8 +5,8 @@ import fs from 'fs';
  * @returns { void }
  */
 export const fileCleaner = () => {
-  const logsPath: string = './src/logs/debug.log';
-  const errorPath: string = './src/logs/error.log';
+  const logsPath = './src/logs/debug.log';
+  const errorPath = './src/logs/error.log';
   const newValue = '';
 
   fs.promises

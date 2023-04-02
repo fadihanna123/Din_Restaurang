@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { getData } from 'functions';
-import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from 'redux/app/hooks';
 import { getList, getLoading, getView, setView } from 'redux/reducers';
 import { getError } from 'redux/reducers/error';

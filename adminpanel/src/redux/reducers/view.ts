@@ -7,7 +7,7 @@ import type { PayloadAction } from '@reduxjs/toolkit';
  * @author Fadi Hanna <fhanna181@gmail.com>
  */
 
-const initialState: string = '';
+const initialState = '';
 
 export const viewSlice = createSlice({
   name: 'view',

@@ -3,7 +3,7 @@ import 'tasks';
 
 import routes from 'api/routes';
 import { listenFn } from 'controllers/listenFn';
-import cors from 'cors';
+import cors, { CorsOptions } from 'cors';
 import express from 'express';
 import rateLimit from 'express-rate-limit';
 import helmet from 'helmet';
@@ -19,8 +19,8 @@ const limiter = rateLimit({ windowMs: 3600000, max: 429 });
 
 const whiteList = allowedURLs?.split(', ');
 
-const corsOptions = {
-  origin: (origin: any, callback: any) => {
+const corsOptions: CorsOptions = {
+  origin: (origin, callback) => {
     if (whiteList?.indexOf(origin as string) !== -1 || !origin) {
       callback(null, true);
     } else {

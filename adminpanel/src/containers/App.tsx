@@ -3,7 +3,7 @@ import Layout from 'app/Layout';
 import axios from 'axios';
 import { apiKey, authorizationKey, backendURL } from 'utils';
 
-const globalHeader: string = 'application/json';
+const globalHeader = 'application/json';
 
 axios.defaults.baseURL = backendURL;
 axios.defaults.headers.common['Content-Type'] = globalHeader;

@@ -27,7 +27,7 @@ export const EditItem = async (): Promise<void> => {
 
   const dispatch = useAppDispatch();
 
-  const endPoint: string = `food/${getId}`;
+  const endPoint = `food/${getId}`;
 
   try {
     await request.put<Food>(endPoint, editForm);
