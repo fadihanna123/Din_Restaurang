@@ -1,5 +1,10 @@
+# Env
 server/.env
-server/logs/
 dinrestaurang/.env
 adminpanel/.env
+
+# Logs
+server/logs/
+
+# Vscode
 .vscode/launch.json
