@@ -5,7 +5,7 @@ import { RootState } from 'redux/app';
  * @author Fadi Hanna <fhanna181@gmail.com>
  */
 
-const initialState: boolean = false;
+const initialState = false;
 
 export const loadingSlice = createSlice({
   name: 'loading',

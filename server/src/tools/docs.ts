@@ -8,11 +8,11 @@
  * @apiError (503) Forbidden
  * @apiErrorExample Error-response:
  *                  FORBIDDEN
- * @apiSuccess {String} title
- * @apiSuccess {String} Sorts
- * @apiSuccess {Number} price
- * @apiSuccess {String} image
- * @apiSuccess {String} included
+ * @apiSuccess {string} title
+ * @apiSuccess {string} Sorts
+ * @apiSuccess {number} price
+ * @apiSuccess {string} image
+ * @apiSuccess {string} included
  * @apiSuccessExample Success-Response:
  *    [
  *      {
@@ -36,12 +36,12 @@
  * @apiError (503) Forbidden
  * @apiErrorExample Error-response:
  *                  FORBIDDEN
- * @apiSuccess {String} title
- * @apiSuccess {String} Sorts
- * @apiSuccess {Number} price
- * @apiSuccess {String} image
- * @apiSuccess {String} included
- * @apiParam {Number} id
+ * @apiSuccess {string} title
+ * @apiSuccess {string} Sorts
+ * @apiSuccess {number} price
+ * @apiSuccess {string} image
+ * @apiSuccess {string} included
+ * @apiParam {number} id
  * @apiSuccessExample Success-Response:
  *    [
  *      {
@@ -65,16 +65,16 @@
  * @apiError (503) Forbidden
  * @apiErrorExample Error-response:
  *                  FORBIDDEN
- * @apiBody {String} title
- * @apiBody {String} Sorts
- * @apiBody {Number} price
- * @apiBody {String} image
- * @apiBody {String} included
- * @apiSuccess {String} title
- * @apiSuccess {String} Sorts
- * @apiSuccess {Number} price
- * @apiSuccess {String} image
- * @apiSuccess {String} included
+ * @apiBody {string} title
+ * @apiBody {string} Sorts
+ * @apiBody {number} price
+ * @apiBody {string} image
+ * @apiBody {string} included
+ * @apiSuccess {string} title
+ * @apiSuccess {string} Sorts
+ * @apiSuccess {number} price
+ * @apiSuccess {string} image
+ * @apiSuccess {string} included
  * @apiSuccessExample Success-Response:
  *    [
  *      {
@@ -98,12 +98,12 @@
  * @apiError (503) Forbidden
  * @apiErrorExample Error-response:
  *                  FORBIDDEN
- * @apiParam {Number} id
- * @apiBody {String} title
- * @apiBody {String} Sorts
- * @apiBody {Number} price
- * @apiBody {String} image
- * @apiBody {String} included
+ * @apiParam {number} id
+ * @apiBody {string} title
+ * @apiBody {string} Sorts
+ * @apiBody {number} price
+ * @apiBody {string} image
+ * @apiBody {string} included
  * @apiSuccessExample Success-Response:
  *                    Changed
  */
@@ -118,7 +118,7 @@
  * @apiError (503) Forbidden
  * @apiErrorExample Error-response:
  *                  FORBIDDEN
- * @apiParam {Number} id
+ * @apiParam {number} id
  * @apiSuccessExample Success-Response:
  *                    Deleted
  */

@@ -13,7 +13,7 @@ import { DeleteItem } from './deleteItem';
  * @param item - Food object
  * @param list - Food array
  * @param dispatch - Dispatch
- * @returns Promise
+ * @returns { Promise<void> } Promise
  */
 
 export const loadDeleteItem = (

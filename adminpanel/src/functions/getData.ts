@@ -17,7 +17,7 @@ import { setError } from 'redux/reducers/error';
  */
 export const getData = async (dispatch: Dispatch<any>): Promise<void> => {
   try {
-    const endPoint: string = 'food';
+    const endPoint = 'food';
 
     dispatch(setLoading(true));
 
@@ -25,7 +25,7 @@ export const getData = async (dispatch: Dispatch<any>): Promise<void> => {
     dispatch(setList(data));
   } catch (err) {
     if ((err as { code: string }).code === 'ERR_NETWORK') {
-      toast.error("Servern dosent't respond", {
+      toast.error('Servern dosent\'t respond', {
         toastId: 'fetchError',
       });
       dispatch(setError((err as Error).message));

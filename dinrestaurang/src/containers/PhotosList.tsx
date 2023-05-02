@@ -1,13 +1,12 @@
 import FoodItem from 'components/FoodItem';
 import { getData } from 'functions';
 import { Food } from 'models';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from 'redux/app';
 import { getError, getList, getLoading } from 'redux/reducers';
 import sal from 'sal.js';
 import { ErrorData, Loading, MainPhotos, Row } from 'styles';
 import { debounce } from 'ts-debounce';
-import React from 'react';
 
 const PhotosList: React.FC = () => {
   const dispatch = useAppDispatch();
