@@ -16,8 +16,8 @@ import { DateTime } from 'luxon';
 
 export const storeError = async (
   message: string,
-  method: string,
-  located: string
+  method?: string,
+  located?: string
 ): Promise<void> => {
   const rnd: number = Math.floor(Math.random() * 1000);
 
@@ -29,8 +29,8 @@ export const storeError = async (
     data: {
       errorId: rnd,
       message,
-      method,
-      located,
+      method: method || '/',
+      located: located || '/',
       time,
     },
   });

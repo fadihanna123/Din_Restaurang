@@ -16,8 +16,8 @@ import { DateTime } from 'luxon';
 
 export const storeLog = async (
   message: string,
-  method: string,
-  located: string
+  method?: string,
+  located?: string
 ) => {
   const time: string = DateTime.fromJSDate(new Date()).toFormat(
     'yyyy-MM-dd HH:mm'
@@ -26,8 +26,8 @@ export const storeLog = async (
   await prisma.logs.create({
     data: {
       message,
-      method,
-      located,
+      method: method || '/',
+      located: located || '/',
       time,
     },
   });

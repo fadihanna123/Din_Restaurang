@@ -11,6 +11,7 @@ import ip from 'ip';
 import morgan from 'morgan';
 import { logger } from 'tools';
 import { allowedURLs, errorHandler, serverPort, storeLog } from 'utils';
+import { connectDb } from 'db';
 
 const server = express();
 
@@ -46,6 +47,7 @@ server.use((req, res, next) => {
   next();
 });
 
+connectDb();
 server.use(morgan('dev'));
 server.use(limiter);
 server.use(helmet());
