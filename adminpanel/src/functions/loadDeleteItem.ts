@@ -9,7 +9,6 @@ import { DeleteItem } from './deleteItem';
 
 /**
  * Run DeleteItem function.
- *
  * @param item - Food object
  * @param list - Food array
  * @param dispatch - Dispatch

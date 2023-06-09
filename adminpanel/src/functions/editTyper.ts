@@ -9,7 +9,6 @@ import { setEditForm } from 'redux/reducers';
 
 /**
  * Handle edit-form values.
- *
  * @param e - Event
  * @param editForm - Edit-form values.
  * @param dispatch - Dispatch

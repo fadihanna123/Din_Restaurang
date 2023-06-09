@@ -8,7 +8,6 @@ import { setId, setView } from 'redux/reducers';
 
 /**
  * Switch to edit-form.
- *
  * @param item - Food object
  * @param dispatch - Dispatch
  * @returns Void

@@ -49,6 +49,8 @@ const config = {
     'import/no-unresolved': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
     'jsdoc/no-types': 'off',
+    'jsdoc/check-tag-names': 'off',
+    'import/no-named-as-default': 'off',
   },
 };
 

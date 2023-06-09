@@ -10,7 +10,6 @@ import { setList, setLoading } from 'redux/reducers';
 
 /**
  * Delete a food item.
- *
  * @param id - String
  * @param list - Food list
  * @param dispatch - Dispatch

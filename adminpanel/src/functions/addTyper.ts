@@ -9,7 +9,6 @@ import { setAddForm } from 'redux/reducers';
 
 /**
  * Handle add form values.
- *
  * @param e - Event
  * @param addForm - AddForm values
  * @param dispatch - Dispatch

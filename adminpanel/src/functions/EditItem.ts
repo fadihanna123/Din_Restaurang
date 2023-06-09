@@ -16,7 +16,6 @@ import {
 
 /**
  * Edit a food item.
- *
  * @returns Promise
  */
 

@@ -11,7 +11,6 @@ import { setError } from 'redux/reducers/error';
 
 /**
  * Get all food items.
- *
  * @param dispatch - Dispatch
  * @returns Promise
  */
@@ -25,7 +24,7 @@ export const getData = async (dispatch: Dispatch<any>): Promise<void> => {
     dispatch(setList(data));
   } catch (err) {
     if ((err as { code: string }).code === 'ERR_NETWORK') {
-      toast.error('Servern dosent\'t respond', {
+      toast.error("Servern dosent't respond", {
         toastId: 'fetchError',
       });
       dispatch(setError((err as Error).message));

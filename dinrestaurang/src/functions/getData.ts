@@ -10,7 +10,6 @@ import { getFoodData } from './api';
 
 /**
  * Get all food items.
- *
  * @function getData
  * @async
  * @param dispatch - Dispatch

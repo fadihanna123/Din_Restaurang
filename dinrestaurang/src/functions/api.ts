@@ -8,7 +8,6 @@ import { food_api } from 'utils/envs';
 
 /**
  * Get all food items from api.
- *
  *@function getFoodData
  * @async
  * @returns Promise contains food array

@@ -42,12 +42,14 @@ const config = {
     'no-console': 'error',
     indent: ['error', 2],
     'linebreak-style': ['error', 'windows'],
-    quotes: ['error', 'single'],
+    quotes: ['error', 'single', { avoidEscape: true }],
     semi: ['error', 'always'],
     'no-undef': 'off',
     'import/export': 'off',
     'import/no-unresolved': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
+    'import/no-named-as-default': 'off',
+    'jsdoc/check-tag-names': 'off',
   },
 };
 
