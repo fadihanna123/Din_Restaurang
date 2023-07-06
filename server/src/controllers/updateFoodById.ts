@@ -13,7 +13,6 @@ import { storeLog } from 'utils/storeLog';
 
 /**
  * Update a food item by id.
- *
  * @async
  * @function updateFoodById
  * @route PUT /food/:id

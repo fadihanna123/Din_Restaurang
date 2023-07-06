@@ -11,7 +11,6 @@ import { storeLog } from 'utils/storeLog';
 
 /**
  * Delete a food item.
- *
  * @function deleteFoodById
  * @async
  * @route DELETE /food/:id

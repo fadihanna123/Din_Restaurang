@@ -8,7 +8,6 @@ import { storeLog } from 'utils/storeLog';
 
 /**
  * Listen to the server.
- *
  * @function listenFn
  * @returns { void } Void
  */

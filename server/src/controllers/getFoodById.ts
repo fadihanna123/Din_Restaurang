@@ -10,7 +10,6 @@ import { storeError } from 'utils/storeError';
 
 /**
  * Get a food item by id.
- *
  * @async
  * @function getFoodById
  * @route GET /food/:id

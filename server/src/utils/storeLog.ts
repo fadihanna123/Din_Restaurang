@@ -7,7 +7,6 @@ import { DateTime } from 'luxon';
 
 /**
  * Store logs in the database.
- *
  * @param message - String
  * @param method - String
  * @param located - String

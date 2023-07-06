@@ -12,7 +12,6 @@ import { storeError } from 'utils/storeError';
 
 /**
  * Add a food item.
- *
  * @function addFood
  * @async
  * @route POST /food/add

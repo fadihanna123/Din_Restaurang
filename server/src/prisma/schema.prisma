@@ -8,12 +8,12 @@ generator docs {
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "mysql"
   url      = env("DATABASE_URL")
 }
 
 model food {
-  id       Int    @id(map: "Post_pkey") @default(autoincrement())
+  id       Int    @id @default(autoincrement())
   title    String
   sorts    String
   price    Int

@@ -10,7 +10,6 @@ import { storeError } from 'utils/storeError';
 
 /**
  * Get all food items.
- *
  * @function getFood
  * @async
  * @route GET /food
