@@ -39,10 +39,8 @@ const config = {
     },
   },
   rules: {
-    'no-console': 'error',
     indent: ['error', 2],
     'linebreak-style': ['error', 'windows'],
-    quotes: ['error', 'single'],
     semi: ['error', 'always'],
     'no-undef': 'off',
     'import/export': 'off',
