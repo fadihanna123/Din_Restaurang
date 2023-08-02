@@ -46,23 +46,21 @@ const FoodTable: React.FC = () => {
               </tr>
             </TableHead>
             <tbody>
-              {error ? (
-                <td colSpan={7}>
-                  Det finns server fel. Var vänlig kom senare.{' '}
-                </td>
-              ) : !loading ? (
-                list.length ? (
-                  list.map((item) => <FoodItem key={item.id} item={item} />)
-                ) : (
-                  <tr>
+              <tr>
+                {error ? (
+                  <td colSpan={7}>
+                    Det finns server fel. Var vänlig kom senare.{' '}
+                  </td>
+                ) : !loading ? (
+                  list.length ? (
+                    list.map((item) => <FoodItem key={item.id} item={item} />)
+                  ) : (
                     <td colSpan={7}>Inga data. Var vänlig lägg till data!</td>
-                  </tr>
-                )
-              ) : (
-                <tr>
+                  )
+                ) : (
                   <td colSpan={7}>Laddar...</td>
-                </tr>
-              )}
+                )}
+              </tr>
             </tbody>
           </DataTable>
           {!error && (
