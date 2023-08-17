@@ -12,6 +12,17 @@
       }
     },
     {
+      "label": "Seed DB",
+      "type": "shell",
+      "command": "cd server && pnpm seed",
+      "runOptions": { "runOn": "folderOpen" },
+      "dependsOn": "Install Dependencies - Server",
+      "presentation": {
+        "reveal": "silent",
+        "close": true
+      }
+    },
+    {
       "label": "Install Dependencies - Dinrestaurang",
       "type": "shell",
       "command": "cd dinrestaurang && pnpm i",
@@ -53,7 +64,6 @@
       "label": "Remove dependencies - Adminpanel",
       "type": "shell",
       "command": "cd adminpanel && rm -rf node_modules build",
-      "runOptions": { "runOn": "folderOpen" },
       "presentation": {
         "reveal": "silent",
         "close": true
