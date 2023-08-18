@@ -4,69 +4,90 @@
     {
       "label": "Install Dependencies - Server",
       "type": "shell",
-      "command": "cd server && pnpm i",
+      "command": "pnpm i",
       "runOptions": { "runOn": "folderOpen" },
       "presentation": {
         "reveal": "silent",
         "close": true
+      },
+      "options": {
+        "cwd": "./server"
       }
     },
     {
       "label": "Seed DB",
       "type": "shell",
-      "command": "cd server && pnpm seed",
+      "command": "pnpm seed",
       "runOptions": { "runOn": "folderOpen" },
       "dependsOn": "Install Dependencies - Server",
       "presentation": {
         "reveal": "silent",
         "close": true
+      },
+      "options": {
+        "cwd": "./server"
       }
     },
     {
       "label": "Install Dependencies - Dinrestaurang",
       "type": "shell",
-      "command": "cd dinrestaurang && pnpm i",
+      "command": "pnpm i",
       "runOptions": { "runOn": "folderOpen" },
       "presentation": {
         "reveal": "silent",
         "close": true
+      },
+      "options": {
+        "cwd": "./dinrestaurang"
       }
     },
     {
       "label": "Install Dependencies - Adminpanel",
       "type": "shell",
-      "command": "cd adminpanel && pnpm i",
+      "command": "pnpm i",
       "runOptions": { "runOn": "folderOpen" },
       "presentation": {
         "reveal": "silent",
         "close": true
+      },
+      "options": {
+        "cwd": "./adminpanel"
       }
     },
     {
       "label": "Remove dependencies - Server",
       "type": "shell",
-      "command": "cd server && rm -rf node_modules",
+      "command": "rm -rf node_modules",
       "presentation": {
         "reveal": "silent",
         "close": true
+      },
+      "options": {
+        "cwd": "./server"
       }
     },
     {
       "label": "Remove dependencies - Dinrestaurang",
       "type": "shell",
-      "command": "cd dinrestaurang && rm -rf node_modules build",
+      "command": "rm -rf node_modules build",
       "presentation": {
         "reveal": "silent",
         "close": true
+      },
+      "options": {
+        "cwd": "./dinrestaurang"
       }
     },
     {
       "label": "Remove dependencies - Adminpanel",
       "type": "shell",
-      "command": "cd adminpanel && rm -rf node_modules build",
+      "command": "rm -rf node_modules build",
       "presentation": {
         "reveal": "silent",
         "close": true
+      },
+      "options": {
+        "cwd": "./adminpanel"
       }
     }
   ]
