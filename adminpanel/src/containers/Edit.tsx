@@ -54,7 +54,7 @@ const EditComp: React.FC = () => {
           <Input
             name='price'
             id='price'
-            value={editForm.price || ''}
+            value={editForm.price || 0}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
               editTyper(e, editForm, dispatch)
             }

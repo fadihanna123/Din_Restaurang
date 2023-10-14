@@ -8,6 +8,15 @@ declare global {
       NODE_ENV: 'development' | 'production';
     }
   }
+
+  interface Food {
+    id: string;
+    title: string;
+    sorts: string;
+    price: number;
+    image: string;
+    included: string;
+  }
 }
 
 export {};

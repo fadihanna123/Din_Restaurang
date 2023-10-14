@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "esNext",
     "lib": ["dom", "dom.iterable", "esnext"],
-    "baseUrl": "src/",
+    "baseUrl": "src",
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -16,6 +16,7 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
+    "alwaysStrict": true,
     "sourceMap": true,
     "paths": {
       "@core/*": ["src/*"],

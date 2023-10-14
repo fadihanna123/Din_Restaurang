@@ -1,3 +1,4 @@
+// @ts-check
 /**
  * @type { import("eslint").Linter.Config }
  */
@@ -39,6 +40,7 @@ const config = {
     'html',
   ],
   rules: {
+    'jsdoc/no-types': 'off',
     'no-console': 'error',
     indent: ['error', 2],
     'linebreak-style': ['error', 'windows'],

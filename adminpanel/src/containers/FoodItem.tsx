@@ -1,6 +1,5 @@
 import React from 'react';
 import { editHandler, loadDeleteItem } from 'functions';
-import { Food } from 'models';
 import { useAppDispatch, useAppSelector } from 'redux/app/hooks';
 import { getList } from 'redux/reducers';
 import { Button } from 'styles/global';
@@ -14,7 +13,9 @@ const FoodItem: React.FC<{
 
   return (
     <tr>
-      <td>{item.title}</td>
+      <td>
+        <b>{item.title}</b>
+      </td>
       <td>{item.sorts}</td>
       <td>{item.price} kr </td>
       <td>{item.included}</td>

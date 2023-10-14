@@ -3,6 +3,11 @@ server/.env
 dinrestaurang/.env
 adminpanel/.env
 
+# Docs
+server/docs
+server/dbDocs/
+
+
 # Logs
 server/logs/
 

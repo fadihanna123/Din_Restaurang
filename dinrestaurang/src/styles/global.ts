@@ -1,7 +1,7 @@
 import styled, { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
-  body 
+  body
   {
     margin: 0;
     padding: 0;
@@ -49,10 +49,10 @@ export const Row = styled.section`
 
 export const Col = styled.section`
   float: left;
-  width: 20%;
+  width: 30%;
   padding: 10px;
 
-  @media (max-width: 1900px) {
+  @media (max-width: 820px) {
     width: 100%;
   }
 `;

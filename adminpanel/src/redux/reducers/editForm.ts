@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { IEditForm } from 'models';
 import { RootState } from 'redux/app';
 
 import type { PayloadAction } from '@reduxjs/toolkit';
@@ -12,7 +11,7 @@ const initialState: IEditForm = {
   id: '',
   title: '',
   sorts: '',
-  price: null,
+  price: 0,
   image: '',
   included: '',
 };

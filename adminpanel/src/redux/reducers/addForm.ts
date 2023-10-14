@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { AddForm } from 'models';
 import { RootState } from 'redux/app';
 
 import type { PayloadAction } from '@reduxjs/toolkit';
@@ -11,7 +10,7 @@ import type { PayloadAction } from '@reduxjs/toolkit';
 const initialState: AddForm = {
   title: '',
   sorts: '',
-  price: null,
+  price: 0,
   image: '',
   included: '',
 };

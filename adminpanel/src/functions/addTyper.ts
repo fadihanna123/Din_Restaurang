@@ -1,5 +1,4 @@
 import React from 'react';
-import { AddForm } from 'models';
 import { Dispatch } from 'redux';
 import { setAddForm } from 'redux/reducers';
 

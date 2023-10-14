@@ -4,22 +4,8 @@
     {
       "label": "Install Dependencies - Server",
       "type": "shell",
-      "command": "pnpm i",
+      "command": "yarn --emoji",
       "runOptions": { "runOn": "folderOpen" },
-      "presentation": {
-        "reveal": "silent",
-        "close": true
-      },
-      "options": {
-        "cwd": "./server"
-      }
-    },
-    {
-      "label": "Seed DB",
-      "type": "shell",
-      "command": "pnpm seed",
-      "runOptions": { "runOn": "folderOpen" },
-      "dependsOn": "Install Dependencies - Server",
       "presentation": {
         "reveal": "silent",
         "close": true
@@ -31,7 +17,7 @@
     {
       "label": "Install Dependencies - Dinrestaurang",
       "type": "shell",
-      "command": "pnpm i",
+      "command": "yarn --emoji",
       "runOptions": { "runOn": "folderOpen" },
       "presentation": {
         "reveal": "silent",
@@ -44,7 +30,7 @@
     {
       "label": "Install Dependencies - Adminpanel",
       "type": "shell",
-      "command": "pnpm i",
+      "command": "yarn --emoji",
       "runOptions": { "runOn": "folderOpen" },
       "presentation": {
         "reveal": "silent",

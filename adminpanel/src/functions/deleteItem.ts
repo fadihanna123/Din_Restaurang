@@ -1,5 +1,4 @@
 import { request } from 'api';
-import { Food } from 'models';
 import { toast } from 'react-toastify';
 import { Dispatch } from 'redux';
 import { setList, setLoading } from 'redux/reducers';

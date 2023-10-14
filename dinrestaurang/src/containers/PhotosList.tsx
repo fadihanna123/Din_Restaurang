@@ -1,6 +1,5 @@
 import FoodItem from 'components/FoodItem';
 import { getData } from 'functions';
-import { Food } from 'models';
 import React, { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from 'redux/app';
 import { getError, getList, getLoading } from 'redux/reducers';

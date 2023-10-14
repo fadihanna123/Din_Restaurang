@@ -2,13 +2,15 @@
   "compilerOptions": {
     "target": "esNext",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "baseUrl": "src/",
+    "baseUrl": "src",
     "module": "commonjs",
     "strict": true,
+    "outDir": "dist",
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "sourceMap": true,
+    "alwaysStrict": true,
     "paths": {
       "@core/*": ["src/*"]
     }

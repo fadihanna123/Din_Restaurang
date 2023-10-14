@@ -1,4 +1,3 @@
-import { Food } from 'models';
 import { Dispatch } from 'redux';
 
 import { DeleteItem } from './deleteItem';

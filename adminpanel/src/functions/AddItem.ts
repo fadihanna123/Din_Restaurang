@@ -1,8 +1,7 @@
 import { request } from 'api';
-import { Food } from 'models';
-import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
-import { getAddForm, getList, setList } from 'redux/reducers';
+import { Dispatch } from 'redux';
+import { setList } from 'redux/reducers';
 
 /**
  * @author Fadi Hanna <fhanna181@gmail.com>
@@ -11,15 +10,17 @@ import { getAddForm, getList, setList } from 'redux/reducers';
 /**
  * Add a food item.
  * @function AddItem
+ * @param { AddForm } addForm - Added formdata
+ * @param { Food[] } list - Food data
+ * @param { Dispatch<any> } dispatch - Set data by dispatch
  * @async
  * @returns Promise
  */
-export const AddItem = async (): Promise<void> => {
-  const addForm = useSelector(getAddForm);
-  const list = useSelector(getList);
-
-  const dispatch = useDispatch();
-
+export const AddItem = async (
+  addForm: AddForm,
+  list: Food[],
+  dispatch: Dispatch<any>
+): Promise<void> => {
   const endPoint = 'food/add';
 
   try {

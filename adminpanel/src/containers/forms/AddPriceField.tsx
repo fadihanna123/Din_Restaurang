@@ -13,7 +13,7 @@ const AddPriceField: React.FC = () => {
     <Input
       name='price'
       id='price'
-      value={addForm.price || ''}
+      value={addForm.price || 0}
       onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
         addTyper(e, addForm, dispatch)
       }

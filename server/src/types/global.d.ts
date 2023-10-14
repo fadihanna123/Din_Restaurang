@@ -1,3 +1,17 @@
+import { Request } from 'express';
+
+interface IFood {
+  title: string;
+  sorts: string;
+  price: number;
+  image: string;
+  included: string;
+}
+
+interface TypedRequestBody<T> extends Request {
+  body: T;
+}
+
 declare global {
   namespace NodeJS {
     interface ProcessEnv {
@@ -10,5 +24,3 @@ declare global {
     }
   }
 }
-
-export {};

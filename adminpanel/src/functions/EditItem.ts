@@ -1,14 +1,7 @@
 import { request } from 'api';
-import { Food } from 'models';
+import { Dispatch } from 'react';
 import { toast } from 'react-toastify';
-import { useAppDispatch, useAppSelector } from 'redux/app/hooks';
-import {
-  getEditForm,
-  getIdState,
-  getList,
-  setList,
-  setView,
-} from 'redux/reducers';
+import { setList, setView } from 'redux/reducers';
 
 /**
  * @author Fadi Hanna <fhanna181@gmail.com>
@@ -19,13 +12,12 @@ import {
  * @returns Promise
  */
 
-export const EditItem = async (): Promise<void> => {
-  const getId = useAppSelector(getIdState);
-  const editForm = useAppSelector(getEditForm);
-  const list = useAppSelector(getList);
-
-  const dispatch = useAppDispatch();
-
+export const EditItem = async (
+  getId: string,
+  editForm: IEditForm,
+  list: Food[],
+  dispatch: Dispatch<any>
+): Promise<void> => {
   const endPoint = `food/${getId}`;
 
   try {

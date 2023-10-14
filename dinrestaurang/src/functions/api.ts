@@ -1,5 +1,4 @@
 import { request } from 'api';
-import { Food } from 'models';
 import { food_api } from 'utils/envs';
 
 /**

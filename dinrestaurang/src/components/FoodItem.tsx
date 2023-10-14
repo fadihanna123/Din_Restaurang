@@ -1,15 +1,14 @@
-import { Food } from 'models';
 import { Col, FoodImg, FoodTitle, MainTxt } from 'styles';
 import React from 'react';
 
 const FoodItem: React.FC<{ item: Food }> = ({ item }: { item: Food }) => (
   <Col>
     <FoodImg
-      width='auto'
-      height='auto'
+      width='100%'
+      height='500px'
       maxWidth='100%'
       maxHeight='100%'
-      src={`../assets/${item.image}`}
+      src={require(`../assets/${item.image}.jpg`)}
       alt={item.title}
       aria-label={item.title}
       loading='lazy'
