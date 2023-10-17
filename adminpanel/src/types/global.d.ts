@@ -33,6 +33,8 @@ declare global {
     image: string;
     included: string;
   }
+
+  type Paths = 'food' | 'food/add' | `food/${number}`;
 }
 
 export {};

@@ -1,11 +1,7 @@
-import Layout from 'app/Layout';
-import axios from 'axios';
-import { apiKey, authorizationKey, backendURL } from 'utils/envs';
 import React from 'react';
 
-axios.defaults.baseURL = backendURL;
-axios.defaults.headers.common.apiKey = apiKey as string;
-axios.defaults.headers.common.authorization = authorizationKey as string;
+// Components
+import { Layout } from 'app';
 
 const App: React.FC = () => <Layout />;
 

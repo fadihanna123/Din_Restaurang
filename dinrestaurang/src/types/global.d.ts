@@ -17,6 +17,19 @@ declare global {
     image: string;
     included: string;
   }
+
+  router.get('/food/:id', getFoodById);
+
+  // Add food item.
+  router.post('/food/add', addFood);
+
+  // Update a food item.
+  router.put('/food/:id', updateFoodById);
+
+  // Delete a food item.
+  router.delete('/food/:id', deleteFoodById);
+
+  type Paths = 'food' | 'food/add' | `food/${number}`;
 }
 
 export {};

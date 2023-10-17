@@ -2,7 +2,7 @@ import { toast } from 'react-toastify';
 import { Dispatch } from 'redux';
 import { setError, setList, setLoading } from 'redux/reducers';
 
-import { getFoodData } from './api';
+import { getFoodData } from './apiStore';
 
 /**
  * @author Fadi Hanna <fhanna181@gmail.com>

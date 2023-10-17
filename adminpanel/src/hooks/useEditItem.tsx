@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from 'redux/app/hooks';
 import { getIdState, getList, setEditForm } from 'redux/reducers';
 
-export const useEditItem = () => {
+const useEditItem = () => {
   const list = useAppSelector(getList);
   const getId = useAppSelector(getIdState);
 
@@ -16,3 +16,5 @@ export const useEditItem = () => {
     }
   }, [dispatch, getId, list]);
 };
+
+export default useEditItem;
