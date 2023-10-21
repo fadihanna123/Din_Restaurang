@@ -1,7 +1,6 @@
 import { prisma } from 'db';
 import { Response } from 'express';
 import { logger } from 'tools';
-import { IFood, TypedRequestBody } from 'types';
 import { apiKey, authorizationKey } from 'utils';
 import { storeError } from 'utils/storeError';
 import { storeLog } from 'utils/storeLog';
