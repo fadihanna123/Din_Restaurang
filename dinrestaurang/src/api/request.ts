@@ -2,8 +2,8 @@ import { apiKey, authorizationKey, backendURL } from 'utils';
 import axios from 'axios';
 
 axios.defaults.baseURL = backendURL;
-axios.defaults.headers.common.apiKey = apiKey as string;
-axios.defaults.headers.common.authorization = authorizationKey as string;
+axios.defaults.headers.common['apiKey'] = apiKey as string;
+axios.defaults.headers.common['authorization'] = authorizationKey as string;
 
 export const request = {
   get: async <T>(url: Paths) => {

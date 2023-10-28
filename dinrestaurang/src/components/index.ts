@@ -1,2 +1,2 @@
-export { default as FoodItem } from './FoodItem'
-export { default as WelcomeComp } from './WelcomeComp'
+export { default as FoodItem } from './FoodItem';
+export { default as WelcomeComp } from './WelcomeComp';

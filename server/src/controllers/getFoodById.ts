@@ -26,7 +26,7 @@ export const getFoodById = async (
     req.get('Authorization') === authorizationKey
   ) {
     try {
-      const id = Number(req.params.id);
+      const id = Number(req.params['id']);
       const getFoodById = await prisma.food.findUnique({
         where: {
           id,
@@ -35,12 +35,12 @@ export const getFoodById = async (
 
       res.json(getFoodById);
     } catch (err) {
-      storeError((err as Error).message, 'GET', `/food/${req.params.id}`);
+      storeError((err as Error).message, 'GET', `/food/${req.params['id']}`);
 
       logger.error((err as Error).message);
     }
   } else {
-    storeError('No headers provided!', 'GET', `/food/${req.params.id}`);
+    storeError('No headers provided!', 'GET', `/food/${req.params['id']}`);
 
     logger.error('No headers provided on GET /food/:id!');
 
