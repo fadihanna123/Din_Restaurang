@@ -13,3 +13,8 @@ server/logs/
 
 # Vscode
 .vscode/launch.json
+
+# Dependencies
+server/node_modules
+dinrestaurang/node_modules
+adminpanel/node_modules
