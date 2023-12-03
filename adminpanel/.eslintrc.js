@@ -31,14 +31,7 @@ const config = {
       version: 'detect',
     },
   },
-  plugins: [
-    'react',
-    '@typescript-eslint',
-    'import',
-    'jsdoc',
-    'prefer-arrow',
-    'html',
-  ],
+  plugins: ['react', '@typescript-eslint', 'import', 'jsdoc'],
   rules: {
     'jsdoc/no-types': 'off',
     'no-console': 'error',

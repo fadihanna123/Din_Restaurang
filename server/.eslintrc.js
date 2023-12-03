@@ -5,7 +5,7 @@
 const config = {
   env: {
     node: true,
-    es2022: true,
+    es2023: true,
   },
   extends: [
     'eslint:recommended',
@@ -15,7 +15,6 @@ const config = {
     'plugin:jsdoc/recommended',
     'plugin:jsdoc/recommended-error',
     'plugin:jsdoc/recommended-typescript',
-    'plugin:node/recommended',
     'prettier',
   ],
   parser: '@typescript-eslint/parser',
@@ -30,14 +29,11 @@ const config = {
     'linebreak-style': ['error', 'windows'],
     quotes: ['error', 'single'],
     semi: ['error', 'always'],
-    'node/no-unsupported-features/es-syntax': 'off',
     'import/export': 'off',
-    'node/no-missing-import': 'off',
     'import/no-unresolved': 'off',
     'jsdoc/check-tag-names': 'off',
     'jsdoc/no-undefined-types': 'off',
     'jsdoc/no-types': 'off',
-    'node/no-unpublished-import': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
     'jsdoc/require-param-description': 'off',
   },

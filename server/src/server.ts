@@ -7,8 +7,6 @@ import cors, { CorsOptions } from 'cors';
 import express from 'express';
 import rateLimit from 'express-rate-limit';
 import helmet from 'helmet';
-import ip from 'ip';
-import morgan from 'morgan';
 import { logger } from 'tools';
 import { allowedURLs, errorHandler, serverPort, storeLog } from 'utils';
 import { connectDb } from 'db';
@@ -31,24 +29,17 @@ const corsOptions: CorsOptions = {
 };
 
 server.use((req, res, next) => {
-  const ipAddress = ip.address();
-
-  logger.info(`Method: ${req.method}, URL: ${req.url}, IP: ${ipAddress}`);
+  logger.info(`Method: ${req.method}, URL: ${req.url}`);
 
   // eslint-disable-next-line no-console
-  console.log(`Method: ${req.method}, URL: ${req.url}, IP: ${ipAddress}`);
+  console.log(`Method: ${req.method}, URL: ${req.url}`);
 
-  storeLog(
-    `Method: ${req.method}, URL: ${req.url}, IP: ${ipAddress}`,
-    req.method,
-    req.url
-  );
+  storeLog(`Method: ${req.method}, URL: ${req.url}`, req.method, req.url);
 
   next();
 });
 
 connectDb();
-server.use(morgan('dev'));
 server.use(limiter);
 server.use(helmet());
 server.use(cors(corsOptions));

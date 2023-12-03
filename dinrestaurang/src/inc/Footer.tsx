@@ -2,17 +2,7 @@ import { FooterBlock } from 'styles';
 import React from 'react';
 
 const Footer: React.FC = () => (
-  <FooterBlock
-    display='grid'
-    gridTemplateColumns='1fr'
-    textAlign='center'
-    fontSize={21}
-    ml={-100}
-    bg='#ADD8E6'
-    height={200}
-    m={10}
-    p={30}
-  >
+  <FooterBlock>
     <h2>Din restaurang</h2>
     Telefonnummer:
     <span className='fa fa-phone'>

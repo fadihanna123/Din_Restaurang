@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react';
-import sal from 'sal.js';
+import React from 'react';
 import { Col20, Label, LabelCol, MyAddForm, Row } from 'styles/global';
 
 import AddBtn from '../components/forms/AddBtn';
@@ -10,10 +9,6 @@ import SortsField from './forms/AddSortsField';
 import TitleField from './forms/AddTitleField';
 
 const AddComp: React.FC = () => {
-  useEffect(() => {
-    sal();
-  }, []);
-
   return (
     <MyAddForm data-sal='flip-right'>
       <Row>

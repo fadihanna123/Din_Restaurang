@@ -1,8 +1,18 @@
 import styled from '@emotion/styled';
-import { layout, space, typography } from 'styled-system';
 
-export const FoodImg = styled('img')(layout, space);
+export const FoodImg = styled.img`
+  width: 100%;
+  height: 500px;
+  max-width: 100%;
+  max-height: 100%;
+`;
 
-export const FoodTitle = styled('h1')(typography);
+export const FoodTitle = styled.h1`
+  textalign: center;
+  fontsize: 25px;
+`;
 
-export const MainTxt = styled('p')(typography, space);
+export const MainTxt = styled.p`
+  padding: 10px;
+  fontsize: 20px;
+`;

@@ -3,9 +3,7 @@ import { getData } from 'functions';
 import React, { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from 'redux/app';
 import { getError, getList, getLoading } from 'redux/reducers';
-import sal from 'sal.js';
 import { ErrorData, Loading, MainPhotos, Row } from 'styles';
-import { debounce } from 'ts-debounce';
 
 const PhotosList: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -16,15 +14,13 @@ const PhotosList: React.FC = () => {
   const list = useAppSelector(getList);
 
   useEffect(() => {
-    sal();
-
-    debounce(getData(dispatch) as any, 1500);
+    getData(dispatch);
   }, []);
 
   return (
     <Row>
       <br />
-      <MainPhotos fontSize={35} mt={80} fontStyle='italic'>
+      <MainPhotos>
         {err ? (
           <ErrorData>{err}</ErrorData>
         ) : !loading ? (

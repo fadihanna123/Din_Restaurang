@@ -26,14 +26,7 @@ const config = {
       jsx: true,
     },
   },
-  plugins: [
-    'react',
-    '@typescript-eslint',
-    'import',
-    'jsdoc',
-    'prefer-arrow',
-    'html',
-  ],
+  plugins: ['react', '@typescript-eslint', 'import', 'jsdoc'],
   settings: {
     react: {
       version: 'detect',

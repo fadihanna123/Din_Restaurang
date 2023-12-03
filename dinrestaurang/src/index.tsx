@@ -1,6 +1,4 @@
-import 'normalize.css';
 import 'react-toastify/dist/ReactToastify.css';
-import 'sal.js/dist/sal.css';
 
 import App from 'containers/App';
 import React from 'react';

@@ -11,7 +11,6 @@ import {
   Row,
   TableHead,
 } from 'styles/global';
-import { debounce } from 'ts-debounce';
 
 import AddComp from './Add';
 import EditComp from './Edit';
@@ -26,8 +25,8 @@ const FoodTable: React.FC = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    debounce(getData(dispatch) as any, 1500);
-  }, [dispatch]);
+    getData(dispatch);
+  }, []);
 
   return (
     <Row data-sal='zoom-in'>
