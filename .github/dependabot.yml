@@ -8,14 +8,14 @@ updates:
   - package-ecosystem: "yarn" # See documentation for possible values
     directory: "server" # Location of package manifests
     schedule:
-      interval: "weekly"
+      interval: "monthly"
 
 version: 2
 updates:
   - package-ecosystem: "yarn" # See documentation for possible values
     directory: "dinrestaurang" # Location of package manifests
     schedule:
-      interval: "weekly"
+      interval: "monthly"
 
 
 version: 2
@@ -23,4 +23,4 @@ updates:
   - package-ecosystem: "yarn" # See documentation for possible values
     directory: "adminpanel" # Location of package manifests
     schedule:
-      interval: "weekly"
+      interval: "monthly"
