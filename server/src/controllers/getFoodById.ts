@@ -32,8 +32,9 @@ export const getFoodById = async (
           id,
         },
       });
-
-      res.json(getFoodById);
+      setTimeout(() => {
+        res.json(getFoodById);
+      }, 2000);
     } catch (err) {
       storeError((err as Error).message, 'GET', `/food/${req.params['id']}`);
 

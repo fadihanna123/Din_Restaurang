@@ -8,11 +8,11 @@ export const FoodImg = styled.img`
 `;
 
 export const FoodTitle = styled.h1`
-  textalign: center;
-  fontsize: 25px;
+  text-align: center;
+  font-size: 25px;
 `;
 
 export const MainTxt = styled.p`
   padding: 10px;
-  fontsize: 20px;
+  font-size: 20px;
 `;

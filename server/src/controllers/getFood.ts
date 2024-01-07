@@ -24,7 +24,10 @@ export const getFood = async (req: Request, res: Response): Promise<void> => {
   ) {
     try {
       const getFood = await prisma.food.findMany();
-      res.json(getFood);
+
+      setTimeout(() => {
+        res.json(getFood);
+      }, 2000);
     } catch (err) {
       storeError((err as Error).message, 'GET', '/food');
       logger.error((err as Error).message);
