@@ -11,6 +11,7 @@ import { logger } from 'tools';
 import { allowedURLs, errorHandler, serverPort, storeLog } from 'utils';
 import { connectDb } from 'db';
 
+// deepcode ignore UseCsurfForExpress: Csurf package is deprecated.
 const server: Application = express();
 
 // Settings
