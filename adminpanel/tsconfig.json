@@ -40,8 +40,8 @@
     "noUncheckedIndexedAccess": true,
     "removeComments": true,
     "paths": {
-      "@core/*": ["src/*"],
-      "@assets/*": ["src/assets/*"]
+      "@core/*": ["*"],
+      "@assets/*": ["assets/*"]
     }
   },
   "include": ["src/**/*"]

@@ -1,8 +1,8 @@
 import FoodItem from 'components/FoodItem';
 import { getData } from 'functions';
 import React, { useEffect } from 'react';
-import { useAppDispatch, useAppSelector } from 'redux/app';
-import { getError, getList, getLoading } from 'redux/reducers';
+import { useAppDispatch, useAppSelector } from '../redux/app';
+import { getError, getList, getLoading } from '../redux/reducers';
 import { ErrorData, Loading, MainPhotos, Row } from 'styles';
 
 const PhotosList: React.FC = () => {

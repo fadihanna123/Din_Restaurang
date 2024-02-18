@@ -1,7 +1,7 @@
 import { addTyper } from 'functions';
 import React from 'react';
-import { useAppDispatch, useAppSelector } from 'redux/app/hooks';
-import { getAddForm } from 'redux/reducers';
+import { useAppDispatch, useAppSelector } from '../../redux/app/hooks';
+import { getAddForm } from '../../redux/reducers';
 import { Input } from 'styles/global';
 
 const AddIncludedField: React.FC = () => {

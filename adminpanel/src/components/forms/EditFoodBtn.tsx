@@ -1,7 +1,7 @@
 import { EditItem } from 'functions';
 import React from 'react';
-import { useAppDispatch, useAppSelector } from 'redux/app/hooks';
-import { getEditForm, getIdState, getList } from 'redux/reducers';
+import { useAppDispatch, useAppSelector } from '../../redux/app/hooks';
+import { getEditForm, getIdState, getList } from '../../redux/reducers';
 import { Button } from 'styles';
 
 const EditFoodBtn: React.FC = () => {

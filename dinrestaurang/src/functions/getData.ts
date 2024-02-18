@@ -1,6 +1,6 @@
 import { toast } from 'react-toastify';
 import { Dispatch } from 'redux';
-import { setError, setList, setLoading } from 'redux/reducers';
+import { setError, setList, setLoading } from '../redux/reducers';
 
 import { getFoodData } from './apiStore';
 

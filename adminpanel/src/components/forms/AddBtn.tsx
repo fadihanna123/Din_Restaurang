@@ -2,7 +2,7 @@ import React from 'react';
 import { AddItem } from 'functions';
 import { Button } from 'styles/global';
 import { useDispatch, useSelector } from 'react-redux';
-import { getAddForm, getList } from 'redux/reducers';
+import { getAddForm, getList } from '../../redux/reducers';
 
 const AddBtn: React.FC = () => {
   const addForm = useSelector(getAddForm);

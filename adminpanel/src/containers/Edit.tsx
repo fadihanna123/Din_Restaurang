@@ -1,8 +1,8 @@
 import EditFoodBtn from 'components/forms/EditFoodBtn';
 import { editTyper } from 'functions';
 import React from 'react';
-import { useAppDispatch, useAppSelector } from 'redux/app/hooks';
-import { getEditForm } from 'redux/reducers';
+import { useAppDispatch, useAppSelector } from '../redux/app/hooks';
+import { getEditForm } from '../redux/reducers';
 import { Col15, EditForm, Input, Label, LabelCol, Row } from 'styles';
 
 import { useEditItem } from '../hooks';

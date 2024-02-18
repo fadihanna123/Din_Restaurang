@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
-import { useAppDispatch, useAppSelector } from 'redux/app/hooks';
-import { getIdState, getList, setEditForm } from 'redux/reducers';
+import { useAppDispatch, useAppSelector } from '../redux/app/hooks';
+import { getIdState, getList, setEditForm } from '../redux/reducers';
 
 const useEditItem = () => {
   const list = useAppSelector(getList);
