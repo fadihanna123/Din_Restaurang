@@ -3,24 +3,24 @@
 # Please see the documentation for all configuration options:
 # https://docs.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
 
-version: 2
+version: 3
 updates:
   - package-ecosystem: "yarn" # See documentation for possible values
-    directory: "server" # Location of package manifests
+    directory: "/server" # Location of package manifests
     schedule:
-      interval: "monthly"
+      interval: "daily"
 
-version: 2
+version: 3
 updates:
   - package-ecosystem: "yarn" # See documentation for possible values
-    directory: "dinrestaurang" # Location of package manifests
+    directory: "/dinrestaurang" # Location of package manifests
     schedule:
-      interval: "monthly"
+      interval: "daily"
 
 
-version: 2
+version: 3
 updates:
   - package-ecosystem: "yarn" # See documentation for possible values
-    directory: "adminpanel" # Location of package manifests
+    directory: "/adminpanel" # Location of package manifests
     schedule:
-      interval: "monthly"
+      interval: "daily"
