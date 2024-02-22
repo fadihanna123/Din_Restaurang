@@ -1,0 +1,11 @@
+@base = http://localhost:5000
+###
+GET {{base}}/food
+###
+GET {{base}}/food/1
+###
+POST {{base}}/food/add
+###
+PUT {{base}}/food/1
+###
+DELETE {{base}}/food/1
