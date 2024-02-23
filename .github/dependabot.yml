@@ -1,26 +1,21 @@
-# To get started with Dependabot version updates, you'll need to specify which
-# package ecosystems to update and where the package manifests are located.
-# Please see the documentation for all configuration options:
-# https://docs.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
-
-version: 3
+version: 4
 updates:
-  - package-ecosystem: "yarn" # See documentation for possible values
-    directory: "/server" # Location of package manifests
+  - package-ecosystem: "yarn" 
+    directory: "/server" 
     schedule:
       interval: "daily"
 
-version: 3
+version: 4
 updates:
-  - package-ecosystem: "yarn" # See documentation for possible values
-    directory: "/dinrestaurang" # Location of package manifests
+  - package-ecosystem: "yarn"
+    directory: "/dinrestaurang"
     schedule:
       interval: "daily"
 
 
-version: 3
+version: 4
 updates:
-  - package-ecosystem: "yarn" # See documentation for possible values
-    directory: "/adminpanel" # Location of package manifests
+  - package-ecosystem: "yarn" 
+    directory: "/adminpanel"
     schedule:
       interval: "daily"
