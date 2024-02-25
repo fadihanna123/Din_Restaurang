@@ -1,21 +1,21 @@
-version: 4
+version: 2
 updates:
-  - package-ecosystem: "yarn" 
+  - package-ecosystem: "npm" 
     directory: "/server" 
     schedule:
       interval: "daily"
 
-version: 4
+version: 2
 updates:
-  - package-ecosystem: "yarn"
+  - package-ecosystem: "npm"
     directory: "/dinrestaurang"
     schedule:
       interval: "daily"
 
 
-version: 4
+version: 2
 updates:
-  - package-ecosystem: "yarn" 
+  - package-ecosystem: "npm" 
     directory: "/adminpanel"
     schedule:
       interval: "daily"
