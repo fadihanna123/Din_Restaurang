@@ -23,6 +23,8 @@ declare global {
   interface TypedRequestBody<T> extends Request {
     body: T;
   }
+
+  type Routes = '/food' | '/food/:id' | '/food/add';
 }
 
 export {};
