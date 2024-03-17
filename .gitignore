@@ -1,7 +1,10 @@
 # Env
 server/.env
+server/.env.prod
 dinrestaurang/.env
+dinrestaurang/.env.prod
 adminpanel/.env
+adminpanel/.env.prod
 
 # Docs
 server/docs
@@ -19,3 +22,8 @@ node_modules
 server/node_modules
 dinrestaurang/node_modules
 adminpanel/node_modules
+
+# Docker
+server/Dockerfile
+dinrestaurang/Dockerfile
+adminpanel/Dockerfile

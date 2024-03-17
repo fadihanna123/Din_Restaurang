@@ -1,0 +1,60 @@
+version: "3.8"
+
+services:
+  db:
+    image: mysql:latest
+    container_name: db
+    ports:
+      - 3307:3306
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DB: din_restaurang_docker
+    volumes:
+      - din_restaurang_mysql-data:/var/lib/mysql
+
+  adminer:
+    image: adminer:latest
+    container_name: db_admin
+    ports:
+      - 8080:8080
+    restart: unless-stopped
+    volumes:
+      - din_restaurang_mysql-admin:/var/lib/mysql
+
+  api:
+    build: ./server
+    container_name: backend
+    ports:
+      - 5000:5000
+    env_file:
+      - ./server/.env.prod
+    restart: unless-stopped
+    links:
+      - db
+
+  web:
+    build: ./dinrestaurang
+    container_name: dinrestaurang
+    ports:
+      - 3000:3000
+    env_file:
+      - ./dinrestaurang/.env.prod
+    restart: unless-stopped
+    links:
+      - api
+
+  web2:
+    build: ./adminpanel
+    container_name: adminpanel
+    ports:
+      - 3001:3000
+    env_file:
+      - ./adminpanel/.env.prod
+    restart: unless-stopped
+    links:
+      - api
+
+volumes:
+  din_restaurang_mysql-data:
+  din_restaurang_mysql-admin:
