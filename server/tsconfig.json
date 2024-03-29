@@ -3,10 +3,10 @@
     "files": true
   },
   "compilerOptions": {
-    "target": "esNext",
+    "target": "ES6",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "baseUrl": "src",
-    "module": "commonjs",
+    "module": "NodeNext",
     "strict": true,
     "outDir": "dist",
     "esModuleInterop": true,
