@@ -5,7 +5,7 @@
   "author": "Fadi Hanna <54924938+fadihanna123@users.noreply.github.com>",
   "license": "MIT",
   "scripts": {
-    "setup": "cd server && yarn && cd .. && cd dinrestaurang && yarn && cd .. && cd adminpanel && yarn",
+    "setup": "cd server && yarn && yarn seed && cd .. && cd dinrestaurang && yarn && cd .. && cd adminpanel && yarn",
     "seed": "cd server && yarn seed",
     "clear": "rimraf node_modules && cd server && rimraf node_modules && cd .. && cd dinrestaurang && rimraf node_modules build && cd .. && cd adminpanel && rimraf node_modules build"
   }
