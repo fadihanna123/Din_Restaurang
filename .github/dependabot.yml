@@ -3,14 +3,14 @@ updates:
   - package-ecosystem: "npm" 
     directory: "/server" 
     schedule:
-      interval: "weekly"
+      interval: "monthly"
 
 version: 2
 updates:
   - package-ecosystem: "npm"
     directory: "/dinrestaurang"
     schedule:
-      interval: "weekly"
+      interval: "monthly"
 
 
 version: 2
@@ -18,4 +18,4 @@ updates:
   - package-ecosystem: "npm" 
     directory: "/adminpanel"
     schedule:
-      interval: "weekly"
+      interval: "monthly"
