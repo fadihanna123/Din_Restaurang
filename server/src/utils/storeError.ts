@@ -28,8 +28,8 @@ export const storeError = async (
     data: {
       errorId: rnd,
       message,
-      method: method || '/',
-      located: located || '/',
+      method: method ?? '/',
+      located: located ?? '/',
       time,
     },
   });
