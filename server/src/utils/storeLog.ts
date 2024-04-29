@@ -25,8 +25,8 @@ export const storeLog = async (
   await prisma.logs.create({
     data: {
       message,
-      method: method || '/',
-      located: located || '/',
+      method: method ?? '/',
+      located: located ?? '/',
       time,
     },
   });
