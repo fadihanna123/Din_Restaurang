@@ -1,29 +1,19 @@
-# Env
-server/.env
-server/.env.prod
-dinrestaurang/.env
-dinrestaurang/.env.prod
-adminpanel/.env
-adminpanel/.env.prod
+# Environment variables
+.env
+.env.prod
 
 # Docs
-server/docs
-server/dbDocs/
-
+docs
+dbDocs
 
 # Logs
-server/logs/
+logs
 
 # Vscode
-.vscode/launch.json
+launch.json
 
 # Dependencies
 node_modules
-server/node_modules
-dinrestaurang/node_modules
-adminpanel/node_modules
 
 # Docker
-server/Dockerfile
-dinrestaurang/Dockerfile
-adminpanel/Dockerfile
+Dockerfile
