@@ -14,6 +14,16 @@ adminpanel/node_modules
 dinrestaurang/build
 adminpanel/build
 
+# License
+
+LICENSE
+
+# Docker
+
+server/Dockerfile
+dinrestaurang/Dockerfile
+adminpanel/Dockerfile
+
 # Readme
 
 README.md
