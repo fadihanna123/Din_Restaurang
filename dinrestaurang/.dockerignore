@@ -1,0 +1,23 @@
+# Git
+.gitignore
+
+# Dependencies
+
+node_modules
+
+# Docker
+
+Dockerfile
+
+# Readme
+
+README.md
+
+# Enviroment
+.env
+
+# Linting
+.eslintrc.js
+
+# Public assets
+public/robots.txt

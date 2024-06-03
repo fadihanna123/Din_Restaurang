@@ -28,7 +28,7 @@ services:
     ports:
       - 5000:5000
     env_file:
-      - ./server/.env.prod
+      - ./server/.env.production
     restart: unless-stopped
     links:
       - db
@@ -39,7 +39,7 @@ services:
     ports:
       - 3000:3000
     env_file:
-      - ./dinrestaurang/.env.prod
+      - ./dinrestaurang/.env.production
     restart: unless-stopped
     links:
       - api
@@ -50,7 +50,7 @@ services:
     ports:
       - 3001:3000
     env_file:
-      - ./adminpanel/.env.prod
+      - ./adminpanel/.env.production
     restart: unless-stopped
     links:
       - api
