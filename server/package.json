@@ -14,7 +14,7 @@
     "email": "fhanna181@gmail.com"
   },
   "scripts": {
-    "dev": "ts-node-dev -r tsconfig-paths/register src/server",
+    "dev": "ts-node-dev --poll -r tsconfig-paths/register src/server",
     "seed": "prisma db push && prisma db pull && prisma generate && apidoc -i src/ -o docs/",
     "seed-migrate": "prisma migrate dev",
     "seed-delete": "prisma migrate reset",
@@ -35,7 +35,6 @@
     "express-rate-limit": "^7.2.0",
     "helmet": "^7.1.0",
     "luxon": "^3.4.4",
-    "tsconfig-paths": "^4.2.0",
     "winston": "^3.12.0"
   },
   "devDependencies": {
@@ -58,10 +57,11 @@
     "prettier": "^3.2.5",
     "prisma": "^5.11.0",
     "prisma-docs-generator": "^0.8.0",
+    "tsconfig-paths": "^4.2.0",
     "typescript": "^5.4.2"
   },
   "engines": {
     "node": ">=16.0.0",
-    "npm": "Please use pnpm instead of NPM to install dependencies"
+    "npm": "Please use Yarn instead of NPM to install dependencies"
   }
 }

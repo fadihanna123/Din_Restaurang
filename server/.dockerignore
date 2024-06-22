@@ -2,15 +2,12 @@
 .gitignore
 
 # Dependencies
-
 node_modules
 
 # Docker
-
 Dockerfile
 
 # Readme
-
 README.md
 
 # Docs
@@ -22,6 +19,7 @@ src/logs
 
 # Enviroment
 .env
+.docker.env
 
 # Linting
 .eslintrc.js

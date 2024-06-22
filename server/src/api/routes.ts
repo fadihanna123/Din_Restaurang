@@ -4,7 +4,7 @@ import {
   getFood,
   getFoodById,
   updateFoodById,
-} from 'controllers';
+} from '../controllers';
 import { Router } from 'express';
 
 const router = Router();

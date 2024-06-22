@@ -1,6 +1,6 @@
 import { PrismaClient } from '@prisma/client';
-import { logger } from 'tools';
-import { storeError, storeLog } from 'utils';
+import { logger } from '../tools';
+import { storeError, storeLog } from '../utils';
 
 const prisma = new PrismaClient();
 

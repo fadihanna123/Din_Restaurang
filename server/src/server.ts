@@ -1,15 +1,15 @@
 import 'dotenv/config.js';
-import 'tasks';
+import './tasks';
 
-import routes from 'api/routes';
-import { listenFn } from 'controllers/listenFn';
+import routes from './api/routes';
+import { listenFn } from './controllers';
 import cors, { CorsOptions } from 'cors';
 import express, { Application } from 'express';
 import rateLimit from 'express-rate-limit';
 import helmet from 'helmet';
-import { logger } from 'tools';
-import { allowedURLs, errorHandler, serverPort, storeLog } from 'utils';
-import { connectDb } from 'db';
+import { logger } from './tools';
+import { allowedURLs, errorHandler, serverPort, storeLog } from './utils';
+import { connectDb } from './db';
 
 // deepcode ignore UseCsurfForExpress: Csurf package is deprecated.
 const server: Application = express();

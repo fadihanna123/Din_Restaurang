@@ -1,6 +1,6 @@
-import { port } from 'server';
-import { logger } from 'tools';
-import { storeLog } from 'utils/storeLog';
+import { port } from '../server';
+import { logger } from '../tools';
+import { storeLog } from '../utils';
 
 /**
  * @author Fadi Hanna <fhanna181@gmail.com>

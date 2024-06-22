@@ -1,9 +1,7 @@
-import { prisma } from 'db';
+import { prisma } from '../db';
 import { Response } from 'express';
-import { logger } from 'tools';
-import { apiKey, authorizationKey } from 'utils';
-import { storeError } from 'utils/storeError';
-import { storeLog } from 'utils/storeLog';
+import { logger } from '../tools';
+import { apiKey, authorizationKey, storeLog, storeError } from '../utils';
 
 /**
  * @author Fadi Hanna <fhanna181@gmail.com>

@@ -4,6 +4,5 @@ COPY package.json .
 RUN npm i --ignore-scripts -g serve
 RUN yarn --ignore-scripts
 COPY . .
-RUN yarn build:prod
 EXPOSE 3001
-CMD serve build
+CMD yarn dev

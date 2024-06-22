@@ -3,9 +3,8 @@
     "files": true
   },
   "compilerOptions": {
-    "target": "ES6",
+    "target": "ES2017",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "baseUrl": "src",
     "module": "NodeNext",
     "strict": true,
     "outDir": "dist",
@@ -36,9 +35,6 @@
     "noPropertyAccessFromIndexSignature": true,
     "noUncheckedIndexedAccess": true,
     "removeComments": true,
-    "paths": {
-      "@core/*": ["src/*"]
-    }
   },
   "include": ["src/**/*"],
   "files": ["src/types/global.d.ts"],

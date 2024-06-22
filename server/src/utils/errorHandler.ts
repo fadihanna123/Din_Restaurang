@@ -1,5 +1,5 @@
 import { ErrorRequestHandler, Request, Response } from 'express';
-import { logger } from 'tools';
+import { logger } from '../tools';
 
 /**
  * @author Fadi Hanna <fhanna181@gmail.com>

@@ -27,7 +27,6 @@
     "dev": "react-scripts start",
     "prebuild": "rm -rf build",
     "build": "react-scripts build",
-    "build:prod": "yarn prebuild && NODE_ENV=production react-scripts build",
     "eject": "react-scripts eject",
     "lint": "eslint .",
     "format": "prettier -w .",
