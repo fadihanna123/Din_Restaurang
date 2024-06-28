@@ -5,9 +5,9 @@
   "author": "Fadi Hanna <54924938+fadihanna123@users.noreply.github.com>",
   "license": "MIT",
   "scripts": {
-    "setup": "cd server && yarn && yarn seed && cd .. && cd dinrestaurang && yarn --ignore-scripts && cd .. && cd adminpanel && yarn --ignore-scripts",
+    "setup": "cd server && yarn --silent && yarn seed && cd .. && cd dinrestaurang && yarn --silent --ignore-scripts && cd .. && cd adminpanel && yarn --silent --ignore-scripts",
     "dev": "concurrently \"cd server && yarn dev\" \"cd dinrestaurang && yarn dev\"",
     "seed": "cd server && yarn seed",
-    "clear": "rimraf node_modules && cd server && rimraf node_modules && cd .. && cd dinrestaurang && rimraf node_modules build && cd .. && cd adminpanel && rimraf node_modules build"
+    "clear": "rimraf node_modules dist build && cd server && rimraf node_modules dist build && cd .. && cd dinrestaurang && rimraf node_modules dist build && cd .. && cd adminpanel && rimraf node_modules dist build"
   }
 }
