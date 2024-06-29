@@ -6,6 +6,7 @@ node_modules
 
 # Docker
 Dockerfile
+.dockerignore
 
 # Readme
 README.md
@@ -16,6 +17,7 @@ README.md
 
 # Linting
 .eslintrc.js
+.editorconfig
 
 # Public assets
 public/robots.txt
