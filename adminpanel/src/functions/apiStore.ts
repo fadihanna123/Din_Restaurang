@@ -11,16 +11,22 @@ import { setError } from '../redux/reducers/error';
 /**
  * Get all food items.
  * @param dispatch - Dispatch
+ * @param mounted - Mounted
  * @returns Promise
  */
-export const getData = async (dispatch: Dispatch<any>): Promise<void> => {
+export const getData = async (
+  dispatch: Dispatch<any>,
+  mounted: boolean
+): Promise<void> => {
   try {
     const endPoint: Paths = 'food';
 
     dispatch(setLoading(true));
 
     const { data } = await request.get<Food[]>(endPoint);
-    dispatch(setList(data));
+    if (mounted) {
+      dispatch(setList(data));
+    }
   } catch (err) {
     if ((err as { code: string }).code === 'ERR_NETWORK') {
       toast.error("Servern dosent't respond", {

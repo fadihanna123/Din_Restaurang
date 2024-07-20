@@ -25,7 +25,11 @@ const FoodTable: React.FC = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    getData(dispatch);
+    let mounted = true;
+    getData(dispatch, mounted);
+    return () => {
+      mounted = false;
+    };
   }, []);
 
   return (

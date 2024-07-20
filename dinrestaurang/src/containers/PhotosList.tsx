@@ -14,7 +14,11 @@ const PhotosList: React.FC = () => {
   const list = useAppSelector(getList);
 
   useEffect(() => {
-    getData(dispatch);
+    let mounted = true;
+    getData(dispatch, mounted);
+    return () => {
+      mounted = false;
+    };
   }, []);
 
   return (
@@ -24,7 +28,7 @@ const PhotosList: React.FC = () => {
         {err ? (
           <ErrorData>{err}</ErrorData>
         ) : !loading ? (
-          list.length ? (
+          list && list.length ? (
             list.map((item: Food) => <FoodItem key={item.id} item={item} />)
           ) : (
             <ErrorData>Inga data. Var vänlig försök igen</ErrorData>

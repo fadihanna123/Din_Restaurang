@@ -1,11 +1,9 @@
-FROM node:20.15.0-alpine3.20
-RUN adduser -D -g '' fadi
+FROM node:20.15.1-alpine3.20
 WORKDIR /backend
 ENV NODE_ENV development
-COPY yarn.lock package.json .
+COPY yarn.lock package.json ./
 RUN npm i --silent --ignore-scripts -g apidoc prisma ts-node-dev
 RUN yarn --silent
 COPY . .
-USER fadi
 EXPOSE 5000
 CMD yarn dev

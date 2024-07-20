@@ -13,18 +13,21 @@ import { getFoodData } from './apiStore';
  * @function getData
  * @async
  * @param dispatch - Dispatch
+ *  @param mounted - Mounted
  * @returns { void } Promise
  */
-export const getData = (dispatch: Dispatch<any>): void => {
+export const getData = (dispatch: Dispatch<any>, mounted: boolean): void => {
   dispatch(setLoading(true));
 
   getFoodData()
     .then(({ data }: any) => {
-      if (data.message) {
-        dispatch(setError(data.message));
-        toast.error(data.message);
-      } else {
-        dispatch(setList(data));
+      if (mounted) {
+        if (data.message) {
+          dispatch(setError(data.message));
+          toast.error(data.message);
+        } else {
+          dispatch(setList(data));
+        }
       }
     })
     .catch((err: Error) => dispatch(setError(err.message)))
