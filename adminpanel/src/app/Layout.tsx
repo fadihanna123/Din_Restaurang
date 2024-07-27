@@ -3,7 +3,8 @@ import { ToastContainer } from 'react-toastify';
 import { Container } from 'styles';
 
 // Components
-import { Header, Footer } from 'inc';
+import Header from 'inc/Header';
+import Footer from 'inc/Footer';
 import AdminTitleComp from 'containers/AdminTitleComp';
 import FoodTable from 'containers/FoodTable';
 

@@ -1,1 +1,1 @@
-export { default as useEditItem } from './useEditItem';
+export * from './useEditItem';

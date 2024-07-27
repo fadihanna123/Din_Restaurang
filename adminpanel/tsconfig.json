@@ -38,11 +38,7 @@
     "noUnusedLocals": true,
     "noPropertyAccessFromIndexSignature": true,
     "noUncheckedIndexedAccess": true,
-    "removeComments": true,
-    "paths": {
-      "@core/*": ["*"],
-      "@assets/*": ["assets/*"]
-    }
+    "removeComments": true
   },
   "include": ["src/**/*"]
 }

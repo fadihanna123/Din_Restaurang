@@ -1,2 +1,2 @@
-export { default as App } from './App';
-export { default as PhotoList } from './PhotosList';
+export * from './App';
+export * from './PhotosList';

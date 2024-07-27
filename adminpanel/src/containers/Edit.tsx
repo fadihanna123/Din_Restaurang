@@ -5,7 +5,7 @@ import { useAppDispatch, useAppSelector } from '../redux/app/hooks';
 import { getEditForm } from '../redux/reducers';
 import { Col15, EditForm, Input, Label, LabelCol, Row } from 'styles';
 
-import { useEditItem } from '../hooks';
+import useEditItem from '../hooks/useEditItem';
 
 const EditComp: React.FC = () => {
   const editForm = useAppSelector(getEditForm);
