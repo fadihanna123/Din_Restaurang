@@ -15,6 +15,11 @@ cd Din_Restaurang
 ```
 
 ```sh
+# Update data in database
+yarn seed
+```
+
+```sh
 # Go to the selected directory
 cd [dinrestaurang/adminpanel]
 ```
