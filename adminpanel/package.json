@@ -1,6 +1,6 @@
 {
   "name": "dinrestaurang_adminpanel",
-  "version": "0.1.30",
+  "version": "0.1.31",
   "private": "true",
   "lastUpgrade": "20231014",
   "bugs": "https://github.com/fadihanna123/Din_Restaurang/issues",
@@ -46,7 +46,7 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "@reduxjs/toolkit": "^2.2.6",
+    "@reduxjs/toolkit": "^2.2.7",
     "@types/eslint": "^9.6.0",
     "@types/react": "^18.3.3",
     "@types/styled-components": "^5.1.34",
