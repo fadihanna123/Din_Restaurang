@@ -15,6 +15,11 @@ cd Din_Restaurang
 ```
 
 ```sh
+# Install dependencies
+yarn setup
+```
+
+```sh
 # Update data in database
 yarn seed
 ```
@@ -22,11 +27,6 @@ yarn seed
 ```sh
 # Go to the selected directory
 cd [dinrestaurang/adminpanel]
-```
-
-```sh
-# Install dependencies
-yarn
 ```
 
 ```sh
