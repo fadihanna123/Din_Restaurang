@@ -1,15 +1,10 @@
 import { EditItem } from 'functions';
+import useReduxConsts from 'hooks/useReduxConsts';
 import React from 'react';
-import { useAppDispatch, useAppSelector } from '../../redux/app/hooks';
-import { getEditForm, getIdState, getList } from '../../redux/reducers';
 import { Button } from 'styles';
 
 const EditFoodBtn: React.FC = () => {
-  const getId = useAppSelector(getIdState);
-  const editForm = useAppSelector(getEditForm);
-  const list = useAppSelector(getList);
-
-  const dispatch = useAppDispatch();
+  const { editForm, list, getId, dispatch } = useReduxConsts();
 
   return (
     <Button

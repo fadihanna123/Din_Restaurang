@@ -1,14 +1,10 @@
 import React from 'react';
 import { AddItem } from 'functions';
 import { Button } from 'styles/global';
-import { useDispatch, useSelector } from 'react-redux';
-import { getAddForm, getList } from '../../redux/reducers';
+import useReduxConsts from 'hooks/useReduxConsts';
 
 const AddBtn: React.FC = () => {
-  const addForm = useSelector(getAddForm);
-  const list = useSelector(getList);
-
-  const dispatch = useDispatch();
+  const { addForm, list, dispatch } = useReduxConsts();
 
   return (
     <Button type='submit' onClick={() => AddItem(addForm, list, dispatch)}>

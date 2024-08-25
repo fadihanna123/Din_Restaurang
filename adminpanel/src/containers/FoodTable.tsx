@@ -1,8 +1,5 @@
 import React, { useEffect } from 'react';
 import { getData } from 'functions';
-import { useAppDispatch, useAppSelector } from '../redux/app/hooks';
-import { getList, getLoading, getView, setView } from '../redux/reducers';
-import { getError } from '../redux/reducers/error';
 import {
   Button,
   Col,
@@ -15,14 +12,11 @@ import {
 import AddComp from './Add';
 import EditComp from './Edit';
 import FoodItem from './FoodItem';
+import useReduxConsts from 'hooks/useReduxConsts';
+import { setView } from '../redux/reducers';
 
 const FoodTable: React.FC = () => {
-  const loading = useAppSelector(getLoading);
-  const list = useAppSelector(getList);
-  const view = useAppSelector(getView);
-  const error = useAppSelector(getError);
-
-  const dispatch = useAppDispatch();
+  const { loading, error, view, list, dispatch } = useReduxConsts();
 
   useEffect(() => {
     let mounted = true;

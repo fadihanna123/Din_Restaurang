@@ -1,15 +1,12 @@
 import React from 'react';
 import { editHandler, loadDeleteItem } from 'functions';
-import { useAppDispatch, useAppSelector } from '../redux/app/hooks';
-import { getList } from '../redux/reducers';
 import { Button } from 'styles/global';
+import useReduxConsts from 'hooks/useReduxConsts';
 
 const FoodItem: React.FC<{
   item: Food;
 }> = ({ item }: { item: Food }) => {
-  const list = useAppSelector(getList);
-
-  const dispatch = useAppDispatch();
+  const { list, dispatch } = useReduxConsts();
 
   return (
     <tr>

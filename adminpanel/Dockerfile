@@ -1,4 +1,4 @@
-FROM node:20.16.0-alpine3.20
+FROM node:20.17.0-alpine3.20
 WORKDIR /adminpanel
 ENV NODE_ENV=development
 COPY yarn.lock package.json ./

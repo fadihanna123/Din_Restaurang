@@ -33,6 +33,7 @@ const config = {
     },
   },
   rules: {
+    '@typescript-eslint/no-require-imports': 'off',
     indent: ['error', 2],
     'linebreak-style': ['error', 'windows'],
     semi: ['error', 'always'],

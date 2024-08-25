@@ -1,12 +1,9 @@
 import { useEffect } from 'react';
-import { useAppDispatch, useAppSelector } from '../redux/app/hooks';
-import { getIdState, getList, setEditForm } from '../redux/reducers';
+import { setEditForm } from '../redux/reducers';
+import useReduxConsts from './useReduxConsts';
 
 const useEditItem = () => {
-  const list = useAppSelector(getList);
-  const getId = useAppSelector(getIdState);
-
-  const dispatch = useAppDispatch();
+  const { getId, list, dispatch } = useReduxConsts();
 
   useEffect(() => {
     const item = list.find((item) => item.id === getId);
