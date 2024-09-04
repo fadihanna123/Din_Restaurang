@@ -29,7 +29,7 @@ export const getData = async (
     }
   } catch (err) {
     if ((err as { code: string }).code === 'ERR_NETWORK') {
-      toast.error("Servern dosent't respond", {
+      toast.error("Servern does't respond", {
         toastId: 'fetchError',
       });
       dispatch(setError((err as Error).message));
@@ -58,9 +58,16 @@ export const AddItem = async (
   dispatch: Dispatch<any>
 ): Promise<void> => {
   const endPoint: Paths = 'food/add';
+  const imgFile = document.getElementById('image')! as HTMLInputElement;
+  const myForm = new FormData();
+  myForm.append('title', addForm.title);
+  myForm.append('sorts', addForm.sorts);
+  myForm.append('price', String(addForm.price));
+  myForm.append('image', imgFile!.files![0]!);
+  myForm.append('included', addForm.included);
 
   try {
-    const { data } = await request.post<Food>(endPoint, addForm);
+    const { data } = await request.post<Food>(endPoint, myForm);
     dispatch(setList([...list, data]));
   } catch (err) {
     toast.error((err as Error).message);

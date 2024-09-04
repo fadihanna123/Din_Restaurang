@@ -1,5 +1,5 @@
 import { addTyper } from 'functions';
-import { Input } from 'styles/global';
+import { FilePicker } from 'styles/global';
 import React from 'react';
 import useReduxConsts from 'hooks/useReduxConsts';
 
@@ -7,10 +7,11 @@ const AddImageField: React.FC = () => {
   const { addForm, dispatch } = useReduxConsts();
 
   return (
-    <Input
+    <FilePicker
       id='image'
       name='image'
-      value={addForm.image}
+      type='file'
+      accept='image/*'
       onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
         addTyper(e, addForm, dispatch)
       }

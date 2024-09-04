@@ -10,6 +10,7 @@ import helmet from 'helmet';
 import { logger } from './tools';
 import { allowedURLs, errorHandler, serverPort, storeLog } from './utils';
 import { connectDb } from './db';
+import fileUpload from 'express-fileupload';
 
 // deepcode ignore UseCsurfForExpress: Csurf package is deprecated.
 const server: Application = express();
@@ -49,6 +50,8 @@ server.use(helmet());
 // Add cors and handle who can access to the server.
 server.use(cors(corsOptions));
 server.use(express.json({ limit: '1kb', type: 'application/json' }));
+// Add file upload middleware.
+server.use(fileUpload());
 // Add the routes to the server.
 server.use(routes);
 // Handle if the user access unknown route.
