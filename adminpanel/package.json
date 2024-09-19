@@ -24,13 +24,15 @@
     "styled-components": "6.1.13"
   },
   "scripts": {
+    "setup": "yarn --emoji --silent --ignore-scripts",
     "dev": "set PORT 3001 && react-scripts start",
     "prebuild": "rm -rf build",
     "build": "react-scripts build",
     "eject": "react-scripts eject",
     "lint": "eslint .",
     "format": "prettier -w .",
-    "preview": "live-server build"
+    "preview": "live-server build",
+    "clear": "rimraf node_modules dist build"
   },
   "browserslist": {
     "production": [

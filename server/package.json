@@ -14,12 +14,14 @@
     "email": "fhanna181@gmail.com"
   },
   "scripts": {
+    "setup": "yarn --emoji --silent --ignore-scripts",
     "dev": "ts-node-dev --poll -r tsconfig-paths/register src/server",
     "seed": "prisma db push && prisma db pull && prisma generate && apidoc -i src/ -o docs/",
     "seed-migrate": "prisma migrate dev",
     "seed-delete": "prisma migrate reset",
     "lint": "eslint .",
-    "format": "prettier -w ."
+    "format": "prettier -w .",
+    "clear": "rimraf node_modules dist build"
   },
   "prisma": {
     "schema": "src/prisma/schema.prisma"
