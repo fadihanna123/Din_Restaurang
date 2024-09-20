@@ -2,10 +2,12 @@ import { prisma } from '../db';
 import { Response } from 'express';
 import { logger } from '../tools';
 import { apiKey, authorizationKey, storeError } from '../utils';
+import * as path from 'path';
+import sanitize from 'sanitize-filename';
 
 /**
  * @author Fadi Hanna <fhanna181@gmail.com>
- */
+*/
 
 /**
  * Add a food item.
@@ -36,7 +38,14 @@ export const addFood = async (req: TypedRequestBody<IFood>, res: Response) => {
         return res.status(400).send('Var vänlig välj en bild.');
       }
 
-      const uploadPath = `src/uploads/${req.body.title}.${image.mimetype.split('/')[1]}`;
+      const sanitizedTitle = sanitize(req.body.title);
+      const uploadPath = path.resolve('src/uploads', `${sanitizedTitle}.${image.mimetype.split('/')[1]}`);
+      const rootPath = path.resolve('src/uploads');
+
+      if (!uploadPath.startsWith(rootPath)) {
+        console.log('Invalid file path.', 'POST', '/food/add');
+        return res.status(400).send('Invalid file path.');
+      }
 
       image.mv(uploadPath, image.name, (err: Error) => {
         if (err) {
