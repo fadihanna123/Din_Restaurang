@@ -12,7 +12,6 @@ declare global {
     title: string;
     sorts: string;
     price: number;
-    image: string;
     included: string;
   }
 

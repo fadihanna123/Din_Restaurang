@@ -10,7 +10,11 @@ import TitleField from './forms/AddTitleField';
 
 const AddComp: React.FC = () => {
   return (
-    <MyAddForm data-sal='flip-right'>
+    <MyAddForm
+      method='post'
+      data-sal='flip-right'
+      encType='multipart/form-data'
+    >
       <Row>
         <LabelCol>
           <Label htmlFor='title'>Titel:</Label>

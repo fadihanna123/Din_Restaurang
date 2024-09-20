@@ -14,19 +14,38 @@ import { apiKey, authorizationKey, storeError } from '../utils';
  * @route POST /food/add
  * @param { TypedRequestBody<IFood> } req - Request
  * @param { Response } res - Response
- * @returns { Promise<void> } Promise.
  */
-export const addFood = async (
-  req: TypedRequestBody<IFood>,
-  res: Response
-): Promise<void> => {
+export const addFood = async (req: TypedRequestBody<IFood>, res: Response) => {
   if (
     req.get('apiKey') === apiKey &&
     req.get('Authorization') === authorizationKey
   ) {
+    const image = (req as any).files.image ? (req as any).files.image : '';
+
     try {
+      const data = {
+        title: req.body.title,
+        sorts: req.body.sorts,
+        price: Number(req.body.price),
+        image: image.name,
+        included: req.body.included,
+      };
+
+      if (!(req as any).files || Object.keys((req as any).files).length === 0) {
+        console.log('Var vänlig välj en bild.', 'POST', '/food/add');
+        return res.status(400).send('Var vänlig välj en bild.');
+      }
+
+      const uploadPath = `src/uploads/${req.body.title}.${image.mimetype.split('/')[1]}`;
+
+      image.mv(uploadPath, image.name, (err: Error) => {
+        if (err) {
+          return logger.error(err);
+        }
+      });
+
       const FoodModel = await prisma.food.create({
-        data: req.body,
+        data,
       });
 
       res.json(FoodModel);

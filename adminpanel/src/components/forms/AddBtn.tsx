@@ -7,7 +7,7 @@ const AddBtn: React.FC = () => {
   const { addForm, list, dispatch } = useReduxConsts();
 
   return (
-    <Button type='submit' onClick={() => AddItem(addForm, list, dispatch)}>
+    <Button type='button' onClick={() => AddItem(addForm, list, dispatch)}>
       Lägg till
     </Button>
   );

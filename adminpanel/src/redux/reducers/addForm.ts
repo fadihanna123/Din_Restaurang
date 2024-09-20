@@ -11,7 +11,6 @@ const initialState: AddForm = {
   title: '',
   sorts: '',
   price: 0,
-  image: '',
   included: '',
 };
 

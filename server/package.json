@@ -14,12 +14,14 @@
     "email": "fhanna181@gmail.com"
   },
   "scripts": {
+    "setup": "yarn --emoji --silent --ignore-scripts",
     "dev": "ts-node-dev --poll -r tsconfig-paths/register src/server",
     "seed": "prisma db push && prisma db pull && prisma generate && apidoc -i src/ -o docs/",
     "seed-migrate": "prisma migrate dev",
     "seed-delete": "prisma migrate reset",
     "lint": "eslint .",
-    "format": "prettier -w ."
+    "format": "prettier -w .",
+    "clear": "rimraf node_modules dist build"
   },
   "prisma": {
     "schema": "src/prisma/schema.prisma"
@@ -31,7 +33,8 @@
   "dependencies": {
     "@prisma/client": "^5.18.0",
     "dotenv": "^16.4.5",
-    "express": "^4.19.2",
+    "express": "^4.20.0",
+    "express-fileupload": "^1.5.1",
     "express-rate-limit": "^7.4.0",
     "helmet": "^7.1.0",
     "luxon": "^3.5.0",
@@ -41,6 +44,7 @@
     "@types/cors": "^2.8.17",
     "@types/eslint": "^9.6.0",
     "@types/express": "^4.17.21",
+    "@types/express-fileupload": "^1.5.1",
     "@types/luxon": "^3.4.2",
     "@types/node": "^22.5.0",
     "@types/node-cron": "^3.0.11",
