@@ -8,7 +8,7 @@
     "setup": "cd server && yarn --silent && cd .. && cd dinrestaurang && yarn --silent --ignore-scripts && cd .. && cd adminpanel && yarn --silent --ignore-scripts",
     "dev": "concurrently \"cd server && yarn dev\" \"cd dinrestaurang && yarn dev\" \"cd adminpanel && yarn dev\"",
     "seed": "cd server && yarn seed",
-    "clear": "npx rimraf node_modules dist build && cd server && npx rimraf node_modules dist build && cd .. && cd dinrestaurang && npx rimraf node_modules dist build && cd .. && cd adminpanel && npx rimraf node_modules dist build"
+    "clear": "npx rimraf node_modules dist build && cd server && npx rimraf node_modules dist build docs dbDocs && cd .. && cd dinrestaurang && npx rimraf node_modules dist build && cd .. && cd adminpanel && npx rimraf node_modules dist build"
   },
   "devDependencies": {
     "apidoc": "^1.2.0",
