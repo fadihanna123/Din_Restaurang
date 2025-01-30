@@ -51,7 +51,7 @@ const FoodTable: React.FC = () => {
                 </tr>
               ) : !loading ? (
                 list.length ? (
-                  list.map((item) => <FoodItem key={item.id} item={item} />)
+                  list.map((item:Food) => <FoodItem key={item.id} item={item} />)
                 ) : (
                   <tr>
                     <td colSpan={7}>Inga data. Var vänlig lägg till data!</td>

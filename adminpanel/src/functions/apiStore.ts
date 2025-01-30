@@ -10,9 +10,9 @@ import { setError } from '../redux/reducers/error';
 
 /**
  * Get all food items.
- * @param dispatch - Dispatch
- * @param mounted - Mounted
- * @returns Promise
+ * @param { Dispatch<any> } dispatch - Dispatch
+ * @param { boolean } mounted - Mounted
+ * @returns { Promise<void> } - Promise
  */
 export const getData = async (
   dispatch: Dispatch<any>,
@@ -50,7 +50,7 @@ export const getData = async (
  * @param { Food[] } list - Food data
  * @param { Dispatch<any> } dispatch - Set data by dispatch
  * @async
- * @returns Promise
+ * @returns { Promise<void> } - Promise
  */
 export const AddItem = async (
   addForm: AddForm,
@@ -58,6 +58,7 @@ export const AddItem = async (
   dispatch: Dispatch<any>
 ): Promise<void> => {
   const endPoint: Paths = 'food/add';
+
   const imgFile = document.getElementById('image')! as HTMLInputElement;
   const myForm = new FormData();
   myForm.append('title', addForm.title);

@@ -11,7 +11,7 @@
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
     "module": "NodeNext",
-    "moduleResolution": "node",
+    "moduleResolution": "nodenext",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "sourceMap": true,
@@ -20,10 +20,7 @@
     "jsx": "react-jsx",
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
-    "checkJs": true,
-    "composite": true,
-    "declaration": true,
-    "declarationMap": true,
+    "incremental": false,
     "moduleDetection": "force",
     "noImplicitAny": true,
     "noImplicitOverride": true,
@@ -40,5 +37,6 @@
     "noUncheckedIndexedAccess": true,
     "removeComments": true
   },
-  "include": ["src/**/*"]
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "build"]
 }

@@ -7,7 +7,7 @@ import sanitize from 'sanitize-filename';
 
 /**
  * @author Fadi Hanna <fhanna181@gmail.com>
-*/
+ */
 
 /**
  * Add a food item.
@@ -16,8 +16,12 @@ import sanitize from 'sanitize-filename';
  * @route POST /food/add
  * @param { TypedRequestBody<IFood> } req - Request
  * @param { Response } res - Response
+ * @returns { Promise<Response<any, Record<string, any>> | undefined> }
  */
-export const addFood = async (req: TypedRequestBody<IFood>, res: Response) => {
+export const addFood = async (
+  req: TypedRequestBody<IFood>,
+  res: Response
+): Promise<Response<any, Record<string, any>> | undefined> => {
   if (
     req.get('apiKey') === apiKey &&
     req.get('Authorization') === authorizationKey
@@ -39,7 +43,11 @@ export const addFood = async (req: TypedRequestBody<IFood>, res: Response) => {
       }
 
       const sanitizedTitle = sanitize(req.body.title);
-      const uploadPath = path.resolve('src/uploads', `${sanitizedTitle}.${image.mimetype.split('/')[1]}`);
+      const uploadPath = path.resolve(
+        'src/uploads',
+        `${sanitizedTitle}.${image.mimetype.split('/')[1]}`
+      );
+
       const rootPath = path.resolve('src/uploads');
 
       if (!uploadPath.startsWith(rootPath)) {

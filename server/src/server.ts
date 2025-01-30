@@ -5,7 +5,7 @@ import routes from './api/routes';
 import { listenFn } from './controllers';
 import cors, { CorsOptions } from 'cors';
 import express, { Application } from 'express';
-import rateLimit from 'express-rate-limit';
+import { rateLimit } from 'express-rate-limit';
 import helmet from 'helmet';
 import { logger } from './tools';
 import { allowedURLs, errorHandler, serverPort, storeLog } from './utils';
@@ -33,7 +33,6 @@ const corsOptions: CorsOptions = {
 server.use((req, res, next) => {
   logger.info(`Method: ${req.method}, URL: ${req.url}`);
 
-  // eslint-disable-next-line no-console
   console.log(`Method: ${req.method}, URL: ${req.url}`);
 
   storeLog(`Method: ${req.method}, URL: ${req.url}`, req.method, req.url);

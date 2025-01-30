@@ -14,3 +14,9 @@ launch.json
 
 # Dependencies
 node_modules
+
+# Types
+react-app-env.d.ts
+
+# Assets
+server/src/uploads/

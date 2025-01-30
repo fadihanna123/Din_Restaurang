@@ -3,7 +3,7 @@ import winston, { format } from 'winston';
 
 const { combine, printf, prettyPrint, timestamp } = format;
 
-const myFormat = printf(({ level, message, label, timestamp }) => {
+const myFormat = printf(({ level, message, label, timestamp }: any) => {
   timestamp = DateTime.fromJSDate(new Date(timestamp)).toFormat(
     'yyyy-MM-dd HH:mm'
   );

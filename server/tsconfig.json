@@ -34,7 +34,7 @@
     "noUnusedLocals": true,
     "noPropertyAccessFromIndexSignature": true,
     "noUncheckedIndexedAccess": true,
-    "removeComments": true,
+    "removeComments": true
   },
   "include": ["src/**/*"],
   "files": ["src/types/global.d.ts"],
