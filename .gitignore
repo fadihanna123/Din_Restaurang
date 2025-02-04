@@ -9,9 +9,6 @@ dbDocs
 # Logs
 logs
 
-# Vscode
-launch.json
-
 # Dependencies
 node_modules
 

@@ -1,0 +1,21 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "chrome",
+      "request": "attach",
+      "name": "Launch Debugger - dinrestaurang",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}/dinrestaurang",
+      "port": 9222
+    },
+    {
+      "type": "chrome",
+      "request": "attach",
+      "name": "Launch Debugger - dinrestaurang - Adminpanel",
+      "url": "http://localhost:3001",
+      "webRoot": "${workspaceFolder}/adminpanel",
+      "port": 9222
+    }
+  ]
+}
