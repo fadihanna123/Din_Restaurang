@@ -50,11 +50,10 @@ server.use(helmet());
 server.use(cors(corsOptions));
 server.use(express.json({ limit: '1kb', type: 'application/json' }));
 // Add file upload middleware.
-server.use(fileUpload());
+server.use(fileUpload() as any);
 // Add the routes to the server.
 server.use(routes);
 // Handle if the user access unknown route.
-server.use((_, res) => res.send('This route does not exist!'));
 // Handle server errors.
 server.use(errorHandler);
 

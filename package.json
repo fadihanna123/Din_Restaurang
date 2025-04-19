@@ -1,20 +1,20 @@
 {
   "name": "Din_Restaurang",
-  "version": "1.0.0",
+  "version": "1.0.1",
+  "lastUpgrade": "20250419",
   "repository": "https://github.com/fadihanna123/Din_Restaurang.git",
   "author": "Fadi Hanna <54924938+fadihanna123@users.noreply.github.com>",
   "license": "MIT",
   "scripts": {
-    "setup": "cd server && yarn --silent && cd .. && cd dinrestaurang && yarn --silent --ignore-scripts && cd .. && cd adminpanel && yarn --silent --ignore-scripts",
-    "dev": "concurrently \"cd server && yarn dev\" \"cd dinrestaurang && yarn dev\" \"cd adminpanel && yarn dev\"",
+    "setup": "yarn --cwd ./server --silent --emoji && yarn --cwd ./dinrestaurang --silent --ignore-scripts && yarn --cwd ./adminpanel --silent --ignore-scripts",
+    "dev": "npx concurrently \"cd server && yarn dev\" \"cd dinrestaurang && yarn dev\" \"cd adminpanel && yarn dev\"",
     "seed": "cd server && yarn seed",
     "clear": "npx rimraf node_modules dist build && cd server && npx rimraf node_modules dist build docs dbDocs && cd .. && cd dinrestaurang && npx rimraf node_modules dist build && cd .. && cd adminpanel && npx rimraf node_modules dist build"
   },
   "devDependencies": {
-    "apidoc": "^1.2.0",
-    "concurrently": "^9.1.2",
-    "rimraf": "^6.0.1",
-    "ts-node-dev": "^2.0.0",
-    "typescript": "^5.7.3"
+    "apidoc": "1.2.0",
+    "rimraf": "6.0.1",
+    "ts-node-dev": "2.0.0",
+    "typescript": "5.8.3"
   }
 }

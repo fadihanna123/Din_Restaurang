@@ -34,6 +34,8 @@ declare global {
   }
 
   type Paths = 'food' | 'food/add' | `food/${number}`;
+
+  declare module '*.jpg';
 }
 
 export {};

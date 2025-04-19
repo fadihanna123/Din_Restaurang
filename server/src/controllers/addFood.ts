@@ -16,12 +16,9 @@ import sanitize from 'sanitize-filename';
  * @route POST /food/add
  * @param { TypedRequestBody<IFood> } req - Request
  * @param { Response } res - Response
- * @returns { Promise<Response<any, Record<string, any>> | undefined> }
  */
-export const addFood = async (
-  req: TypedRequestBody<IFood>,
-  res: Response
-): Promise<Response<any, Record<string, any>> | undefined> => {
+
+export const addFood = async (req: TypedRequestBody<IFood>, res: Response) => {
   if (
     req.get('apiKey') === apiKey &&
     req.get('Authorization') === authorizationKey
@@ -39,7 +36,7 @@ export const addFood = async (
 
       if (!(req as any).files || Object.keys((req as any).files).length === 0) {
         console.log('Var vänlig välj en bild.', 'POST', '/food/add');
-        return res.status(400).send('Var vänlig välj en bild.');
+        res.status(400).send('Var vänlig välj en bild.');
       }
 
       const sanitizedTitle = sanitize(req.body.title);
@@ -52,7 +49,7 @@ export const addFood = async (
 
       if (!uploadPath.startsWith(rootPath)) {
         console.log('Invalid file path.', 'POST', '/food/add');
-        return res.status(400).send('Invalid file path.');
+        res.status(400).send('Invalid file path.');
       }
 
       image.mv(uploadPath, image.name, (err: Error) => {
