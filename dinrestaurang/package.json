@@ -17,26 +17,28 @@
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
     "@types/react-dom": "^19.1.2",
+    "@vitejs/plugin-react-swc": "^3.9.0",
     "axios": "1.8.4",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "react-scripts": "5.0.1",
     "react-toastify": "^11.0.5",
     "redux": "^5.0.1",
-    "styled-components": "6.1.17"
+    "styled-components": "6.1.17",
+    "vite": "^6.3.2",
+    "vite-tsconfig-paths": "^5.1.4"
   },
   "scripts": {
     "setup": "yarn --emoji --silent --ignore-scripts",
-    "dev": "react-scripts start",
-    "build": "react-scripts build",
-    "prebuild": "rimraf build",
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "prebuild": "rimraf ./build",
     "eject": "react-scripts eject",
-    "lint": "eslint . && htmlhint **/*.html && yarn type-check",
+    "lint": "eslint ./ && htmlhint **/*.html && yarn type-check",
     "type-check": "tsc --noEmit",
-    "format": "prettier -w .",
-    "preview": "yarn build && serve build",
+    "format": "prettier -w ./",
+    "preview": "vite serve",
     "ci": "yarn lint && yarn build",
-    "clear": "rimraf node_modules build"
+    "clear": "rimraf ./node_modules ./build"
   },
   "browserslist": {
     "production": [

@@ -1,4 +1,4 @@
-import { Welcome } from 'styles';
+import { Welcome } from '@styles/welcomeStyles';
 import React from 'react';
 
 const WelcomeComp: React.FC = () => (

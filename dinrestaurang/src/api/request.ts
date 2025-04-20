@@ -1,4 +1,4 @@
-import { apiKey, authorizationKey, backendURL } from 'utils';
+import { apiKey, authorizationKey, backendURL } from '@utils/envs';
 import axios from 'axios';
 
 axios.defaults.baseURL = backendURL;

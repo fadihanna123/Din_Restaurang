@@ -1,4 +1,4 @@
-import { LogoBox } from 'styles';
+import { LogoBox } from '@styles/headerStyles';
 import React from 'react';
 
 const Header: React.FC = () => (

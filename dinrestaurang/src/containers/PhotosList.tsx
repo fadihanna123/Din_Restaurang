@@ -1,8 +1,8 @@
-import FoodItem from 'components/FoodItem';
-import { getData } from 'functions';
+import FoodItem from '@components/FoodItem';
+import { getData } from '@functions/getData';
 import React, { useEffect } from 'react';
-import { ErrorData, Loading, MainPhotos, Row } from 'styles';
-import useReduxConsts from 'hooks/useReduxConsts';
+import { ErrorData, Loading, MainPhotos, Row } from '@styles/index';
+import useReduxConsts from '@hooks/useReduxConsts';
 
 const PhotosList: React.FC = () => {
   const { dispatch, err, loading, list } = useReduxConsts();

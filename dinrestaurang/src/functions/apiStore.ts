@@ -1,5 +1,5 @@
-import { request } from 'api';
-import { food_api } from 'utils';
+import { request } from '@api/request';
+import { food_api } from '@utils/envs';
 import { errorHandler } from './helper';
 
 /**

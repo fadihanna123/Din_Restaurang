@@ -1,4 +1,4 @@
-import { Col, FoodImg, FoodTitle, MainTxt } from 'styles';
+import { Col, FoodImg, FoodTitle, MainTxt } from '@styles/index';
 import React from 'react';
 
 const FoodItem: React.FC<{ item: Food }> = ({ item }: { item: Food }) => (

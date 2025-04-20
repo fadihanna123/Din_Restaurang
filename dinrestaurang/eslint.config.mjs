@@ -77,6 +77,7 @@ export default [
       'jsdoc/no-types': 'off',
       'jsdoc/check-tag-names': 'off',
       'import/no-named-as-default': 'off',
+      '@typescript-eslint/no-require-imports': 'off',
     },
   },
 ];

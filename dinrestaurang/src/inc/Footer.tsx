@@ -1,4 +1,4 @@
-import { FooterBlock } from 'styles';
+import { FooterBlock } from '@styles/footerStyles';
 import React from 'react';
 
 const Footer: React.FC = () => (
