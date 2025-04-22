@@ -1,5 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 
+// Components
 import addFormReducer from '../reducers/addForm';
 import editFormReducer from '../reducers/editForm';
 import idReducer from '../reducers/id';

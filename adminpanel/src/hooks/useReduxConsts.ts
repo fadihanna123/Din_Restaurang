@@ -1,5 +1,8 @@
-import { getError } from '../redux/reducers/error';
-import { useAppDispatch, useAppSelector } from '../redux/app/hooks';
+import { useSelector } from 'react-redux';
+
+// Components
+import { getError } from '@redux/reducers/error';
+import { useAppDispatch, useAppSelector } from '@redux/app/hooks';
 import {
   getAddForm,
   getEditForm,
@@ -7,8 +10,7 @@ import {
   getList,
   getLoading,
   getView,
-} from '../redux/reducers';
-import { useSelector } from 'react-redux';
+} from '@redux/reducers';
 
 const useReduxConsts = () => {
   const addForm = useAppSelector(getAddForm);

@@ -1,4 +1,4 @@
-import Logo from 'assets/logo.jpg';
+import Logo from '@assets/logo.jpg';
 import styled from 'styled-components';
 
 export const LogoBox = styled.div`

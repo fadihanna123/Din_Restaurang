@@ -1,10 +1,11 @@
 import React from 'react';
-import EditFoodBtn from 'components/forms/EditFoodBtn';
-import { editTyper } from 'functions';
-import { Col15, EditForm, Input, Label, LabelCol, Row } from 'styles';
 
-import useEditItem from '../hooks/useEditItem';
-import useReduxConsts from 'hooks/useReduxConsts';
+// Components
+import EditFoodBtn from '@components/forms/EditFoodBtn';
+import { editTyper } from '@functions/helper';
+import { Col15, EditForm, Input, Label, LabelCol, Row } from '@styles/global';
+import useEditItem from '@hooks/useEditItem';
+import useReduxConsts from '@hooks/useReduxConsts';
 
 const EditComp: React.FC = () => {
   const { editForm, dispatch } = useReduxConsts();

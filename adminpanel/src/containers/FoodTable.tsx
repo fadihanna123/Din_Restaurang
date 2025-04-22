@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
-import { getData } from 'functions';
+
+// Components
+import { getData } from '@functions/apiStore';
 import {
   Button,
   Col,
@@ -7,13 +9,12 @@ import {
   MainTable,
   Row,
   TableHead,
-} from 'styles/global';
-
+} from '@styles/global';
 import AddComp from './Add';
 import EditComp from './Edit';
 import FoodItem from './FoodItem';
-import useReduxConsts from 'hooks/useReduxConsts';
-import { setView } from '../redux/reducers';
+import useReduxConsts from '@hooks/useReduxConsts';
+import { setView } from '@redux/reducers';
 
 const FoodTable: React.FC = () => {
   const { loading, error, view, list, dispatch } = useReduxConsts();
@@ -51,7 +52,9 @@ const FoodTable: React.FC = () => {
                 </tr>
               ) : !loading ? (
                 list.length ? (
-                  list.map((item:Food) => <FoodItem key={item.id} item={item} />)
+                  list.map((item: Food) => (
+                    <FoodItem key={item.id} item={item} />
+                  ))
                 ) : (
                   <tr>
                     <td colSpan={7}>Inga data. Var vänlig lägg till data!</td>

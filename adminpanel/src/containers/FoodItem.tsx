@@ -1,7 +1,9 @@
 import React from 'react';
-import { editHandler, loadDeleteItem } from 'functions';
-import { Button } from 'styles/global';
-import useReduxConsts from 'hooks/useReduxConsts';
+
+// Components
+import { editHandler, loadDeleteItem } from '@functions/helper';
+import { Button } from '@styles/global';
+import useReduxConsts from '@hooks/useReduxConsts';
 
 const FoodItem: React.FC<{
   item: Food;

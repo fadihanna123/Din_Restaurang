@@ -1,7 +1,9 @@
-import { addTyper } from 'functions';
-import { FilePicker } from 'styles/global';
 import React from 'react';
-import useReduxConsts from 'hooks/useReduxConsts';
+
+// Components
+import { addTyper } from '@functions/helper';
+import { FilePicker } from '@styles/global';
+import useReduxConsts from '@hooks/useReduxConsts';
 
 const AddImageField: React.FC = () => {
   const { addForm, dispatch } = useReduxConsts();

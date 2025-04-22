@@ -1,7 +1,8 @@
 import React from 'react';
-import { Col20, Label, LabelCol, MyAddForm, Row } from 'styles/global';
 
-import AddBtn from '../components/forms/AddBtn';
+// Components
+import { Col20, Label, LabelCol, MyAddForm, Row } from '@styles/global';
+import AddBtn from '@components/forms/AddBtn';
 import ImageField from './forms/AddImageField';
 import IncludedField from './forms/AddIncludedField';
 import PriceField from './forms/AddPriceField';

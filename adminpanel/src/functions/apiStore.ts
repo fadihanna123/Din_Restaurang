@@ -1,8 +1,10 @@
-import { request } from 'api';
 import { toast } from 'react-toastify';
 import { Dispatch } from 'redux';
-import { setList, setLoading, setView } from '../redux/reducers';
-import { setError } from '../redux/reducers/error';
+
+// Components
+import { request } from '@api/request';
+import { setList, setLoading, setView } from '@redux/reducers';
+import { setError } from '@redux/reducers/error';
 
 /**
  * @author Fadi Hanna <fhanna181@gmail.com>

@@ -1,6 +1,8 @@
 import React from 'react';
 import { Dispatch } from 'redux';
-import { setAddForm, setEditForm, setId, setView } from '../redux/reducers';
+
+// Components
+import { setAddForm, setEditForm, setId, setView } from '@redux/reducers';
 import { DeleteItem } from './apiStore';
 
 /**

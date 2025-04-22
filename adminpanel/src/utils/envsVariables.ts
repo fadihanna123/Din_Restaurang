@@ -1,8 +1,10 @@
-const { REACT_APP_BACKEND_URL, REACT_APP_APIKEY, REACT_APP_AUTHORIZATION } =
-  process.env;
+const { VITE_BACKEND_URL, VITE_APIKEY, VITE_AUTHORIZATION, NODE_ENV } =
+  import.meta.env;
 
-export const backendURL = REACT_APP_BACKEND_URL;
+export const backendURL = VITE_BACKEND_URL;
 
-export const apiKey = REACT_APP_APIKEY;
+export const apiKey = VITE_APIKEY;
 
-export const authorizationKey = REACT_APP_AUTHORIZATION;
+export const authorizationKey = VITE_AUTHORIZATION;
+
+export const nodeEnv = NODE_ENV;

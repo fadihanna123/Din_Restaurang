@@ -1,5 +1,7 @@
 import React from 'react';
-import { FooterBlock } from 'styles';
+
+// Components
+import { FooterBlock } from '@styles/footerStyles';
 
 const Footer: React.FC = () => (
   <FooterBlock>

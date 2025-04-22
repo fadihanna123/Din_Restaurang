@@ -1,7 +1,9 @@
-import { EditItem } from 'functions';
-import useReduxConsts from 'hooks/useReduxConsts';
 import React from 'react';
-import { Button } from 'styles';
+
+// Components
+import { EditItem } from '@functions/apiStore';
+import useReduxConsts from '@hooks/useReduxConsts';
+import { Button } from '@styles/global';
 
 const EditFoodBtn: React.FC = () => {
   const { editForm, list, getId, dispatch } = useReduxConsts();

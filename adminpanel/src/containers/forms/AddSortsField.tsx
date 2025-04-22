@@ -1,7 +1,9 @@
 import React from 'react';
-import { addTyper } from 'functions';
-import { Input } from 'styles/global';
-import useReduxConsts from 'hooks/useReduxConsts';
+
+// Components
+import { addTyper } from '@functions/helper';
+import { Input } from '@styles/global';
+import useReduxConsts from '@hooks/useReduxConsts';
 
 const AddSortsField: React.FC = () => {
   const { addForm, dispatch } = useReduxConsts();

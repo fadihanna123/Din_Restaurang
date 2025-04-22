@@ -15,26 +15,27 @@
   "license": "MIT",
   "dependencies": {
     "@types/react-dom": "19.1.2",
+    "@vitejs/plugin-react-swc": "^3.9.0",
     "axios": "1.8.4",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "react-scripts": "5.0.1",
     "react-toastify": "11.0.5",
     "redux": "5.0.1",
-    "styled-components": "6.1.17"
+    "styled-components": "6.1.17",
+    "vite": "^6.3.2",
+    "vite-tsconfig-paths": "^5.1.4"
   },
   "scripts": {
     "setup": "yarn --emoji --silent --ignore-scripts",
-    "dev": "PORT=3001 react-scripts start",
+    "dev": "vite",
     "prebuild": "rimraf build",
-    "build": "react-scripts build",
-    "eject": "react-scripts eject",
+    "build": "tsc && vite build",
     "lint": "eslint . && htmlhint **/*.html && yarn type-check",
     "type-check": "tsc --noEmit",
     "format": "prettier -w .",
-    "preview": "serve build",
+    "preview": "vite preview",
     "ci": "yarn lint && yarn build",
-    "clear": "rimraf node_modules dist build"
+    "clear": "rimraf ./node_modules ./dist ./build"
   },
   "browserslist": {
     "production": [

@@ -1,5 +1,7 @@
 import React from 'react';
-import { Admin } from 'styles';
+
+// Components
+import { Admin } from '@styles/AdminTitleStyles';
 
 const AdminTitleComp: React.FC = () => {
   return <Admin data-sal='zoom-in'>Välkommen till din restaurang</Admin>;
