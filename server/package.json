@@ -1,7 +1,7 @@
 {
   "name": "dinrestaurang_server",
-  "version": "1.0.38",
-  "lastUpgrade": "20250421",
+  "version": "1.0.39",
+  "lastUpgrade": "20250423",
   "bugs": "https://github.com/fadihanna123/Din_Restaurang/issues",
   "repository": {
     "type": "git",
@@ -16,7 +16,7 @@
   "scripts": {
     "setup": "yarn --emoji --silent --ignore-scripts",
     "dev": "ts-node-dev --poll -r tsconfig-paths/register src/server",
-    "seed": "prisma db push && prisma db pull && prisma generate && apidoc -i src/ -o docs/",
+    "seed": "prisma db push && prisma db pull && prisma generate",
     "seed-migrate": "prisma migrate dev",
     "seed-delete": "prisma migrate reset",
     "lint": "eslint . && yarn type-check",
@@ -26,10 +26,6 @@
   },
   "prisma": {
     "schema": "src/prisma/schema.prisma"
-  },
-  "apidoc": {
-    "name": "Din_Restaurang Docs",
-    "url": "https://localhost:5000"
   },
   "dependencies": {
     "@prisma/client": "6.6.0",
@@ -55,12 +51,11 @@
     "@types/node-cron": "3.0.11",
     "@typescript-eslint/eslint-plugin": "8.31.0",
     "@typescript-eslint/parser": "8.31.0",
-    "apidoc": "^1.2.0",
     "cors": "2.8.5",
     "eslint": "9.25.1",
     "eslint-config-prettier": "10.1.2",
     "eslint-plugin-import": "2.31.0",
-    "eslint-plugin-jsdoc": "50.6.9",
+    "eslint-plugin-jsdoc": "50.6.10",
     "eslint-plugin-prefer-arrow": "1.2.3",
     "eslint-plugin-prettier": "5.2.6",
     "globals": "^16.0.0",
