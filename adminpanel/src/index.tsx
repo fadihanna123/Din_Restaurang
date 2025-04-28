@@ -3,6 +3,7 @@ import { Provider } from 'react-redux';
 import ReactDOM from 'react-dom/client';
 import 'react-toastify/dist/ReactToastify.css';
 import { toast } from 'react-toastify';
+import AOS from 'aos';
 
 // Components
 import App from '@containers/App';
@@ -19,6 +20,8 @@ if (!apiKey || !authorizationKey) {
   toast.error('Missing keys! Add them and restart the app.');
   throw new Error('Missing keys! Add them and restart the app.');
 }
+
+AOS.init();
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLDivElement

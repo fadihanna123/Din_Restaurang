@@ -7,7 +7,7 @@ import { Provider } from 'react-redux';
 import { store } from './redux/app/store';
 import { GlobalStyles } from '@styles/index';
 import { toast } from 'react-toastify';
-
+import AOS from 'aos';
 const { VITE_API_KEY, VITE_AUTHORIZATION_KEY } = import.meta.env;
 
 if (process.env.NODE_ENV === 'development') {
@@ -18,6 +18,8 @@ if (!VITE_API_KEY || !VITE_AUTHORIZATION_KEY) {
   toast.error('Missing keys! Add them and restart the app.');
   throw new Error('Missing keys! Add them and restart the app.');
 }
+
+AOS.init();
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLDivElement
