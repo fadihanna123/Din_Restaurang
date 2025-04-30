@@ -1,51 +1,116 @@
 # Din Restaurang
 
-> Din Restaurang shows 5 meals and in the admin panel you can manage all types of food. <br />
+A full-stack restaurant management system with a customer-facing website and admin panel.
 
-## 🚀 Quick Start
+## Project Structure
 
-```sh
-# Clone the project
+The project consists of three main components:
+
+- **Frontend (dinrestaurang/)**: Customer-facing website consists of meals.
+- **Admin Panel (adminpanel/)**: Restaurant management interface
+- **Backend (server/)**: RESTful API server
+
+## Prerequisites
+
+- Node.js (v14 or higher)
+- Yarn package manager
+- Docker and Docker Compose
+- MySQL (if running locally without Docker)
+
+## Getting Started
+
+### Installation
+
+1. Clone the repository:
+
+```bash
 git clone https://github.com/fadihanna123/Din_Restaurang.git
-```
-
-```sh
-# Go to the directory
 cd Din_Restaurang
 ```
 
-```sh
-# Install dependencies
+2. Install dependencies:
+
+```bash
 yarn setup
 ```
 
-```sh
-# Update data in database
+### Development
+
+To start the development servers:
+
+```bash
+yarn dev
+```
+
+This will start:
+
+- Frontend server on port 3000
+- Admin panel on port 3001
+- Backend API on port 5000
+
+### Database Setup
+
+The project uses MySQL as the database. You can either:
+
+1. Use Docker (recommended):
+
+```bash
+docker-compose up -d
+```
+
+This will start:
+
+- MySQL database on port 3306
+- phpMyAdmin on port 8080
+
+2. Or run MySQL locally and update the configuration in the server's environment variables.
+
+### Seeding the Database
+
+To populate the database with initial data:
+
+```bash
 yarn seed
 ```
 
-```sh
-# Go to the selected directory
-cd [dinrestaurang/adminpanel]
+## Docker Deployment
+
+The project includes Docker configuration for easy deployment:
+
+```bash
+docker-compose up -d
 ```
 
-```sh
-# Start the server
-yarn dev
-# Go to http://localhost:3000
-```
+This will start all services:
 
-## Usage
+- MySQL database
+- phpMyAdmin
+- Backend API
+- Frontend website
+- Admin panel
 
-Dinrestaurang shows 5 meals from backend and in the adminpanel you can see, add, update and delete meals. In the adminpanel you can click add button. Just add meal details and click add. You will see details both in Dinrestaurang and adminpanel.
+## Available Scripts
 
-## 🤝 Contributing
+- `yarn setup`: Install all dependencies
+- `yarn dev`: Start development servers
+- `yarn seed`: Seed the database with initial data
+- `yarn clear`: Clean up node_modules and build directories
 
-1 - Clone the project. <br />
-2 - Fork the project. <br />
-3 - Create your own branch: `
-git checkout -b <your branchname>` <br />
-4 - Push changes. <br />
-5 - Create a pull request. <br />
+## Environment Variables
 
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/fadihanna123/Din_Restaurang/issues).
+Each component has its own environment variables file:
+
+- `server/.docker.env`
+- `server/.env`
+- `dinrestaurang/.docker.env`
+- `dinrestaurang/.env`
+- `adminpanel/.docker.env`
+- `adminpanel/.env`
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Author
+
+Fadi Hanna - [GitHub](https://github.com/fadihanna123)
