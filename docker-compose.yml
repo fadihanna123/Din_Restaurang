@@ -9,7 +9,7 @@ services:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: din_restaurang_db
       MYSQL_USER: fadi
-      MYSQL_PASSWORD: '0000'
+      MYSQL_PASSWORD: "0000"
     env_file:
       - ./server/.docker.env
     volumes:
@@ -29,6 +29,7 @@ services:
     container_name: din_restaurang_backend
     ports:
       - 5000:5000
+      - 5555:5555
     env_file:
       - ./server/.docker.env
     volumes:

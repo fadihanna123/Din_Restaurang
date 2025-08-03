@@ -1,7 +1,7 @@
 {
   "name": "din_restaurang",
-  "version": "1.0.1",
-  "lastUpgrade": "20250419",
+  "version": "1.0.2",
+  "lastUpgrade": "20250803",
   "repository": "https://github.com/fadihanna123/Din_Restaurang.git",
   "author": "Fadi Hanna <54924938+fadihanna123@users.noreply.github.com>",
   "license": "MIT",
@@ -15,6 +15,6 @@
     "apidoc": "1.2.0",
     "rimraf": "6.0.1",
     "ts-node-dev": "2.0.0",
-    "typescript": "5.8.3"
+    "typescript": "5.9.2"
   }
 }
