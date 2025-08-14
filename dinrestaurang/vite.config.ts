@@ -5,11 +5,20 @@ import viteTsconfigPaths from 'vite-tsconfig-paths';
 // https://vitejs.dev/config/
 export default defineConfig({
   base: '/',
+  plugins: [react(), viteTsconfigPaths()],
   server: {
     port: 3000,
-    open: true,
+    strictPort: true,
+    host: true,
+    watch: {
+      usePolling: true,
+    },
   },
-  plugins: [react(), viteTsconfigPaths()],
+  preview: {
+    port: 3000,
+    strictPort: true,
+    host: true,
+  },
   build: {
     sourcemap: true,
   },

@@ -52,7 +52,7 @@ server.use(express.json({ limit: '1kb', type: 'application/json' }));
 // Add file upload middleware.
 server.use(fileUpload() as any);
 // Add the routes to the server.
-server.use(routes);
+server.use('/api/', routes);
 // Handle if the user access unknown route.
 // Handle server errors.
 server.use(errorHandler);

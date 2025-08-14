@@ -57,7 +57,7 @@ services:
     build: ./adminpanel
     container_name: din_restaurang_adminpanel
     ports:
-      - 3001:3000
+      - 3001:3001
     env_file:
       - ./adminpanel/.docker.env
     volumes:

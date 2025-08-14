@@ -8,7 +8,16 @@ export default defineConfig({
   plugins: [react(), viteTsconfigPaths()],
   server: {
     port: 3001,
-    open: true,
+    strictPort: true,
+    host: true,
+    watch: {
+      usePolling: true,
+    },
+  },
+  preview: {
+    port: 3001,
+    strictPort: true,
+    host: true,
   },
   build: {
     sourcemap: true,
