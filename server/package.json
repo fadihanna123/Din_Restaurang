@@ -25,9 +25,6 @@
     "type-check": "tsc --noEmit",
     "clear": "rimraf node_modules dist build dbDocs docs"
   },
-  "prisma": {
-    "schema": "src/prisma/schema.prisma"
-  },
   "dependencies": {
     "@prisma/client": "6.14.0",
     "dotenv": "17.2.1",

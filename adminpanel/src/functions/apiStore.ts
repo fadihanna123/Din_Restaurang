@@ -5,6 +5,7 @@ import { Dispatch } from 'redux';
 import { request } from '@api/request';
 import { setList, setLoading, setView } from '@redux/reducers';
 import { setError } from '@redux/reducers/error';
+import { RefObject } from 'react';
 
 /**
  * @author Fadi Hanna <fhanna181@gmail.com>
@@ -50,6 +51,7 @@ export const getData = async (
  * @function AddItem
  * @param { AddForm } addForm - Added formdata
  * @param { Food[] } list - Food data
+ * @param { RefObject<HTMLFormElement> } addBtnForm - Handle form data
  * @param { Dispatch<any> } dispatch - Set data by dispatch
  * @async
  * @returns { Promise<void> } - Promise
@@ -57,6 +59,7 @@ export const getData = async (
 export const AddItem = async (
   addForm: AddForm,
   list: Food[],
+  addBtnForm: RefObject<HTMLFormElement | null>,
   dispatch: Dispatch<any>
 ): Promise<void> => {
   const endPoint: Paths = 'food/add';
@@ -72,6 +75,8 @@ export const AddItem = async (
   try {
     const { data } = await request.post<Food>(endPoint, myForm);
     dispatch(setList([...list, data]));
+    dispatch(setView(''));
+    addBtnForm.current!.reset();
   } catch (err) {
     toast.error((err as Error).message);
   }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 
 // Components
 import { Col20, Label, LabelCol, MyAddForm, Row } from '@styles/global';
@@ -10,11 +10,14 @@ import SortsField from './forms/AddSortsField';
 import TitleField from './forms/AddTitleField';
 
 const AddComp: React.FC = () => {
+  const addBtnForm = useRef<HTMLFormElement | null>(null);
+
   return (
     <MyAddForm
       method='post'
       data-sal='flip-right'
       encType='multipart/form-data'
+      ref={addBtnForm}
     >
       <Row>
         <LabelCol>
@@ -60,7 +63,7 @@ const AddComp: React.FC = () => {
           <IncludedField />
         </Col20>
       </Row>
-      <AddBtn />
+      <AddBtn addBtnForm={addBtnForm} />
     </MyAddForm>
   );
 };

@@ -4,7 +4,7 @@ import React from 'react';
 const FoodItem: React.FC<{ item: Food }> = ({ item }: { item: Food }) => (
   <Col>
     <FoodImg
-      src={require(`../assets/${item.image}`)}
+      src={`/assets/${item.image}`}
       alt={item.title}
       aria-label={item.title}
       loading='lazy'
