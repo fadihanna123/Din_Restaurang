@@ -26,6 +26,7 @@ services:
 
   api:
     build: ./server
+    image: ${DOCKER_USERNAME}/din_restaurang-backend
     container_name: din_restaurang_backend
     ports:
       - 5000:5000
@@ -41,6 +42,7 @@ services:
 
   web:
     build: ./dinrestaurang
+    image: ${DOCKER_USERNAME}/din_restaurang-frontend
     container_name: din_restaurang
     ports:
       - 3000:3000

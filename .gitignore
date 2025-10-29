@@ -17,3 +17,6 @@ react-app-env.d.ts
 
 # Assets
 server/src/uploads/
+
+# Mac
+.DS_Store
