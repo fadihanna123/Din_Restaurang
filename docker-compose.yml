@@ -57,6 +57,7 @@ services:
 
   web2:
     build: ./adminpanel
+    image: ${DOCKER_USERNAME}/din_restaurang-frontend-admin
     container_name: din_restaurang_adminpanel
     ports:
       - 3001:3001
