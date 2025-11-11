@@ -17,7 +17,7 @@ import useReduxConsts from '@hooks/useReduxConsts';
 import { setView } from '@redux/reducers';
 
 const FoodTable: React.FC = () => {
-  const { loading, error, view, list, dispatch } = useReduxConsts();
+  const { darkMode, loading, error, view, list, dispatch } = useReduxConsts();
 
   useEffect(() => {
     let mounted = true;
@@ -32,7 +32,7 @@ const FoodTable: React.FC = () => {
       <br />
       <Col>
         <div id='data'></div>
-        <MainTable>
+        <MainTable theme={darkMode ? 'dark' : 'light'}>
           <DataTable>
             <TableHead>
               <tr>

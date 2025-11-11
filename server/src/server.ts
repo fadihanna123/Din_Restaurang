@@ -1,5 +1,4 @@
 import 'dotenv/config.js';
-import './tasks';
 
 import routes from './api/routes';
 import { listenFn } from './controllers';
@@ -8,12 +7,29 @@ import express, { Application } from 'express';
 import { rateLimit } from 'express-rate-limit';
 import helmet from 'helmet';
 import { logger } from './tools';
-import { allowedURLs, errorHandler, serverPort, storeLog } from './utils';
-import { connectDb } from './db';
+import {
+  allowedURLs,
+  dbHost,
+  dbName,
+  dbPassword,
+  dbUsername,
+  errorHandler,
+  mode,
+  serverPort,
+  storeLog,
+} from './utils';
 import fileUpload from 'express-fileupload';
+import mysql from 'mysql2';
 
 // deepcode ignore UseCsurfForExpress: Csurf package is deprecated.
 const server: Application = express();
+
+export const connection = mysql.createConnection({
+  host: dbHost,
+  user: dbUsername,
+  password: dbPassword,
+  database: dbName,
+});
 
 // Settings
 const limiter = rateLimit({ windowMs: 3600000, max: 429 });
@@ -40,8 +56,6 @@ server.use((req, res, next) => {
   next();
 });
 
-// Connect to database.
-connectDb();
 // Add rate limiter to limit the requests.
 server.use(limiter);
 // Add security middleware to the server.
@@ -57,6 +71,7 @@ server.use('/api/', routes);
 // Handle server errors.
 server.use(errorHandler);
 
-export const port: number = Number(serverPort) || 5000;
 // Start the server.
-server.listen(port, listenFn);
+if (mode !== 'test') {
+  server.listen(serverPort, listenFn);
+}

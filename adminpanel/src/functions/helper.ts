@@ -4,6 +4,7 @@ import { Dispatch } from 'redux';
 // Components
 import { setAddForm, setEditForm, setId, setView } from '@redux/reducers';
 import { DeleteItem } from './apiStore';
+import { toast } from 'react-toastify';
 
 /**
  * @author Fadi Hanna <fhanna181@gmail.com>
@@ -21,7 +22,11 @@ export const addTyper = (
   e: React.ChangeEvent<HTMLInputElement>,
   addForm: AddForm,
   dispatch: Dispatch<any>
-) => dispatch(setAddForm({ ...addForm, [e.target.name]: e.target.value }));
+) => {
+  if (!addForm) toast.error('All add form fields are required');
+
+  dispatch(setAddForm({ ...addForm, [e.target.name]: e.target.value }));
+};
 
 /**
  * @author Fadi Hanna <fhanna181@gmail.com>
@@ -35,6 +40,8 @@ export const addTyper = (
  */
 
 export const editHandler = (item: Food, dispatch: Dispatch<any>): void => {
+  if (!item) toast.error('Item is not defined');
+
   dispatch(setView('Edit'));
 
   dispatch(setId(item.id));
@@ -52,9 +59,11 @@ export const editTyper = (
   e: React.ChangeEvent<HTMLInputElement>,
   editForm: IEditForm,
   dispatch: Dispatch<any>
-): object =>
-  dispatch(setEditForm({ ...editForm, [e.target.name]: e.target.value }));
+) => {
+  if (!editForm) toast.error('All edit form fields are required');
 
+  dispatch(setEditForm({ ...editForm, [e.target.name]: e.target.value }));
+};
 /**
  * Run DeleteItem function.
  * @param item - Food object
@@ -67,4 +76,8 @@ export const loadDeleteItem = (
   item: Food,
   list: Food[],
   dispatch: Dispatch<any>
-): Promise<void> => DeleteItem(item.id, list, dispatch);
+) => {
+  if (!item || !list) toast.error('Item or list is not defined');
+
+  DeleteItem(item.id, list, dispatch);
+};

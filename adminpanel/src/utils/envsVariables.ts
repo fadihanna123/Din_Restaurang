@@ -1,9 +1,9 @@
-const { VITE_BACKEND_URL, VITE_APIKEY, VITE_AUTHORIZATION_KEY, NODE_ENV } =
+const { VITE_BACKEND_URL, VITE_API_KEY, VITE_AUTHORIZATION_KEY, NODE_ENV } =
   import.meta.env;
 
 export const backendURL = VITE_BACKEND_URL;
 
-export const apiKey = VITE_APIKEY;
+export const apiKey = VITE_API_KEY;
 
 export const authorizationKey = VITE_AUTHORIZATION_KEY;
 

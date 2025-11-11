@@ -98,6 +98,7 @@ export default [
       'import/no-named-as-default': 'off',
       'jsdoc/check-tag-names': 'off',
       'jsdoc/no-undefined-types': 'off',
+      'jsdoc/reject-any-type': 'off',
     },
   },
 ];

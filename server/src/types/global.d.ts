@@ -8,7 +8,11 @@ declare global {
       DATABASE_URL: string;
       APIKEY: string;
       AUTHORIZATION: string;
-      NODE_ENV: 'development' | 'production';
+      NODE_ENV: 'development' | 'production' | 'test';
+      DATABASE_HOST: string;
+      DATABASE_USERNAME: string;
+      DATABASE_PASSWORD: string;
+      DATABASE_NAME: string;
     }
   }
 

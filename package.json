@@ -8,11 +8,14 @@
   "scripts": {
     "setup": "yarn --cwd ./server --silent --emoji && yarn --cwd ./dinrestaurang --silent --ignore-scripts && yarn --cwd ./adminpanel --silent --ignore-scripts",
     "dev": "npx concurrently \"cd server && yarn dev\" \"cd dinrestaurang && yarn dev\" \"cd adminpanel && yarn dev\"",
-    "seed": "cd server && yarn seed",
-    "clear": "npx rimraf node_modules dist build && cd server && npx rimraf node_modules dist build docs dbDocs && cd .. && cd dinrestaurang && npx rimraf node_modules dist build && cd .. && cd adminpanel && npx rimraf node_modules dist build"
+    "lint": "yarn --cwd ./server lint && yarn --cwd ./dinrestaurang lint && yarn --cwd ./adminpanel lint",
+    "format": "yarn --cwd ./server format && yarn --cwd ./dinrestaurang format && yarn --cwd ./adminpanel format",
+    "clear": "npx rimraf node_modules dist build && cd server && npx rimraf node_modules dist build docs dbDocs && cd .. && cd dinrestaurang && npx rimraf node_modules dist build && cd .. && cd adminpanel && npx rimraf node_modules dist build",
+    "prepare": "husky"
   },
   "devDependencies": {
     "apidoc": "1.2.0",
+    "husky": "^9.1.7",
     "rimraf": "6.0.1",
     "ts-node-dev": "2.0.0",
     "typescript": "5.9.3"

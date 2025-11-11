@@ -4,3 +4,4 @@ export * from './id';
 export * from './list';
 export * from './loading';
 export * from './view';
+export * from './pageLoading';

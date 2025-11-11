@@ -165,6 +165,7 @@ export const MainTable = styled.div`
   font-size: 16px;
   text-align: center;
   margin-top: 80px;
+  color: #111;
 
   a {
     text-decoration: none;

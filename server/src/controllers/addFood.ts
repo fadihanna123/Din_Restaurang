@@ -1,9 +1,9 @@
-import { prisma } from '../db';
 import { Response } from 'express';
 import { logger } from '../tools';
 import { apiKey, authorizationKey, storeError } from '../utils';
 import * as path from 'path';
 import sanitize from 'sanitize-filename';
+import { connection } from '@core/server';
 
 /**
  * @author Fadi Hanna <fhanna181@gmail.com>
@@ -58,11 +58,12 @@ export const addFood = async (req: TypedRequestBody<IFood>, res: Response) => {
         }
       });
 
-      const FoodModel = await prisma.food.create({
-        data,
-      });
-
-      res.json(FoodModel);
+      connection.query(
+        `INSERT INTO food (title, sorts, price, image, included) VALUES('${data.title}', '${data.sorts}', '${data.price}','${data.image}', '${data.included}')`,
+        (err, results) => {
+          res.json(results);
+        }
+      );
     } catch (err) {
       storeError((err as Error).message, 'POST', '/food/add');
       logger.error((err as Error).message);

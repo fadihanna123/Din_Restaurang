@@ -62,6 +62,16 @@ export const AddItem = async (
   addBtnForm: RefObject<HTMLFormElement | null>,
   dispatch: Dispatch<any>
 ): Promise<void> => {
+  if (!addForm.title || !addForm.sorts || !addForm.price || !addForm.included) {
+    toast.error('All fields are required');
+    return;
+  }
+
+  if (!addBtnForm.current) {
+    toast.error('Form is not defined');
+    return;
+  }
+
   const endPoint: Paths = 'food/add';
 
   const imgFile = document.getElementById('image')! as HTMLInputElement;

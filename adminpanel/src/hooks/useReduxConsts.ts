@@ -11,6 +11,8 @@ import {
   getLoading,
   getView,
 } from '@redux/reducers';
+import { getPageLoading } from '@redux/reducers/pageLoading';
+import { getDarkMode } from '@core/redux/reducers/darkMode';
 
 const useReduxConsts = () => {
   const addForm = useAppSelector(getAddForm);
@@ -25,11 +27,26 @@ const useReduxConsts = () => {
 
   const loading = useAppSelector(getLoading);
 
+  const pageLoading = useAppSelector(getPageLoading);
+
+  const darkMode = useAppSelector(getDarkMode);
+
   const dispatch = useAppDispatch();
 
   const getId = useAppSelector(getIdState);
 
-  return { addForm, error, loading, list, view, editForm, getId, dispatch };
+  return {
+    addForm,
+    error,
+    loading,
+    list,
+    view,
+    editForm,
+    getId,
+    pageLoading,
+    darkMode,
+    dispatch,
+  };
 };
 
 export default useReduxConsts;

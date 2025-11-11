@@ -1,6 +1,5 @@
-import { port } from '../server';
 import { logger } from '../tools';
-import { storeLog } from '../utils';
+import { serverPort, storeLog } from '../utils';
 
 /**
  * @author Fadi Hanna <fhanna181@gmail.com>
@@ -13,6 +12,6 @@ import { storeLog } from '../utils';
  */
 
 export const listenFn = (): void => {
-  storeLog(`Servern startar på port ${port}`, '', '/');
-  logger.debug(`Servern startar på port ${port}`);
+  storeLog(`Servern startar på port ${serverPort}`, '', '/');
+  logger.debug(`Servern startar på port ${serverPort}`);
 };

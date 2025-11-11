@@ -1,7 +1,7 @@
-import { prisma } from '../db';
 import { Request, Response } from 'express';
 import { logger } from '../tools';
 import { apiKey, authorizationKey, storeError } from '../utils';
+import { connection } from '@core/server';
 
 /**
  * @author Fadi Hanna <fhanna181@gmail.com>
@@ -22,11 +22,9 @@ export const getFood = async (req: Request, res: Response): Promise<void> => {
     req.get('Authorization') === authorizationKey
   ) {
     try {
-      const getFood = await prisma.food.findMany();
-
-      setTimeout(() => {
-        res.json(getFood);
-      }, 2000);
+      connection.query('SELECT * FROM food', (err, results) => {
+        res.json(results);
+      });
     } catch (err) {
       storeError((err as Error).message, 'GET', '/food');
       logger.error((err as Error).message);

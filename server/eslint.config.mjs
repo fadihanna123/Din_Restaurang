@@ -71,6 +71,7 @@ export default [
       '@typescript-eslint/no-explicit-any': 'off',
       'jsdoc/require-param-description': 'off',
       'jsdoc/require-returns-description': 'off',
+      'jsdoc/valid-types': 'off',
     },
   },
 ];

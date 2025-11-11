@@ -1,7 +1,7 @@
-import { prisma } from '../db';
 import { Response } from 'express';
 import { logger } from '../tools';
 import { apiKey, authorizationKey, storeLog, storeError } from '../utils';
+import { connection } from '@core/server';
 
 /**
  * @author Fadi Hanna <fhanna181@gmail.com>
@@ -26,7 +26,18 @@ export const updateFoodById = async (
   ) {
     try {
       const id = Number(req.params['id']);
-      await prisma.food.update({ where: { id }, data: req.body });
+      connection.query(
+        `UPDATE food SET title = '${req.body.title}', price = ${req.body.price}, sorts = '${req.body.sorts}', image = '${req.body.image}', included = '${req.body.included}' WHERE id = ${id}`,
+        (err, results) => {
+          if (results) {
+            setTimeout(() => {
+              res.json(results);
+            }, 2000);
+          } else {
+            res.json({ message: 'No food item found!' });
+          }
+        }
+      );
 
       storeLog('Changed', 'PUT', `/food/${id}`);
       res.send({ message: 'Changed' });

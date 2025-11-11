@@ -1,7 +1,7 @@
-import { prisma } from '../db';
 import { Request, Response } from 'express';
 import { logger } from '../tools';
 import { apiKey, authorizationKey, storeError } from '../utils';
+import { connection } from '@core/server';
 
 /**
  * @author Fadi Hanna <fhanna181@gmail.com>
@@ -26,18 +26,18 @@ export const getFoodById = async (
   ) {
     try {
       const id = Number(req.params['id']);
-      const getFoodById = await prisma.food.findUnique({
-        where: {
-          id,
-        },
-      });
-      if (getFoodById) {
-        setTimeout(() => {
-          res.json(getFoodById);
-        }, 2000);
-      } else {
-        res.json({ message: 'No food item found!' });
-      }
+      connection.query(
+        `SELECT * FROM food WHERE id = ${id}`,
+        (err, results) => {
+          if (results) {
+            setTimeout(() => {
+              res.json(results);
+            }, 2000);
+          } else {
+            res.json({ message: 'No food item found!' });
+          }
+        }
+      );
     } catch (err) {
       storeError((err as Error).message, 'GET', `/food/${req.params['id']}`);
 

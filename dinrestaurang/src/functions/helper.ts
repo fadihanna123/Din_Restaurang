@@ -2,6 +2,8 @@
 import { toast } from 'react-toastify';
 
 const errorHandler = (error: any) => {
+  if (!error) return;
+
   if (error.response) {
     toast.error(error.response.data);
     toast.error(error.response.status);

@@ -1,3 +1,4 @@
+import { verifyToken } from '@core/controllers/verifyToken';
 import {
   addFood,
   deleteFoodById,
@@ -16,12 +17,12 @@ router.get<Routes>('/food', getFood);
 router.get<Routes>('/food/:id', getFoodById);
 
 // Add food item.
-router.post<Routes>('/food/add', addFood);
+router.post<Routes>('/food/add', verifyToken, addFood);
 
 // Update a food item.
-router.put<Routes>('/food/:id', updateFoodById);
+router.put<Routes>('/food/:id', verifyToken, updateFoodById);
 
 // Delete a food item.
-router.delete<Routes>('/food/:id', deleteFoodById);
+router.delete<Routes>('/food/:id', verifyToken, deleteFoodById);
 
 export default router;

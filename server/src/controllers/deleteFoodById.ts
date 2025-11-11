@@ -1,7 +1,7 @@
-import { prisma } from '../db';
 import { Request, Response } from 'express';
 import { logger } from '../tools';
 import { apiKey, authorizationKey, storeError, storeLog } from '../utils';
+import { connection } from '@core/server';
 
 /**
  * @author Fadi Hanna <fhanna181@gmail.com>
@@ -26,7 +26,7 @@ export const deleteFoodById = async (
   ) {
     try {
       const id = Number(req.params['id']);
-      await prisma.food.delete({ where: { id } });
+      connection.query(`DELETE FROM food WHERE id = ${id}`);
 
       storeLog('Deleted', 'DELETE', `/food/${id}`);
 

@@ -8,6 +8,8 @@ import listReducer from '../reducers/list';
 import loadingReducer from '../reducers/loading';
 import viewReducer from '../reducers/view';
 import errorReducer from '../reducers/error';
+import pageLoadingReducer from '../reducers/pageLoading';
+import darkModeReducer from '../reducers/darkMode';
 
 export const store = configureStore({
   reducer: {
@@ -18,6 +20,8 @@ export const store = configureStore({
     view: viewReducer,
     id: idReducer,
     error: errorReducer,
+    pageLoading: pageLoadingReducer,
+    darkMode: darkModeReducer,
   },
 });
 

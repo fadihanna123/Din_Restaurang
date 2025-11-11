@@ -17,7 +17,6 @@ export const LogoBox = styled.div`
     background-repeat: no-repeat;
     background-size: 100% 50%;
     background-position: center;
-    margin: 10 10px 0 10px;
-    border: 1px solid black;
+    border: 1px solid ${(props) => (props.theme === 'dark' ? '#fff' : '#111')};
   }
 `;
