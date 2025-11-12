@@ -72,6 +72,7 @@ export default [
       'jsdoc/require-param-description': 'off',
       'jsdoc/require-returns-description': 'off',
       'jsdoc/valid-types': 'off',
+      'jsdoc/reject-any-type': 'off',
     },
   },
 ];

@@ -23,7 +23,7 @@ export const getFood = async (req: Request, res: Response): Promise<void> => {
   ) {
     try {
       connection.query('SELECT * FROM food', (err, results) => {
-        res.json(results);
+        res.status(200).json(results);
       });
     } catch (err) {
       storeError((err as Error).message, 'GET', '/food');
@@ -33,6 +33,6 @@ export const getFood = async (req: Request, res: Response): Promise<void> => {
     storeError('No headers provided!', 'GET', '/food');
     logger.error('No headers provided on GET/food!');
 
-    res.json({ message: 'FORBIDDEN' });
+    res.status(401).json({ message: 'FORBIDDEN' });
   }
 };

@@ -7,11 +7,13 @@ import {
   updateFoodById,
 } from '../controllers';
 import { Router } from 'express';
+import { getToken } from '@controllers/getToken';
 
 const router = Router();
 
 // Get all food items.
 router.get<Routes>('/food', getFood);
+router.get<Routes>('/token', getToken);
 
 // Get food item by id.
 router.get<Routes>('/food/:id', getFoodById);

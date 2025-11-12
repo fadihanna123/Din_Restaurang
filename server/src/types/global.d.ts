@@ -28,7 +28,7 @@ declare global {
     body: T;
   }
 
-  type Routes = '/food' | '/food/:id' | '/food/add';
+  type Routes = '/food' | '/food/:id' | '/food/add' | '/token';
 }
 
 export {};

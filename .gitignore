@@ -20,3 +20,6 @@ server/src/uploads/
 
 # Mac
 .DS_Store
+
+# Build
+build

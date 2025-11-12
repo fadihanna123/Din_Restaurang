@@ -11,7 +11,7 @@ export const verifyToken = async (
   const token = Header?.split(' ')?.[1];
 
   if (!token) {
-    res.sendStatus(401);
+    res.status(401).json({ message: 'FORBIDDEN' });
   }
 
   try {
@@ -20,6 +20,6 @@ export const verifyToken = async (
     next();
   } catch (error) {
     console.log(error);
-    res.sendStatus(403);
+    res.status(401).json({ message: 'FORBIDDEN' });
   }
 };

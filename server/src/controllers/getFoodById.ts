@@ -28,13 +28,13 @@ export const getFoodById = async (
       const id = Number(req.params['id']);
       connection.query(
         `SELECT * FROM food WHERE id = ${id}`,
-        (err, results) => {
-          if (results) {
+        (err, results: any) => {
+          if (results.length !== 0) {
             setTimeout(() => {
-              res.json(results);
+              res.status(200).json(results);
             }, 2000);
           } else {
-            res.json({ message: 'No food item found!' });
+            res.status(404).json({ message: 'No food item found!' });
           }
         }
       );
@@ -48,6 +48,6 @@ export const getFoodById = async (
 
     logger.error('No headers provided on GET /food/:id!');
 
-    res.json({ message: 'FORBIDDEN' });
+    res.status(401).json({ message: 'FORBIDDEN' });
   }
 };

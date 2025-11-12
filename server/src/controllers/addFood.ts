@@ -1,6 +1,6 @@
 import { Response } from 'express';
 import { logger } from '../tools';
-import { apiKey, authorizationKey, storeError } from '../utils';
+import { apiKey, storeError } from '../utils';
 import * as path from 'path';
 import sanitize from 'sanitize-filename';
 import { connection } from '@core/server';
@@ -19,10 +19,7 @@ import { connection } from '@core/server';
  */
 
 export const addFood = async (req: TypedRequestBody<IFood>, res: Response) => {
-  if (
-    req.get('apiKey') === apiKey &&
-    req.get('Authorization') === authorizationKey
-  ) {
+  if (req.get('apiKey') === apiKey) {
     const image = (req as any).files.image ? (req as any).files.image : '';
 
     try {
@@ -60,8 +57,8 @@ export const addFood = async (req: TypedRequestBody<IFood>, res: Response) => {
 
       connection.query(
         `INSERT INTO food (title, sorts, price, image, included) VALUES('${data.title}', '${data.sorts}', '${data.price}','${data.image}', '${data.included}')`,
-        (err, results) => {
-          res.json(results);
+        () => {
+          res.status(201).json({ message: 'Food added successfully.' });
         }
       );
     } catch (err) {
@@ -73,6 +70,6 @@ export const addFood = async (req: TypedRequestBody<IFood>, res: Response) => {
 
     logger.error('No headers provided POST /food/add!');
 
-    res.json({ message: 'FORBIDDEN' });
+    res.status(401).json({ message: 'FORBIDDEN' });
   }
 };

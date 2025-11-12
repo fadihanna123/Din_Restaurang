@@ -16,10 +16,11 @@
   "scripts": {
     "setup": "yarn --emoji --silent --ignore-scripts",
     "dev": "ts-node-dev --poll -r tsconfig-paths/register src/server",
+    "build": "esbuild ./src/server.ts --bundle --minify --packages=external --sourcemap --outdir=./build --platform=node",
     "lint": "eslint . && yarn type-check",
     "format": "prettier -w .",
     "type-check": "tsc --noEmit",
-    "clear": "rimraf node_modules dist build dbDocs docs"
+    "clear": "rimraf ./node_modules ./build ./dbDocs ./docs"
   },
   "dependencies": {
     "dotenv": "17.2.3",
@@ -48,6 +49,7 @@
     "@typescript-eslint/eslint-plugin": "8.46.4",
     "@typescript-eslint/parser": "8.46.4",
     "cors": "2.8.5",
+    "esbuild": "^0.27.0",
     "eslint": "9.39.1",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-import": "2.32.0",

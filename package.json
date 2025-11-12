@@ -7,6 +7,7 @@
   "license": "MIT",
   "scripts": {
     "setup": "yarn --cwd ./server --silent --emoji && yarn --cwd ./dinrestaurang --silent --ignore-scripts && yarn --cwd ./adminpanel --silent --ignore-scripts",
+    "build": "yarn --cwd ./server build && yarn --cwd ./dinrestaurang build && yarn --cwd ./adminpanel build",
     "dev": "npx concurrently \"cd server && yarn dev\" \"cd dinrestaurang && yarn dev\" \"cd adminpanel && yarn dev\"",
     "lint": "yarn --cwd ./server lint && yarn --cwd ./dinrestaurang lint && yarn --cwd ./adminpanel lint",
     "format": "yarn --cwd ./server format && yarn --cwd ./dinrestaurang format && yarn --cwd ./adminpanel format",
