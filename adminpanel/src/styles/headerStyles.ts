@@ -1,10 +1,9 @@
-import Logo from '@assets/logo.jpg';
 import styled from 'styled-components';
 
 export const LogoBox = styled.div`
   display: grid;
   grid-template-columns: 1fr;
-  background: url(${Logo}) no-repeat center center;
+  background: url('/assets/logo.jpg') no-repeat center center;
   height: 320px;
   border: 1px solid black;
   border-radius: 10px;

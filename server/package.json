@@ -17,7 +17,7 @@
     "setup": "yarn --emoji --silent --ignore-scripts",
     "dev": "ts-node-dev --poll -r tsconfig-paths/register src/server",
     "build": "esbuild ./src/server.ts --bundle --minify --packages=external --sourcemap --outdir=./build --platform=node",
-    "lint": "eslint . && yarn type-check",
+    "lint": "eslint && yarn type-check",
     "format": "prettier -w .",
     "type-check": "tsc --noEmit",
     "clear": "rimraf ./node_modules ./build ./dbDocs ./docs"

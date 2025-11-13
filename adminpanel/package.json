@@ -38,7 +38,7 @@
     "dev": "vite",
     "prebuild": "rimraf build",
     "build": "tsc && vite build",
-    "lint": "eslint . && htmlhint **/*.html && yarn type-check",
+    "lint": "eslint && htmlhint **/*.html && yarn type-check",
     "type-check": "tsc --noEmit",
     "format": "prettier -w .",
     "test": "vitest",

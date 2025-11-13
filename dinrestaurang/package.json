@@ -41,7 +41,7 @@
     "build": "tsc && vite build",
     "prebuild": "rimraf ./build",
     "eject": "react-scripts eject",
-    "lint": "eslint ./ && htmlhint **/*.html && yarn type-check",
+    "lint": "eslint && htmlhint **/*.html && yarn type-check",
     "type-check": "tsc --noEmit",
     "format": "prettier -w ./",
     "test": "vitest",
