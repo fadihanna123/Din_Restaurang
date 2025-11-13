@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import { logger } from '../tools';
-import { apiKey, authorizationKey, storeError, storeLog } from '../utils';
+import { apiKey, storeError, storeLog } from '../utils';
 import { connection } from '@core/server';
 
 /**
@@ -20,17 +20,14 @@ export const deleteFoodById = async (
   req: Request,
   res: Response
 ): Promise<void> => {
-  if (
-    req.get('apiKey') === apiKey &&
-    req.get('Authorization') === authorizationKey
-  ) {
+  if (req.get('apiKey') === apiKey) {
     try {
       const id = Number(req.params['id']);
       connection.query(`DELETE FROM food WHERE id = ${id}`);
 
       storeLog('Deleted', 'DELETE', `/food/${id}`);
 
-      res.send({ message: 'Deleted' });
+      res.status(200).send({ message: 'Deleted' });
     } catch (err) {
       storeError((err as Error).message, 'DELETE', `/food/${req.params['id']}`);
 
@@ -41,6 +38,6 @@ export const deleteFoodById = async (
 
     logger.error('No headers provided on DELETE /food/:id!');
 
-    res.json({ message: 'FORBIDDEN' });
+    res.status(401).json({ message: 'FORBIDDEN' });
   }
 };
