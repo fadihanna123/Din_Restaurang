@@ -1,12 +1,14 @@
 declare global {
-  namespace NodeJS {
-    interface ProcessEnv {
-      REACT_APP_BACKEND_URL: string;
-      REACT_APP_FOOD_API: string;
-      REACT_APP_API_KEY: string;
-      REACT_APP_AUTHORIZATION_KEY: string;
-      NODE_ENV: 'development' | 'production';
-    }
+  interface ImportMetaEnv {
+    VITE_BACKEND_URL: string;
+    VITE_FOOD_ENDPOINT: string;
+    VITE_TOKEN_ENDPOINT: string;
+    VITE_API_KEY: string;
+    NODE_ENV: 'development' | 'production' | 'test';
+  }
+
+  interface ResponseToken {
+    token: string;
   }
 
   interface Food {
@@ -18,7 +20,7 @@ declare global {
     included: string;
   }
 
-  type Paths = 'food' | 'food/add' | `food/${number}`;
+  type Paths = 'food' | 'food/add' | `food/${number}` | 'token';
 
   declare module '*.jpg';
 }

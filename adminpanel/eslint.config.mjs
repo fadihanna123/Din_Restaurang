@@ -99,6 +99,7 @@ export default [
       'jsdoc/check-tag-names': 'off',
       'jsdoc/no-undefined-types': 'off',
       'jsdoc/reject-any-type': 'off',
+      'jsdoc/require-returns': 'off',
     },
   },
 ];

@@ -64,8 +64,6 @@ public/ <br />
 public/index.html <br />
 public/robots.txt <br />
 public/favicon/ <br />
-public/favicon/android-chrome-192x192.png <br />
-public/favicon/android-chrome-512x512.png <br />
 public/favicon/apple-touch-icon.png <br />
 public/favicon/browserconfig.xml <br />
 public/favicon/favicon-16x16.png <br />

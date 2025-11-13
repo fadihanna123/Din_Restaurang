@@ -23,29 +23,19 @@ export const updateFoodById = async (
   if (req.get('apiKey') === apiKey) {
     try {
       const id = Number(req.params['id']);
+
       connection.query(
         `UPDATE food SET title = '${req.body.title}', price = ${req.body.price}, sorts = '${req.body.sorts}', image = '${req.body.image}', included = '${req.body.included}' WHERE id = ${id}`,
-        (err, results: any) => {
-          if (results.length !== 0) {
-            setTimeout(() => {
-              res.status(200).json(results);
-            }, 2000);
-          } else {
-            res.status(404).json({ message: 'No food item found!' });
-          }
+        () => {
+          setTimeout(() => {
+            res.status(200).json({ message: 'The field is updated' });
+          }, 2000);
         }
       );
 
-      storeLog('Changed', 'PUT', `/food/${id}`);
-      res.status(200).json({ message: 'Changed' });
+      storeLog('The field is updated', 'PUT', `/food/${id}`);
     } catch (err) {
-      storeError(
-        (err as Error).message,
-        'PUT',
-        `/api//food/${req.params['id']}`
-      );
-
-      logger.error((err as Error).message);
+      console.log((err as Error).message);
     }
   } else {
     storeError('No headers provided!', 'PUT', `/api/food/${req.params['id']}`);

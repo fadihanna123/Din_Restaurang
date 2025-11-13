@@ -33,6 +33,10 @@ declare global {
     included: string;
   }
 
+  interface TokenResponse {
+    token: string;
+  }
+
   type Paths = 'food' | 'food/add' | `food/${number}`;
 
   declare module '*.jpg';

@@ -8,6 +8,10 @@ const FoodItem: React.FC<{ item: Food }> = ({ item }: { item: Food }) => (
       alt={item.title}
       aria-label={item.title}
       loading='lazy'
+      onError={(e) => {
+        e.currentTarget.style.fontSize = '2rem';
+        e.currentTarget.alt = 'No image available';
+      }}
     />
     <FoodTitle>{item.title}</FoodTitle>
     <MainTxt>

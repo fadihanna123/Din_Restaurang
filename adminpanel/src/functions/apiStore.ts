@@ -6,10 +6,30 @@ import { request } from '@api/request';
 import { setList, setLoading, setView } from '@redux/reducers';
 import { setError } from '@redux/reducers/error';
 import { RefObject } from 'react';
+import { apiKey, get_token_endpoint } from '@utils/envsVariables';
 
 /**
  * @author Fadi Hanna <fhanna181@gmail.com>
  */
+
+/**
+ * Get token from API.
+ *@function getToken
+ * @async
+ */
+export const getToken = async () => {
+  try {
+    return await request.get<TokenResponse>(get_token_endpoint as Paths, {
+      headers: {
+        apiKey,
+      },
+    });
+  } catch (err) {
+    toast.error((err as Error).message, {
+      toastId: 'fetchError',
+    });
+  }
+};
 
 /**
  * Get all food items.
@@ -83,7 +103,11 @@ export const AddItem = async (
   myForm.append('included', addForm.included);
 
   try {
-    const { data } = await request.post<Food>(endPoint, myForm);
+    const { data } = await request.post<Food>(endPoint, myForm, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
+      },
+    });
     dispatch(setList([...list, data]));
     dispatch(setView(''));
     addBtnForm.current!.reset();
@@ -106,7 +130,11 @@ export const EditItem = async (
   const endPoint = `food/${getId}` as Paths;
 
   try {
-    await request.put<Food>(endPoint as Paths, editForm);
+    await request.put<Food>(endPoint as Paths, editForm, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
+      },
+    });
 
     const temp = [...list];
     const index = temp.findIndex((i: Food) => i.id === getId);
@@ -137,7 +165,11 @@ export const DeleteItem = async (
 
     dispatch(setLoading(true));
 
-    await request.delete<Food>(endPoint);
+    await request.delete<Food>(endPoint, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
+      },
+    });
     const temp = [...list].filter((item) => item.id !== id);
     dispatch(setList(temp));
   } catch (err) {

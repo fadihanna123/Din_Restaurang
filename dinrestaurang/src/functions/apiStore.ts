@@ -1,5 +1,5 @@
 import { request } from '@api/request';
-import { food_api } from '@utils/envs';
+import { food_endpoint } from '@utils/envs';
 import { errorHandler } from './helper';
 
 /**
@@ -7,14 +7,14 @@ import { errorHandler } from './helper';
  */
 
 /**
- * Get all food items from api.
+ * Get all food items from API.
  *@function getFoodData
  * @async
  * @returns Promise contains food array
  */
 export const getFoodData = async () => {
   try {
-    return await request.get<Food[]>(food_api as Paths);
+    return await request.get<Food[]>(food_endpoint as Paths);
   } catch (err) {
     errorHandler(err);
   }
