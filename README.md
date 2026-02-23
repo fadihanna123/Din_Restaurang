@@ -24,7 +24,7 @@ The project consists of three main components:
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/fadihanna123/Din_Restaurang.git
+git clone https://codeberg.org/fadihanna/Din_Restaurang.git
 cd Din_Restaurang
 ```
 
